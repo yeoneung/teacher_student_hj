@@ -1,0 +1,1217 @@
+{
+  "config": {
+    "stage": "pilot",
+    "seeds": [
+      9921
+    ],
+    "methods": [
+      "clone",
+      "hamiltonian",
+      "fixed16",
+      "fixed64",
+      "fixed256",
+      "adaptive",
+      "guided"
+    ],
+    "selected_fixed": {},
+    "budget": 15.0,
+    "teacher_budget": 30.0,
+    "training_initials": 512,
+    "validation_initials": 256,
+    "state_pool": 4096,
+    "test_initials": 512,
+    "batch": 512,
+    "scope": "Teacher held frozen to isolate teaching operation; same weak initial student and full training gate. Teacher construction is separate. All graphs and cache work charged to teaching budget."
+  },
+  "rows": [
+    {
+      "method": "clone",
+      "seed": 9921,
+      "updates": 3920,
+      "accepted": 7,
+      "rejected": 0,
+      "audits": 0,
+      "best_validation_cost": 2.8061017369097367,
+      "best_available_seconds": 14.882246100023622,
+      "charged_seconds": 15.004794000036782,
+      "common_seconds": 11.618523500015726,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 3.0101991567698656,
+          "validation_cost": 3.001072040944427,
+          "available_seconds": 12.364428500033682
+        },
+        {
+          "block": 8,
+          "updates": 1024,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.9469385725513098,
+          "validation_cost": 2.9351951185780614,
+          "available_seconds": 12.788623500033282
+        },
+        {
+          "block": 12,
+          "updates": 1536,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.9004622471925403,
+          "validation_cost": 2.869069584430674,
+          "available_seconds": 13.210378700023284
+        },
+        {
+          "block": 16,
+          "updates": 2048,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.86832843465805,
+          "validation_cost": 2.8420459873213084,
+          "available_seconds": 13.623639400029788
+        },
+        {
+          "block": 20,
+          "updates": 2560,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.843635800833768,
+          "validation_cost": 2.8180611887152356,
+          "available_seconds": 14.04129550003563
+        },
+        {
+          "block": 24,
+          "updates": 3072,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.8322399873956847,
+          "validation_cost": 2.8095743101416737,
+          "available_seconds": 14.466023200016934
+        },
+        {
+          "block": 28,
+          "updates": 3584,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.8259824423671853,
+          "validation_cost": 2.8061017369097367,
+          "available_seconds": 14.88230000002659
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "mechanical",
+      "comparison_label": "clone",
+      "test_cost": 2.8840035544368905,
+      "teacher_test_cost": 2.868558407620586,
+      "initial_test_cost": 3.2621298742081004,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\short.pt",
+        "sha256": "9235a9038a809796877fb02bcaba59bcd9a43f9b59ec132f2230cd11c6e6c592",
+        "budget": 30.0,
+        "validation_mean": 2.7431856439610023
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\parent.pt",
+        "sha256": "e3702845ccee46ddca062e4d13ef0f79238157a71e64f053d8a9ce660f46b689",
+        "budget": 7.5,
+        "validation_mean": 3.107663052955614
+      },
+      "policy_sha256": "5a3148237eb0ff1f534fdb2e3800a91c7ac647ed87feece7de8a1e92ce4eebbc",
+      "diagnostic": {
+        "predicted_improvements": 21,
+        "false_positive_predictions": 0
+      }
+    },
+    {
+      "method": "guided",
+      "seed": 9921,
+      "updates": 128,
+      "accepted": 1,
+      "rejected": 0,
+      "audits": 1,
+      "best_validation_cost": 3.195337509503492,
+      "best_available_seconds": 0.0,
+      "charged_seconds": 17.074923600041075,
+      "common_seconds": 11.618523500015726,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 1,
+          "updates": 128,
+          "accepted": true,
+          "operation": "refresh",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 3.09063799830051,
+          "validation_cost": 3.1157887805448237,
+          "available_seconds": 17.07488190001459,
+          "student_advantage": 0.0010250424212007486,
+          "fresh_target_advantage": -0.000332912353473624,
+          "cached_target_advantage": 0.0007724363467990379,
+          "mean_state_distance": 1.0298211574554443
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "mechanical",
+      "comparison_label": "guided",
+      "test_cost": 3.2621298742081004,
+      "teacher_test_cost": 2.868558407620586,
+      "initial_test_cost": 3.2621298742081004,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\short.pt",
+        "sha256": "9235a9038a809796877fb02bcaba59bcd9a43f9b59ec132f2230cd11c6e6c592",
+        "budget": 30.0,
+        "validation_mean": 2.7431856439610023
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\parent.pt",
+        "sha256": "e3702845ccee46ddca062e4d13ef0f79238157a71e64f053d8a9ce660f46b689",
+        "budget": 7.5,
+        "validation_mean": 3.107663052955614
+      },
+      "policy_sha256": "0272d71644f0826c0356631f16da632d7c6fab0b3cb7708f35cfb47afd7eb919",
+      "diagnostic": {
+        "predicted_improvements": 19,
+        "false_positive_predictions": 8
+      }
+    },
+    {
+      "method": "fixed256",
+      "seed": 9921,
+      "updates": 3984,
+      "accepted": 7,
+      "rejected": 0,
+      "audits": 0,
+      "best_validation_cost": 2.8021298966157158,
+      "best_available_seconds": 14.854148600017652,
+      "charged_seconds": 15.001389900018694,
+      "common_seconds": 11.618523500015726,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 256.0,
+          "eta_after": 256.0,
+          "training_cost": 3.00783383987981,
+          "validation_cost": 3.000340776156751,
+          "available_seconds": 12.299189600016689
+        },
+        {
+          "block": 8,
+          "updates": 1024,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 256.0,
+          "eta_after": 256.0,
+          "training_cost": 2.9340121827704655,
+          "validation_cost": 2.9222564909109434,
+          "available_seconds": 12.715258900017943
+        },
+        {
+          "block": 12,
+          "updates": 1536,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 256.0,
+          "eta_after": 256.0,
+          "training_cost": 2.890506904317404,
+          "validation_cost": 2.8727187866348816,
+          "available_seconds": 13.129871100012679
+        },
+        {
+          "block": 16,
+          "updates": 2048,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 256.0,
+          "eta_after": 256.0,
+          "training_cost": 2.860981645749619,
+          "validation_cost": 2.841134903472442,
+          "available_seconds": 13.554639700014377
+        },
+        {
+          "block": 20,
+          "updates": 2560,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 256.0,
+          "eta_after": 256.0,
+          "training_cost": 2.837119361783221,
+          "validation_cost": 2.8200128251768923,
+          "available_seconds": 13.97415700001875
+        },
+        {
+          "block": 24,
+          "updates": 3072,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 256.0,
+          "eta_after": 256.0,
+          "training_cost": 2.828440086814179,
+          "validation_cost": 2.807194386624971,
+          "available_seconds": 14.395585799997207
+        },
+        {
+          "block": 28,
+          "updates": 3584,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 256.0,
+          "eta_after": 256.0,
+          "training_cost": 2.818586254620881,
+          "validation_cost": 2.8021298966157158,
+          "available_seconds": 14.85420120001072
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "mechanical",
+      "comparison_label": "fixed256",
+      "test_cost": 2.877393889474556,
+      "teacher_test_cost": 2.868558407620586,
+      "initial_test_cost": 3.2621298742081004,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\short.pt",
+        "sha256": "9235a9038a809796877fb02bcaba59bcd9a43f9b59ec132f2230cd11c6e6c592",
+        "budget": 30.0,
+        "validation_mean": 2.7431856439610023
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\parent.pt",
+        "sha256": "e3702845ccee46ddca062e4d13ef0f79238157a71e64f053d8a9ce660f46b689",
+        "budget": 7.5,
+        "validation_mean": 3.107663052955614
+      },
+      "policy_sha256": "87c53fc022cad40e0c437de0347991212042ee517b509048d082a0f80ecef97d",
+      "diagnostic": {
+        "predicted_improvements": 21,
+        "false_positive_predictions": 0
+      }
+    },
+    {
+      "method": "fixed16",
+      "seed": 9921,
+      "updates": 4096,
+      "accepted": 8,
+      "rejected": 0,
+      "audits": 0,
+      "best_validation_cost": 2.797582309215043,
+      "best_available_seconds": 14.74769970003399,
+      "charged_seconds": 15.154953700024635,
+      "common_seconds": 11.618523500015726,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 3.0052331259553395,
+          "validation_cost": 3.004842749146995,
+          "available_seconds": 12.290730100008659
+        },
+        {
+          "block": 8,
+          "updates": 1024,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.9175055761547135,
+          "validation_cost": 2.909752971777542,
+          "available_seconds": 12.695182000024943
+        },
+        {
+          "block": 12,
+          "updates": 1536,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.894472929434051,
+          "validation_cost": 2.8789963346922725,
+          "available_seconds": 13.121603400009917
+        },
+        {
+          "block": 16,
+          "updates": 2048,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.854306397869357,
+          "validation_cost": 2.85235454185634,
+          "available_seconds": 13.532461100025102
+        },
+        {
+          "block": 20,
+          "updates": 2560,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.8364289836560266,
+          "validation_cost": 2.8297131137797558,
+          "available_seconds": 13.937963800010039
+        },
+        {
+          "block": 24,
+          "updates": 3072,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.8256724257185986,
+          "validation_cost": 2.813554978633545,
+          "available_seconds": 14.344049600011203
+        },
+        {
+          "block": 28,
+          "updates": 3584,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.8151778283262576,
+          "validation_cost": 2.797582309215043,
+          "available_seconds": 14.747750200011069
+        },
+        {
+          "block": 32,
+          "updates": 4096,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.814893048277849,
+          "validation_cost": 2.80027836241711,
+          "available_seconds": 15.154914700018708
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "mechanical",
+      "comparison_label": "fixed16",
+      "test_cost": 2.880462433108676,
+      "teacher_test_cost": 2.868558407620586,
+      "initial_test_cost": 3.2621298742081004,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\short.pt",
+        "sha256": "9235a9038a809796877fb02bcaba59bcd9a43f9b59ec132f2230cd11c6e6c592",
+        "budget": 30.0,
+        "validation_mean": 2.7431856439610023
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\parent.pt",
+        "sha256": "e3702845ccee46ddca062e4d13ef0f79238157a71e64f053d8a9ce660f46b689",
+        "budget": 7.5,
+        "validation_mean": 3.107663052955614
+      },
+      "policy_sha256": "f083d0fd902e2aa84b075053eff10a077eb5b3c0179ee10f5bec98fadf00e963",
+      "diagnostic": {
+        "predicted_improvements": 14,
+        "false_positive_predictions": 1
+      }
+    },
+    {
+      "method": "fixed64",
+      "seed": 9921,
+      "updates": 4096,
+      "accepted": 8,
+      "rejected": 0,
+      "audits": 0,
+      "best_validation_cost": 2.8071195566957936,
+      "best_available_seconds": 14.751300000032643,
+      "charged_seconds": 15.159322000021348,
+      "common_seconds": 11.618523500015726,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 64.0,
+          "eta_after": 64.0,
+          "training_cost": 3.0062275752239724,
+          "validation_cost": 3.001893046408557,
+          "available_seconds": 12.289412600017386
+        },
+        {
+          "block": 8,
+          "updates": 1024,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 64.0,
+          "eta_after": 64.0,
+          "training_cost": 2.9409147977300534,
+          "validation_cost": 2.9387157910693724,
+          "available_seconds": 12.699027700029546
+        },
+        {
+          "block": 12,
+          "updates": 1536,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 64.0,
+          "eta_after": 64.0,
+          "training_cost": 2.8953283847394253,
+          "validation_cost": 2.8749854507338624,
+          "available_seconds": 13.107556500035571
+        },
+        {
+          "block": 16,
+          "updates": 2048,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 64.0,
+          "eta_after": 64.0,
+          "training_cost": 2.856586465991308,
+          "validation_cost": 2.853168463837594,
+          "available_seconds": 13.515854700031923
+        },
+        {
+          "block": 20,
+          "updates": 2560,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 64.0,
+          "eta_after": 64.0,
+          "training_cost": 2.8359219662208046,
+          "validation_cost": 2.8227963728750973,
+          "available_seconds": 13.92579960002331
+        },
+        {
+          "block": 24,
+          "updates": 3072,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 64.0,
+          "eta_after": 64.0,
+          "training_cost": 2.821880739485903,
+          "validation_cost": 2.811322848272079,
+          "available_seconds": 14.340122800029349
+        },
+        {
+          "block": 28,
+          "updates": 3584,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 64.0,
+          "eta_after": 64.0,
+          "training_cost": 2.818690147666954,
+          "validation_cost": 2.8071195566957936,
+          "available_seconds": 14.751351400016574
+        },
+        {
+          "block": 32,
+          "updates": 4096,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 64.0,
+          "eta_after": 64.0,
+          "training_cost": 2.816329911329964,
+          "validation_cost": 2.7942308321964235,
+          "available_seconds": 15.15928200003691
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "mechanical",
+      "comparison_label": "fixed64",
+      "test_cost": 2.876111513296138,
+      "teacher_test_cost": 2.868558407620586,
+      "initial_test_cost": 3.2621298742081004,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\short.pt",
+        "sha256": "9235a9038a809796877fb02bcaba59bcd9a43f9b59ec132f2230cd11c6e6c592",
+        "budget": 30.0,
+        "validation_mean": 2.7431856439610023
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\parent.pt",
+        "sha256": "e3702845ccee46ddca062e4d13ef0f79238157a71e64f053d8a9ce660f46b689",
+        "budget": 7.5,
+        "validation_mean": 3.107663052955614
+      },
+      "policy_sha256": "2d37ec31cdf51d00d09e75877ef2f4a568bfa95e3d1c216c42f3499e63ace6f7",
+      "diagnostic": {
+        "predicted_improvements": 19,
+        "false_positive_predictions": 0
+      }
+    },
+    {
+      "method": "adaptive",
+      "seed": 9921,
+      "updates": 4256,
+      "accepted": 6,
+      "rejected": 2,
+      "audits": 0,
+      "best_validation_cost": 2.8097211908455315,
+      "best_available_seconds": 14.346916900016367,
+      "charged_seconds": 15.003223100036848,
+      "common_seconds": 11.618523500015726,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 8.0,
+          "training_cost": 3.0052331259553395,
+          "validation_cost": 3.004842749146995,
+          "available_seconds": 12.292665000015404
+        },
+        {
+          "block": 8,
+          "updates": 1024,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 8.0,
+          "eta_after": 8.0,
+          "training_cost": 2.9154976473118768,
+          "validation_cost": 2.894590039875305,
+          "available_seconds": 12.705938300030539
+        },
+        {
+          "block": 12,
+          "updates": 1536,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 8.0,
+          "eta_after": 16.0,
+          "training_cost": 2.890960405790909,
+          "validation_cost": 2.8810570579509163,
+          "available_seconds": 13.12059550001868
+        },
+        {
+          "block": 16,
+          "updates": 2048,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 32.0,
+          "training_cost": 2.8600233447391075,
+          "validation_cost": 2.8489341916115105,
+          "available_seconds": 13.530184900038876
+        },
+        {
+          "block": 20,
+          "updates": 2560,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 32.0,
+          "eta_after": 64.0,
+          "training_cost": 2.834447568787004,
+          "validation_cost": 2.816729356601439,
+          "available_seconds": 13.93837310001254
+        },
+        {
+          "block": 24,
+          "updates": 3072,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 64.0,
+          "eta_after": 128.0,
+          "training_cost": 2.8251860076364954,
+          "validation_cost": 2.8097211908455315,
+          "available_seconds": 14.346968600031687
+        },
+        {
+          "block": 28,
+          "updates": 3584,
+          "accepted": false,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 128.0,
+          "eta_after": 256.0,
+          "training_cost": 2.8298962148178792,
+          "validation_cost": null,
+          "available_seconds": 14.64532490001875
+        },
+        {
+          "block": 32,
+          "updates": 4096,
+          "accepted": false,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 256.0,
+          "eta_after": 512.0,
+          "training_cost": 2.8252613873294083,
+          "validation_cost": null,
+          "available_seconds": 14.945176900015213
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "mechanical",
+      "comparison_label": "adaptive",
+      "test_cost": 2.877158149833131,
+      "teacher_test_cost": 2.868558407620586,
+      "initial_test_cost": 3.2621298742081004,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\short.pt",
+        "sha256": "9235a9038a809796877fb02bcaba59bcd9a43f9b59ec132f2230cd11c6e6c592",
+        "budget": 30.0,
+        "validation_mean": 2.7431856439610023
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\parent.pt",
+        "sha256": "e3702845ccee46ddca062e4d13ef0f79238157a71e64f053d8a9ce660f46b689",
+        "budget": 7.5,
+        "validation_mean": 3.107663052955614
+      },
+      "policy_sha256": "dbcd6dd6eb6ad95d292d9bc249f74db4dffcc28e12ffd832ac1938a4254d0f7d",
+      "diagnostic": {
+        "predicted_improvements": 10,
+        "false_positive_predictions": 0
+      }
+    },
+    {
+      "method": "hamiltonian",
+      "seed": 9921,
+      "updates": 4096,
+      "accepted": 6,
+      "rejected": 2,
+      "audits": 0,
+      "best_validation_cost": 2.885947520658121,
+      "best_available_seconds": 14.70017830003053,
+      "charged_seconds": 15.004031500022393,
+      "common_seconds": 11.618523500015726,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 3.0168830569062273,
+          "validation_cost": 3.0148432845763145,
+          "available_seconds": 12.29285800002981
+        },
+        {
+          "block": 8,
+          "updates": 1024,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.9339910192949032,
+          "validation_cost": 2.9497029018451477,
+          "available_seconds": 12.708126700017601
+        },
+        {
+          "block": 12,
+          "updates": 1536,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.9312267343079346,
+          "validation_cost": 2.931083485628264,
+          "available_seconds": 13.137925700022606
+        },
+        {
+          "block": 16,
+          "updates": 2048,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.911407459178757,
+          "validation_cost": 2.920743676526879,
+          "available_seconds": 13.554937700013397
+        },
+        {
+          "block": 20,
+          "updates": 2560,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.9072048160206787,
+          "validation_cost": 2.8941186050031056,
+          "available_seconds": 13.972924400004558
+        },
+        {
+          "block": 24,
+          "updates": 3072,
+          "accepted": false,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.919477120417695,
+          "validation_cost": null,
+          "available_seconds": 14.28493870003149
+        },
+        {
+          "block": 28,
+          "updates": 3584,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.905346943536805,
+          "validation_cost": 2.885947520658121,
+          "available_seconds": 14.7002283000038
+        },
+        {
+          "block": 32,
+          "updates": 4096,
+          "accepted": false,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 2.9234827592213755,
+          "validation_cost": null,
+          "available_seconds": 15.003962500020862
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "mechanical",
+      "comparison_label": "hamiltonian",
+      "test_cost": 2.956947102789055,
+      "teacher_test_cost": 2.868558407620586,
+      "initial_test_cost": 3.2621298742081004,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\short.pt",
+        "sha256": "9235a9038a809796877fb02bcaba59bcd9a43f9b59ec132f2230cd11c6e6c592",
+        "budget": 30.0,
+        "validation_mean": 2.7431856439610023
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9502\\parent.pt",
+        "sha256": "e3702845ccee46ddca062e4d13ef0f79238157a71e64f053d8a9ce660f46b689",
+        "budget": 7.5,
+        "validation_mean": 3.107663052955614
+      },
+      "policy_sha256": "db6f15d82825bd7516e5ffefe831db16e849b650a13b11d359ccf9978d85d2e6",
+      "diagnostic": {
+        "predicted_improvements": 20,
+        "false_positive_predictions": 3
+      }
+    },
+    {
+      "method": "fixed16",
+      "seed": 9921,
+      "updates": 512,
+      "accepted": 0,
+      "rejected": 1,
+      "audits": 0,
+      "best_validation_cost": 0.9954537084638138,
+      "best_available_seconds": 0.0,
+      "charged_seconds": 15.089558099978603,
+      "common_seconds": 14.418902799981879,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": false,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 1.1692624058515644,
+          "validation_cost": null,
+          "available_seconds": 15.089491599967005
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "reaction",
+      "comparison_label": "fixed16",
+      "test_cost": 0.8364632569081447,
+      "teacher_test_cost": 0.6949073366727057,
+      "initial_test_cost": 0.8364632569081447,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\warm.pt",
+        "sha256": "df3f6b758f5ce01af5ed68d2501de93b2e1f431c5b5911f5c69c73a561902589",
+        "budget": 30.0,
+        "validation_mean": 0.7295910706301902
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\parent.pt",
+        "sha256": "d3b5ff54bf13e7fad04e2f5348de9205f7973ed00c56dd35f5faf993fa3d2e16",
+        "budget": 7.5,
+        "validation_mean": 0.8754863937147842
+      },
+      "policy_sha256": "979c7c1e821af11039fa5b64e91a8c45aaaf9823c9c1eacbd7b2818d750a5a17",
+      "diagnostic": {
+        "predicted_improvements": 26,
+        "false_positive_predictions": 0
+      }
+    },
+    {
+      "method": "guided",
+      "seed": 9921,
+      "updates": 128,
+      "accepted": 0,
+      "rejected": 1,
+      "audits": 1,
+      "best_validation_cost": 0.9954537084638138,
+      "best_available_seconds": 0.0,
+      "charged_seconds": 20.90067179998732,
+      "common_seconds": 14.418902799981879,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 1,
+          "updates": 128,
+          "accepted": false,
+          "operation": "refresh",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 5.460506309345093,
+          "validation_cost": null,
+          "available_seconds": 20.705114899988985,
+          "student_advantage": 0.002622363373580132,
+          "fresh_target_advantage": -0.0005338331462840724,
+          "cached_target_advantage": 0.00014410501467288216,
+          "mean_state_distance": 0.09078089892864227
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "reaction",
+      "comparison_label": "guided",
+      "test_cost": 0.8364632569081447,
+      "teacher_test_cost": 0.6949073366727057,
+      "initial_test_cost": 0.8364632569081447,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\warm.pt",
+        "sha256": "df3f6b758f5ce01af5ed68d2501de93b2e1f431c5b5911f5c69c73a561902589",
+        "budget": 30.0,
+        "validation_mean": 0.7295910706301902
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\parent.pt",
+        "sha256": "d3b5ff54bf13e7fad04e2f5348de9205f7973ed00c56dd35f5faf993fa3d2e16",
+        "budget": 7.5,
+        "validation_mean": 0.8754863937147842
+      },
+      "policy_sha256": "7d507a2a838adced43920414d93b6c275e53e4435f88fa941cc7486a5db3ff13",
+      "diagnostic": {
+        "predicted_improvements": 28,
+        "false_positive_predictions": 0
+      }
+    },
+    {
+      "method": "adaptive",
+      "seed": 9921,
+      "updates": 512,
+      "accepted": 0,
+      "rejected": 1,
+      "audits": 0,
+      "best_validation_cost": 0.9954537084638138,
+      "best_available_seconds": 0.0,
+      "charged_seconds": 15.106351700000232,
+      "common_seconds": 14.418902799981879,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": false,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 32.0,
+          "training_cost": 1.1692624058515644,
+          "validation_cost": null,
+          "available_seconds": 15.106273899989901
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "reaction",
+      "comparison_label": "adaptive",
+      "test_cost": 0.8364632569081447,
+      "teacher_test_cost": 0.6949073366727057,
+      "initial_test_cost": 0.8364632569081447,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\warm.pt",
+        "sha256": "df3f6b758f5ce01af5ed68d2501de93b2e1f431c5b5911f5c69c73a561902589",
+        "budget": 30.0,
+        "validation_mean": 0.7295910706301902
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\parent.pt",
+        "sha256": "d3b5ff54bf13e7fad04e2f5348de9205f7973ed00c56dd35f5faf993fa3d2e16",
+        "budget": 7.5,
+        "validation_mean": 0.8754863937147842
+      },
+      "policy_sha256": "d86faf945478ed3c62ccb4700050c1303b716892ca04fa30360af98156ef00c0",
+      "diagnostic": {
+        "predicted_improvements": 29,
+        "false_positive_predictions": 0
+      }
+    },
+    {
+      "method": "hamiltonian",
+      "seed": 9921,
+      "updates": 512,
+      "accepted": 0,
+      "rejected": 1,
+      "audits": 0,
+      "best_validation_cost": 0.9954537084638138,
+      "best_available_seconds": 0.0,
+      "charged_seconds": 15.093219699978363,
+      "common_seconds": 14.418902799981879,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": false,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 1.0957946160931624,
+          "validation_cost": null,
+          "available_seconds": 15.093143499980215
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "reaction",
+      "comparison_label": "hamiltonian",
+      "test_cost": 0.8364632569081447,
+      "teacher_test_cost": 0.6949073366727057,
+      "initial_test_cost": 0.8364632569081447,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\warm.pt",
+        "sha256": "df3f6b758f5ce01af5ed68d2501de93b2e1f431c5b5911f5c69c73a561902589",
+        "budget": 30.0,
+        "validation_mean": 0.7295910706301902
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\parent.pt",
+        "sha256": "d3b5ff54bf13e7fad04e2f5348de9205f7973ed00c56dd35f5faf993fa3d2e16",
+        "budget": 7.5,
+        "validation_mean": 0.8754863937147842
+      },
+      "policy_sha256": "554f5a63b0e32e4b86b6e126a69ac267c5fec6bf2b3e3e682e5250fbf9b0971e",
+      "diagnostic": {
+        "predicted_improvements": 28,
+        "false_positive_predictions": 0
+      }
+    },
+    {
+      "method": "clone",
+      "seed": 9921,
+      "updates": 512,
+      "accepted": 1,
+      "rejected": 0,
+      "audits": 0,
+      "best_validation_cost": 0.9954537084638138,
+      "best_available_seconds": 0.0,
+      "charged_seconds": 15.228051299985964,
+      "common_seconds": 14.418902799981879,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 16.0,
+          "eta_after": 16.0,
+          "training_cost": 0.7670373195778892,
+          "validation_cost": 0.7451637285055708,
+          "available_seconds": 15.22800809997716
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "reaction",
+      "comparison_label": "clone",
+      "test_cost": 0.8364632569081447,
+      "teacher_test_cost": 0.6949073366727057,
+      "initial_test_cost": 0.8364632569081447,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\warm.pt",
+        "sha256": "df3f6b758f5ce01af5ed68d2501de93b2e1f431c5b5911f5c69c73a561902589",
+        "budget": 30.0,
+        "validation_mean": 0.7295910706301902
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\parent.pt",
+        "sha256": "d3b5ff54bf13e7fad04e2f5348de9205f7973ed00c56dd35f5faf993fa3d2e16",
+        "budget": 7.5,
+        "validation_mean": 0.8754863937147842
+      },
+      "policy_sha256": "ca9c292225648dd53ba80b6a3898a1a3a3d900c1257acc69095533ed5d73d5d4",
+      "diagnostic": {
+        "predicted_improvements": 28,
+        "false_positive_predictions": 0
+      }
+    },
+    {
+      "method": "fixed256",
+      "seed": 9921,
+      "updates": 512,
+      "accepted": 1,
+      "rejected": 0,
+      "audits": 0,
+      "best_validation_cost": 0.9954537084638138,
+      "best_available_seconds": 0.0,
+      "charged_seconds": 15.226165699976264,
+      "common_seconds": 14.418902799981879,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 256.0,
+          "eta_after": 256.0,
+          "training_cost": 0.8092286059114824,
+          "validation_cost": 0.76389460930538,
+          "available_seconds": 15.22612629996729
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "reaction",
+      "comparison_label": "fixed256",
+      "test_cost": 0.8364632569081447,
+      "teacher_test_cost": 0.6949073366727057,
+      "initial_test_cost": 0.8364632569081447,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\warm.pt",
+        "sha256": "df3f6b758f5ce01af5ed68d2501de93b2e1f431c5b5911f5c69c73a561902589",
+        "budget": 30.0,
+        "validation_mean": 0.7295910706301902
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\parent.pt",
+        "sha256": "d3b5ff54bf13e7fad04e2f5348de9205f7973ed00c56dd35f5faf993fa3d2e16",
+        "budget": 7.5,
+        "validation_mean": 0.8754863937147842
+      },
+      "policy_sha256": "316b99924e5c0f4396a175078f107c09f96cce6c2d2400a8c0492ca6a670bf0a",
+      "diagnostic": {
+        "predicted_improvements": 30,
+        "false_positive_predictions": 0
+      }
+    },
+    {
+      "method": "fixed64",
+      "seed": 9921,
+      "updates": 512,
+      "accepted": 1,
+      "rejected": 0,
+      "audits": 0,
+      "best_validation_cost": 0.9954537084638138,
+      "best_available_seconds": 0.0,
+      "charged_seconds": 15.223606899991864,
+      "common_seconds": 14.418902799981879,
+      "budget": 15.0,
+      "events": [
+        {
+          "block": 4,
+          "updates": 512,
+          "accepted": true,
+          "operation": "continue",
+          "retained_proposal": false,
+          "eta_before": 64.0,
+          "eta_after": 64.0,
+          "training_cost": 0.9022925539950885,
+          "validation_cost": 0.8605028338407212,
+          "available_seconds": 15.22353459999431
+        }
+      ],
+      "nonfinite_updates": 0,
+      "family": "reaction",
+      "comparison_label": "fixed64",
+      "test_cost": 0.8364632569081447,
+      "teacher_test_cost": 0.6949073366727057,
+      "initial_test_cost": 0.8364632569081447,
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\warm.pt",
+        "sha256": "df3f6b758f5ce01af5ed68d2501de93b2e1f431c5b5911f5c69c73a561902589",
+        "budget": 30.0,
+        "validation_mean": 0.7295910706301902
+      },
+      "initial": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\parent.pt",
+        "sha256": "d3b5ff54bf13e7fad04e2f5348de9205f7973ed00c56dd35f5faf993fa3d2e16",
+        "budget": 7.5,
+        "validation_mean": 0.8754863937147842
+      },
+      "policy_sha256": "d317955c81e1940b68943ac0985a07802c0b63d2af6965b46d0bb0ae22110fd9",
+      "diagnostic": {
+        "predicted_improvements": 27,
+        "false_positive_predictions": 1
+      }
+    }
+  ],
+  "completed": true
+}

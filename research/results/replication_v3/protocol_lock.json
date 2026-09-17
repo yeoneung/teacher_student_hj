@@ -1,0 +1,36 @@
+{
+  "config": {
+    "stage": "replication_v3",
+    "seeds": [
+      9951,
+      9952,
+      9953,
+      9954,
+      9955
+    ],
+    "methods": [
+      "clone",
+      "hamiltonian",
+      "selected_fixed",
+      "adaptive",
+      "guided"
+    ],
+    "selected_fixed": {
+      "mechanical": "fixed16",
+      "reaction": "fixed16"
+    },
+    "budget": 30.0,
+    "teacher_budget": 30.0,
+    "training_initials": 512,
+    "validation_initials": 256,
+    "state_pool": 4096,
+    "test_initials": 512,
+    "batch": 512,
+    "scope": "Teacher held frozen to isolate teaching operation; same weak initial student and full training gate. Teacher construction is separate. All graphs and cache work charged to teaching budget."
+  },
+  "sources": {
+    "impact_replication.py": "7888fb695f0348f7df9eb525eacda9dfb3108f6c0f3c5c0fb1f2f17de87c6650",
+    "impact_learning.py": "fcfd2be3d261fdbec11235362d9655523c4236babf0127ac26477dcb97451505",
+    "impact_core.py": "73af53434141f1cb42a784ee4f96d1621b16fd2d94dccc58e3f09705fd136490"
+  }
+}

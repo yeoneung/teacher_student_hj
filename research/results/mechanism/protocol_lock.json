@@ -1,0 +1,58 @@
+{
+  "config": {
+    "stage": "mechanism",
+    "seeds": [
+      9911
+    ],
+    "qualities": [
+      7.5,
+      15.0,
+      30.0
+    ],
+    "noise_specs": [
+      [
+        "none",
+        0.0
+      ],
+      [
+        "bias",
+        0.5
+      ],
+      [
+        "gaussian",
+        0.5
+      ],
+      [
+        "bias",
+        1.5
+      ],
+      [
+        "gaussian",
+        1.5
+      ]
+    ],
+    "methods": [
+      "clone",
+      "hamiltonian",
+      "fixed16",
+      "guided"
+    ],
+    "wall_budget_seconds": 8.0,
+    "state_pool": 512,
+    "training_initials": 32,
+    "validation_initials": 32,
+    "test_initials": 256,
+    "student_batch": 256,
+    "updates_per_block": 128,
+    "mechanism_blocks": 2,
+    "teacher_policy_source": "archived Short checkpoints for mechanical; Warm DPC for reaction",
+    "student_initialization": "same archived 7.5s parent across teacher qualities",
+    "rule": "fresh-target failure: regularize; cached-target failure with fresh success: refresh; fitted-student erases half fresh-target improvement: fit; otherwise refresh",
+    "noise_floor": "2*r*control_bound in per-state projected-signal RMS",
+    "scope": "New exploratory controlled study; wall replication frozen independently of new test outcomes. Teacher construction reported separately, not included in teaching-only wall budget."
+  },
+  "sources": {
+    "impact_learning.py": "fcfd2be3d261fdbec11235362d9655523c4236babf0127ac26477dcb97451505",
+    "impact_core.py": "73af53434141f1cb42a784ee4f96d1621b16fd2d94dccc58e3f09705fd136490"
+  }
+}

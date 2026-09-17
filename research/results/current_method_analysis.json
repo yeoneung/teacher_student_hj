@@ -1,0 +1,232 @@
+{
+  "mechanical": {
+    "means": {
+      "clone": 2.8263767463870955,
+      "hamiltonian": 2.8645414529850024,
+      "selected_fixed": 2.8251974047965525,
+      "adaptive": 2.829827243277731,
+      "guided": 2.8261975037455023
+    },
+    "teacher_cost": 2.814376276251946,
+    "initial_cost": 3.0632363617442744,
+    "versus_teacher": {
+      "mean": 0.011821227493556564,
+      "ci": [
+        -0.012494798747025318,
+        0.036137253734138446
+      ],
+      "wins": 1,
+      "relative_percent": 0.42003010021458564
+    },
+    "versus_initial": {
+      "mean": -0.2370388579987715,
+      "ci": [
+        -0.3559523423401978,
+        -0.1181253736573452
+      ],
+      "wins": 5,
+      "relative_percent": -7.738183737927329
+    },
+    "versus_baselines": {
+      "clone": {
+        "mean": -0.00017924264159292492,
+        "ci": [
+          -0.016731578338825864,
+          0.016373093055640015
+        ],
+        "wins": 2,
+        "relative_percent": -0.0063417816404842675
+      },
+      "hamiltonian": {
+        "mean": -0.03834394923949995,
+        "ci": [
+          -0.073294156722739,
+          -0.003393741756260886
+        ],
+        "wins": 5,
+        "relative_percent": -1.3385719798030382
+      },
+      "selected_fixed": {
+        "mean": 0.0010000989489504341,
+        "ci": [
+          -0.0070691026270315776,
+          0.009069300524932445
+        ],
+        "wins": 2,
+        "relative_percent": 0.03539925908369046
+      },
+      "adaptive": {
+        "mean": -0.0036297395322285376,
+        "ci": [
+          -0.02381471716856274,
+          0.01655523810410566
+        ],
+        "wins": 3,
+        "relative_percent": -0.12826717746997618
+      }
+    },
+    "teacher_gap_recovered_percent": 95.24984994272185,
+    "standardized_probe": {
+      "eta": 16,
+      "points": 160,
+      "means": {
+        "actual": 0.0007264436949178347,
+        "target_model": -0.013738054289443368,
+        "fitted_model": 0.0004197794853675431,
+        "fitting_term": 0.01415783377481091,
+        "curvature": 0.00030666420955029135,
+        "sensitivity_error": 0.0
+      },
+      "predicted_improvements": 101,
+      "false_positives": 2,
+      "scope": "Post-fit finite-state probe with fresh exact teacher sensitivities; not the actual training target history or a full-trajectory sum."
+    },
+    "seeds": [
+      {
+        "seed": 9951,
+        "student": 2.788741937639512,
+        "teacher": 2.8009159814057676,
+        "initial": 3.0527204681729376
+      },
+      {
+        "seed": 9952,
+        "student": 2.763571762303411,
+        "teacher": 2.746256311247895,
+        "initial": 3.1148377514289396
+      },
+      {
+        "seed": 9953,
+        "student": 2.802049431298415,
+        "teacher": 2.8019010347906947,
+        "initial": 3.0052559637164644
+      },
+      {
+        "seed": 9954,
+        "student": 2.877733255768381,
+        "teacher": 2.8378521326177726,
+        "initial": 3.1505716261454744
+      },
+      {
+        "seed": 9955,
+        "student": 2.898891131717794,
+        "teacher": 2.8849559211976,
+        "initial": 2.992795999257554
+      }
+    ]
+  },
+  "reaction": {
+    "means": {
+      "clone": 0.7450163045676319,
+      "hamiltonian": 0.8226868248581167,
+      "selected_fixed": 0.8359973002163331,
+      "adaptive": 0.7310099779091888,
+      "guided": 0.7299927950762753
+    },
+    "teacher_cost": 0.7115057286447064,
+    "initial_cost": 0.8971886152728192,
+    "versus_teacher": {
+      "mean": 0.018487066431568923,
+      "ci": [
+        -0.02105634838380927,
+        0.05803048124694712
+      ],
+      "wins": 3,
+      "relative_percent": 2.598301838944228
+    },
+    "versus_initial": {
+      "mean": -0.16719582019654394,
+      "ci": [
+        -0.2665997006506976,
+        -0.0677919397423903
+      ],
+      "wins": 5,
+      "relative_percent": -18.6355262818067
+    },
+    "versus_baselines": {
+      "clone": {
+        "mean": -0.015023509491356512,
+        "ci": [
+          -0.07103159272238779,
+          0.04098457373967476
+        ],
+        "wins": 3,
+        "relative_percent": -2.0165343227052435
+      },
+      "hamiltonian": {
+        "mean": -0.09269402978184141,
+        "ci": [
+          -0.16152656105124025,
+          -0.023861498512442555
+        ],
+        "wins": 5,
+        "relative_percent": -11.267231585704284
+      },
+      "selected_fixed": {
+        "mean": -0.10600450514005774,
+        "ci": [
+          -0.2557290034791019,
+          0.04371999319898637
+        ],
+        "wins": 5,
+        "relative_percent": -12.6800056785622
+      },
+      "adaptive": {
+        "mean": -0.0010171828329133437,
+        "ci": [
+          -0.025796133030281658,
+          0.02376176736445497
+        ],
+        "wins": 3,
+        "relative_percent": -0.13914759902767804
+      }
+    },
+    "teacher_gap_recovered_percent": 90.0437424432145,
+    "standardized_probe": {
+      "eta": 16,
+      "points": 160,
+      "means": {
+        "actual": 1.7566370838958124e-05,
+        "target_model": -2.214685998392744e-05,
+        "fitted_model": 1.745258684654178e-05,
+        "fitting_term": 3.959944683046922e-05,
+        "curvature": 1.1378399241634375e-07,
+        "sensitivity_error": 0.0
+      },
+      "predicted_improvements": 33,
+      "false_positives": 0,
+      "scope": "Post-fit finite-state probe with fresh exact teacher sensitivities; not the actual training target history or a full-trajectory sum."
+    },
+    "seeds": [
+      {
+        "seed": 9951,
+        "student": 0.76022470470098,
+        "teacher": 0.7619679442121763,
+        "initial": 1.0620050791661693
+      },
+      {
+        "seed": 9952,
+        "student": 0.7122788119388024,
+        "teacher": 0.7131516119263139,
+        "initial": 0.8827144265391691
+      },
+      {
+        "seed": 9953,
+        "student": 0.689033583901631,
+        "teacher": 0.6915606581316753,
+        "initial": 0.8377744903795808
+      },
+      {
+        "seed": 9954,
+        "student": 0.7833240445609619,
+        "teacher": 0.7122318008527494,
+        "initial": 0.885942689343686
+      },
+      {
+        "seed": 9955,
+        "student": 0.7051028302790013,
+        "teacher": 0.6786166281006172,
+        "initial": 0.8175063909354912
+      }
+    ]
+  }
+}

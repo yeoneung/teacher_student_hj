@@ -1,0 +1,68 @@
+{
+  "config": {
+    "dim": 8,
+    "horizon": 12,
+    "dynamics": {
+      "A": 0.8,
+      "B": 0.2,
+      "state_cost": 0.3599999999999999,
+      "control_cost": 0.05,
+      "terminal_cost": 1.0
+    },
+    "teacher": "Identically zero; V_teacher(t,x)=||x||^2 exactly for every decision time.",
+    "student": "One hidden SiLU layer without biases, linear output, radial projection. Width is an output-subspace bottleneck; width16 can represent the exact greedy map using SiLU(x)-SiLU(-x)=x.",
+    "widths": [
+      2,
+      4,
+      16
+    ],
+    "control_radii": [
+      0.5,
+      2.0,
+      32.0
+    ],
+    "seeds": [
+      12201,
+      12202,
+      12203,
+      12204,
+      12205,
+      12206,
+      12207,
+      12208,
+      12209,
+      12210
+    ],
+    "methods": [
+      "point",
+      "restored",
+      "weight",
+      "shuffled"
+    ],
+    "updates": 4096,
+    "batch": 512,
+    "learning_rate": 0.003,
+    "train_initials": 1024,
+    "validation_initials": 512,
+    "test_initials": 4096,
+    "data": "Fixed teacher trajectories, all12 decision times. 10% rare large first-axis excursions; other cases concentrate on remaining axes. x1 rare has random sign and magnitude6..10. Common coordinates2..8 are uniform[-1,1]; rare other coordinates are uniform[-.1,.1]. Common x1 is uniform[-.1,.1].",
+    "pairing": "Same initial network parameters, teacher states, minibatch generator and update count within each width/radius/seed. Same initial deployed zero policy at all widths/radii. Randomized sequential run order; one timed GPU process.",
+    "primary": "Independent confirmation: restored minus point held-out normalized local Bellman regret at radius0.5/width2, ten paired seeds, unadjusted paired95%t interval. Benefit requires upper endpoint below zero.",
+    "secondary": "Width4 severe-constraint effect; radius2 boundary; width16 sufficient-capacity control; radius32 inactive-constraint equality; closed-loop cost; weight-only and shuffled-normal comparisons. All are secondary, with unadjusted intervals.",
+    "predictions": [
+      "At radius32 no teacher target is constrained: normal=0 and all methods have identical losses and training trajectories.",
+      "At limited width and active constraints, correct normal information reduces Bellman regret relative to point labels; the effect may depend on radius and need not be monotone in raw cost.",
+      "Increasing representational capacity should reduce conflict when optimization succeeds; width16 has a known exact greedy representation.",
+      "Improvement from correct information should not be reproduced reliably by fixed random permutation of normal vectors. Weight-only loss tests whether scalar importance recovers much of the effect."
+    ],
+    "selection": "Final4096-update policy is primary. No hyperparameter, seed or checkpoint selection on test costs; no rejection/rollback. Validation curves at1024,2048,4096 are descriptive only.",
+    "optimizer": "Identical captured Adam (.9,.999), epsilon1e-8, gradient norm clipping10. Loss normalized by CURV and dimension, not by input radius.",
+    "loss": "point=||u-target||^2; restored=point+normal/CURV dot(u-target); weight=(1+||normal||/(2*CURV*radius))*point; shuffled=point+permuted(normal)/CURV dot(u-target). Mean over samples and action dimensions.",
+    "reporting": "All360 independent confirmation runs retained, without pooling with the initial240 runs. Radius0.5 selected using the initial study secondary response. Initial radius2/width2 primary remains inconclusive. No new tuning; identical architecture, data law, optimizer and4096 updates.",
+    "budget": "Matched updates. Record preparation and complete fitting time separately from diagnostic evaluation. No equal-wall-budget or end-to-end speedup claim."
+  },
+  "base_source_sha256": "8fffaaff7c5d19353a31615a3f202536560cce404eb1ef9651baf5aaa2161872",
+  "driver_source_sha256": "1a64d9b3f76d66b71725681f7520e4ab8bb402813a461a7036643c718a72560d",
+  "parent_report_sha256": "7db8c74066ee49e6d898d66894fc23ed4d65824a49de129252b50a734718efad",
+  "rationale": "The initial study had a null primary at radius2/width2; severe radius0.5 improved regret in5/5 pairs at widths2 and4. Select that secondary condition prospectively for independent seeds, retain radius2 and capacity/inactive controls. No source or hyperparameter changes."
+}

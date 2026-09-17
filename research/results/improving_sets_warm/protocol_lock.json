@@ -1,0 +1,31 @@
+{
+  "config": {
+    "methods": [
+      "point",
+      "upper",
+      "adaptive",
+      "set25",
+      "set50",
+      "set75"
+    ],
+    "teacher_seed": 9508,
+    "seed": 10101,
+    "width": 64,
+    "updates": 1024,
+    "initialization": "Archived 7.5-second parent policy; paired across all methods.",
+    "geometry": "Same realized feasible proximal anchor, eta=16, empirical kappa, epsilon=0.",
+    "trainer": "Identical improving_sets_study.phase: batch256, gate256, refresh512, same queries and validation chances.",
+    "train_initials": 64,
+    "validation_initials": 128,
+    "test_initials": 512,
+    "diagnostic_pairs": 64,
+    "selection": "Checkpoints and alpha selected only by validation; retain all alpha test results as exploratory.",
+    "decision": "Independent paired replication only if validation-selected sets beat BOTH point and adaptive validation costs by at least 1% in a task.",
+    "inference": "One teacher/student/data pair per task. No population or equal-wall-budget claim. Cold-start pilot fully retained."
+  },
+  "sources": {
+    "improving_sets_warm.py": "1de7a420a6ced2672dff79fcd2d00373038f1af475f07d443f09c235100d4424",
+    "improving_sets.py": "2397d697d276324e89c47110e07fd78422dc853ebf257178dc48e1db1e68620d",
+    "improving_sets_study.py": "db739246ddf0203b4bc29c5764a6f454b5f43b72bca9b1f22758bbbbd9f8665a"
+  }
+}

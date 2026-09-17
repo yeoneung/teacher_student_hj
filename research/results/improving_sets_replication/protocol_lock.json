@@ -1,0 +1,42 @@
+{
+  "config": {
+    "family": "reaction",
+    "methods": [
+      "point",
+      "adaptive",
+      "upper",
+      "set25"
+    ],
+    "width": 64,
+    "alpha": 0.25,
+    "teacher_seeds": [
+      9501,
+      9502,
+      9503,
+      9504,
+      9505
+    ],
+    "seeds": [
+      10201,
+      10202,
+      10203,
+      10204,
+      10205
+    ],
+    "updates": 1024,
+    "initialization": "Archived 7.5-second parent per teacher seed.",
+    "trainer": "Unchanged improving_sets_study.phase; same update, refresh and gate schedules.",
+    "train_initials": 64,
+    "validation_initials": 128,
+    "test_initials": 512,
+    "diagnostic_pairs": 64,
+    "selection": "Alpha frozen from disjoint warm-pilot validation; select checkpoint by within-replicate validation; generate test initials only after checkpoint save.",
+    "inference": "Five paired seed means, unadjusted two-sided 95% t intervals, df4. Pilot not pooled. Matched updates; charged times reported without equal-wall-budget claim.",
+    "pilot_sha256": "cc0fb331993a03dbf01c3775a588a638cf066cc57b15660c5ad651102c61aeee"
+  },
+  "sources": {
+    "improving_sets_replication.py": "6b4579ee9c68c8a244ab4b7647d3c5efd057b6140778bbeaed8dc115b7b221a4",
+    "improving_sets.py": "2397d697d276324e89c47110e07fd78422dc853ebf257178dc48e1db1e68620d",
+    "improving_sets_study.py": "db739246ddf0203b4bc29c5764a6f454b5f43b72bca9b1f22758bbbbd9f8665a"
+  }
+}

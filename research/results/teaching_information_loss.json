@@ -1,0 +1,286 @@
+{
+  "passed": true,
+  "point_family": [
+    {
+      "a": 1.0,
+      "targets": [
+        1.0,
+        -1.0,
+        -1.0
+      ],
+      "teacher_cost": 1.0,
+      "point_fit": -0.3333333333333333,
+      "teacher_mse": 1.0,
+      "point_fit_mse": 0.888888888888889,
+      "point_fit_cost": 0.888888888888889,
+      "cost_difference": -0.1111111111111111,
+      "direct_constant": -0.3333333333333333,
+      "direct_cost": 0.888888888888889,
+      "normal_gradient": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": 1.5,
+      "targets": [
+        1.0,
+        -1.0,
+        -1.0
+      ],
+      "teacher_cost": 1.4166666666666667,
+      "point_fit": -0.3333333333333333,
+      "teacher_mse": 1.0,
+      "point_fit_mse": 0.888888888888889,
+      "point_fit_cost": 1.4166666666666667,
+      "cost_difference": 0.0,
+      "direct_constant": -0.16666666666666666,
+      "direct_cost": 1.388888888888889,
+      "normal_gradient": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": 2.0,
+      "targets": [
+        1.0,
+        -1.0,
+        -1.0
+      ],
+      "teacher_cost": 2.0,
+      "point_fit": -0.3333333333333333,
+      "teacher_mse": 1.0,
+      "point_fit_mse": 0.888888888888889,
+      "point_fit_cost": 2.1111111111111116,
+      "cost_difference": 0.1111111111111111,
+      "direct_constant": 0.0,
+      "direct_cost": 2.0,
+      "normal_gradient": [
+        -2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": 4.0,
+      "targets": [
+        1.0,
+        -1.0,
+        -1.0
+      ],
+      "teacher_cost": 6.0,
+      "point_fit": -0.3333333333333333,
+      "teacher_mse": 1.0,
+      "point_fit_mse": 0.888888888888889,
+      "point_fit_cost": 6.555555555555554,
+      "cost_difference": 0.5555555555555556,
+      "direct_constant": 0.6666666666666666,
+      "direct_cost": 5.555555555555556,
+      "normal_gradient": [
+        -6.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": 10.0,
+      "targets": [
+        1.0,
+        -1.0,
+        -1.0
+      ],
+      "teacher_cost": 34.0,
+      "point_fit": -0.3333333333333333,
+      "teacher_mse": 1.0,
+      "point_fit_mse": 0.888888888888889,
+      "point_fit_cost": 35.88888888888889,
+      "cost_difference": 1.8888888888888888,
+      "direct_constant": 1.0,
+      "direct_cost": 29.666666666666668,
+      "normal_gradient": [
+        -18.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "joint_sets": [
+    {
+      "alpha": 0.001,
+      "first_interval": [
+        0.000950045129287384,
+        1.0
+      ],
+      "other_intervals": [
+        -1.0,
+        -0.0005001250625390899
+      ],
+      "intersection_empty": true,
+      "best_constant": -1.6734998596931944e-05,
+      "minimum_set_loss": 4.6733190783600714e-07,
+      "teacher_set_loss": 4.676119680140465e-07,
+      "cost": 34.000089253605914,
+      "teacher_cost": 34.0,
+      "cost_difference": 8.925360591405251e-05
+    },
+    {
+      "alpha": 0.01,
+      "first_interval": [
+        0.009504516791972444,
+        1.0
+      ],
+      "other_intervals": [
+        -1.0,
+        -0.005012562893380045
+      ],
+      "intersection_empty": true,
+      "best_constant": -0.0001735363315958823,
+      "minimum_set_loss": 4.683235613130532e-05,
+      "teacher_set_loss": 4.686247098968907e-05,
+      "cost": 34.00092555721671,
+      "teacher_cost": 34.0,
+      "cost_difference": 0.0009255572167106152
+    },
+    {
+      "alpha": 0.1,
+      "first_interval": [
+        0.09545558846849332,
+        1.0
+      ],
+      "other_intervals": [
+        -1.0,
+        -0.051316701949486204
+      ],
+      "intersection_empty": true,
+      "best_constant": -0.002392605143493029,
+      "minimum_set_loss": 0.004787134496564384,
+      "teacher_set_loss": 0.004792859055937053,
+      "cost": 34.01276628532467,
+      "teacher_cost": 34.0,
+      "cost_difference": 0.012766285324673277
+    },
+    {
+      "alpha": 0.25,
+      "first_interval": [
+        0.24038935202843245,
+        1.0
+      ],
+      "other_intervals": [
+        -1.0,
+        -0.13397459621556135
+      ],
+      "intersection_empty": true,
+      "best_constant": -0.009186613467563415,
+      "minimum_set_loss": 0.03114408127662926,
+      "teacher_set_loss": 0.031228475143631678,
+      "cost": 34.049079665694,
+      "teacher_cost": 34.0,
+      "cost_difference": 0.04907966569400202
+    },
+    {
+      "alpha": 0.5,
+      "first_interval": [
+        0.48685120477977595,
+        1.0
+      ],
+      "other_intervals": [
+        -1.0,
+        -0.2928932188134525
+      ],
+      "intersection_empty": true,
+      "best_constant": -0.032978410949043004,
+      "minimum_set_loss": 0.13511141469438573,
+      "teacher_set_loss": 0.13619899028310975,
+      "cost": 34.17697243398363,
+      "teacher_cost": 34.0,
+      "cost_difference": 0.17697243398362872
+    },
+    {
+      "alpha": 0.75,
+      "first_interval": [
+        0.7398704112739329,
+        1.0
+      ],
+      "other_intervals": [
+        -1.0,
+        -0.5
+      ],
+      "intersection_empty": true,
+      "best_constant": -0.08670986290868903,
+      "minimum_set_loss": 0.3416174748339092,
+      "teacher_set_loss": 0.3491360751595529,
+      "cost": 34.46997120250533,
+      "teacher_cost": 34.0,
+      "cost_difference": 0.4699712025053273
+    },
+    {
+      "alpha": 1.0,
+      "first_interval": [
+        1.0,
+        1.0
+      ],
+      "other_intervals": [
+        -1.0,
+        -1.0
+      ],
+      "intersection_empty": true,
+      "best_constant": -0.3333333333333333,
+      "minimum_set_loss": 0.888888888888889,
+      "teacher_set_loss": 1.0,
+      "cost": 35.88888888888889,
+      "teacher_cost": 34.0,
+      "cost_difference": 1.8888888888888928
+    }
+  ],
+  "regularized_witnesses": [
+    {
+      "rho": 0.0,
+      "beta": 1.0,
+      "targets": [
+        1.0,
+        -1.0,
+        -1.0
+      ],
+      "fitted_cost_difference": 1.8888888888888917,
+      "formula": 1.8888888888888888
+    },
+    {
+      "rho": 2.0,
+      "beta": 2.0,
+      "targets": [
+        1.0,
+        -1.0,
+        -1.0
+      ],
+      "fitted_cost_difference": 3.6666666666666523,
+      "formula": 3.6666666666666665
+    },
+    {
+      "rho": 32.0,
+      "beta": 17.0,
+      "targets": [
+        1.0,
+        -1.0,
+        -1.0
+      ],
+      "fitted_cost_difference": 30.33333333333485,
+      "formula": 30.333333333333332
+    },
+    {
+      "rho": 512.0,
+      "beta": 257.0,
+      "targets": [
+        1.0,
+        -1.0,
+        -1.0
+      ],
+      "fitted_cost_difference": 457.0000000001746,
+      "formula": 457.0
+    }
+  ],
+  "scope": "Exact constructed witnesses; no neural training and no attribution of nonlinear failure causes.",
+  "source_sha256": "c168e240ecf4abe8499b8f97dd105891e47ddd642782ae9920ef9c9389ee0add"
+}

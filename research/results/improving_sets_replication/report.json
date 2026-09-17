@@ -1,0 +1,1759 @@
+{
+  "config": {
+    "family": "reaction",
+    "methods": [
+      "point",
+      "adaptive",
+      "upper",
+      "set25"
+    ],
+    "width": 64,
+    "alpha": 0.25,
+    "teacher_seeds": [
+      9501,
+      9502,
+      9503,
+      9504,
+      9505
+    ],
+    "seeds": [
+      10201,
+      10202,
+      10203,
+      10204,
+      10205
+    ],
+    "updates": 1024,
+    "initialization": "Archived 7.5-second parent per teacher seed.",
+    "trainer": "Unchanged improving_sets_study.phase; same update, refresh and gate schedules.",
+    "train_initials": 64,
+    "validation_initials": 128,
+    "test_initials": 512,
+    "diagnostic_pairs": 64,
+    "selection": "Alpha frozen from disjoint warm-pilot validation; select checkpoint by within-replicate validation; generate test initials only after checkpoint save.",
+    "inference": "Five paired seed means, unadjusted two-sided 95% t intervals, df4. Pilot not pooled. Matched updates; charged times reported without equal-wall-budget claim.",
+    "pilot_sha256": "cc0fb331993a03dbf01c3775a588a638cf066cc57b15660c5ad651102c61aeee"
+  },
+  "rows": [
+    {
+      "method": "adaptive",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10201,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.8427130994385621,
+      "selected_validation_cost": 0.8427130994385621,
+      "charged_seconds": 6.619672599976184,
+      "common_seconds": 3.992222299973946,
+      "fit_seconds": 0.37686019999091513,
+      "refresh_seconds": 0.8315956000005826,
+      "gate_seconds": 1.0869215999846347,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 2.8228143154578023,
+          "validation_cost": 0.8427130994385621,
+          "eta": 32.0,
+          "refresh": false,
+          "charged_seconds": 4.686084799992386
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 3.744105463138272,
+          "validation_cost": 0.8427130994385621,
+          "eta": 64.0,
+          "refresh": true,
+          "charged_seconds": 5.8784559999767225
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 2.858828829460114,
+          "validation_cost": 0.8427130994385621,
+          "eta": 128.0,
+          "refresh": false,
+          "charged_seconds": 6.253283299971372
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 1.2235338172039814,
+          "validation_cost": 0.8427130994385621,
+          "eta": 256.0,
+          "refresh": false,
+          "charged_seconds": 6.6194785999832675
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9501,
+      "test_cost": 0.9572288859824889,
+      "teacher_cost": 0.7515717091528906,
+      "initial_cost": 0.9572288859824889,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\warm.pt",
+        "sha256": "08ac323228aac48895df15e17fcbc98e28a6f50ad72450d156bc8dce73270476",
+        "budget": 30.0,
+        "validation_mean": 0.7315654192317806
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\parent.pt",
+        "sha256": "4d96952996766fabfcaadc7bd396fd245eeaf2499522823f07887ec313104e5c",
+        "budget": 7.5,
+        "validation_mean": 0.9013826765127451
+      },
+      "checkpoint_sha256": "b6e28fb26c246731bc086d6be11719150e7e507678a0810a5375f69055809463",
+      "diagnostics": {
+        "point_mse": 0.001286945683052832,
+        "set_mse": 0.0002979619356767964,
+        "alpha": 0.5,
+        "inside_fraction": 0.046875,
+        "actual_advantage": -4.97260837765575e-06,
+        "projected_actual_advantage": -6.658349407071328e-06,
+        "model_advantage": -4.576435846009023e-07,
+        "mean_anchor_gain": 2.6628387018593296e-06,
+        "upper_violation_count": 1,
+        "projected_upper_violation_count": 1,
+        "nonimproving_inside_count": 1,
+        "count": 64
+      }
+    },
+    {
+      "method": "upper",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10201,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.8427130994385621,
+      "selected_validation_cost": 0.8427130994385621,
+      "charged_seconds": 6.641071799967904,
+      "common_seconds": 3.992222299973946,
+      "fit_seconds": 0.37460310000460595,
+      "refresh_seconds": 0.8341909000009764,
+      "gate_seconds": 1.137237999966601,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 1.7004679302389603,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.664306399965426
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 1.8544887393974878,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.877233299950603
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 1.3554601607605927,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.274415299965767
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 0.6941340197227067,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.6408914999628905
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9501,
+      "test_cost": 0.9572288859824889,
+      "teacher_cost": 0.7515717091528906,
+      "initial_cost": 0.9572288859824889,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\warm.pt",
+        "sha256": "08ac323228aac48895df15e17fcbc98e28a6f50ad72450d156bc8dce73270476",
+        "budget": 30.0,
+        "validation_mean": 0.7315654192317806
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\parent.pt",
+        "sha256": "4d96952996766fabfcaadc7bd396fd245eeaf2499522823f07887ec313104e5c",
+        "budget": 7.5,
+        "validation_mean": 0.9013826765127451
+      },
+      "checkpoint_sha256": "c0f5dd7a46757e53da52c070e8f48b9e1beecf2030a62c6208918846f4aa1dcd",
+      "diagnostics": {
+        "point_mse": 0.001286945683052832,
+        "set_mse": 0.0002979619356767964,
+        "alpha": 0.5,
+        "inside_fraction": 0.046875,
+        "actual_advantage": -4.97260837765575e-06,
+        "projected_actual_advantage": -6.658349407071328e-06,
+        "model_advantage": -4.576435846009023e-07,
+        "mean_anchor_gain": 2.6628387018593296e-06,
+        "upper_violation_count": 1,
+        "projected_upper_violation_count": 1,
+        "nonimproving_inside_count": 1,
+        "count": 64
+      }
+    },
+    {
+      "method": "point",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10201,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.8427130994385621,
+      "selected_validation_cost": 0.8427130994385621,
+      "charged_seconds": 6.626757599966368,
+      "common_seconds": 3.992222299973946,
+      "fit_seconds": 0.37589500000467524,
+      "refresh_seconds": 0.8340528999979142,
+      "gate_seconds": 1.1093117000127677,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 2.8228143154578023,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.689630899956683
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 2.0188573407538155,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.892529499978991
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 1.9836927797376265,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.25358279995271
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 1.9234032533715166,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.626569599960931
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9501,
+      "test_cost": 0.9572288859824889,
+      "teacher_cost": 0.7515717091528906,
+      "initial_cost": 0.9572288859824889,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\warm.pt",
+        "sha256": "08ac323228aac48895df15e17fcbc98e28a6f50ad72450d156bc8dce73270476",
+        "budget": 30.0,
+        "validation_mean": 0.7315654192317806
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\parent.pt",
+        "sha256": "4d96952996766fabfcaadc7bd396fd245eeaf2499522823f07887ec313104e5c",
+        "budget": 7.5,
+        "validation_mean": 0.9013826765127451
+      },
+      "checkpoint_sha256": "ff7b9225ed3746ce142d0d116c9edbb9d28394b589133b290158d345588ba5fd",
+      "diagnostics": {
+        "point_mse": 0.001286945683052832,
+        "set_mse": 0.0002979619356767964,
+        "alpha": 0.5,
+        "inside_fraction": 0.046875,
+        "actual_advantage": -4.97260837765575e-06,
+        "projected_actual_advantage": -6.658349407071328e-06,
+        "model_advantage": -4.576435846009023e-07,
+        "mean_anchor_gain": 2.6628387018593296e-06,
+        "upper_violation_count": 1,
+        "projected_upper_violation_count": 1,
+        "nonimproving_inside_count": 1,
+        "count": 64
+      }
+    },
+    {
+      "method": "set25",
+      "alpha": 0.25,
+      "width": 64,
+      "seed": 10201,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.8427130994385621,
+      "selected_validation_cost": 0.8427130994385621,
+      "charged_seconds": 6.667633299948648,
+      "common_seconds": 3.992222299973946,
+      "fit_seconds": 0.4273894999641925,
+      "refresh_seconds": 0.8296363000117708,
+      "gate_seconds": 1.1064688999613281,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 1.1896697788975814,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.687060099968221
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 1.212768229077809,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.908104799949797
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 1.194424489794558,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.2931784999673255
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 1.1872544533674654,
+          "validation_cost": 0.8427130994385621,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.667451899964362
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9501,
+      "test_cost": 0.9572288859824889,
+      "teacher_cost": 0.7515717091528906,
+      "initial_cost": 0.9572288859824889,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\warm.pt",
+        "sha256": "08ac323228aac48895df15e17fcbc98e28a6f50ad72450d156bc8dce73270476",
+        "budget": 30.0,
+        "validation_mean": 0.7315654192317806
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\parent.pt",
+        "sha256": "4d96952996766fabfcaadc7bd396fd245eeaf2499522823f07887ec313104e5c",
+        "budget": 7.5,
+        "validation_mean": 0.9013826765127451
+      },
+      "checkpoint_sha256": "d17aeab0661055735ee7cc1d4969ce2dc487818767095c3dab1a7ddd7d356929",
+      "diagnostics": {
+        "point_mse": 0.001286945683052832,
+        "set_mse": 0.0002877758371860342,
+        "alpha": 0.25,
+        "inside_fraction": 0.046875,
+        "actual_advantage": -4.97260837765575e-06,
+        "projected_actual_advantage": -6.651587748106684e-06,
+        "model_advantage": -4.576435846009023e-07,
+        "mean_anchor_gain": 2.6628387018593296e-06,
+        "upper_violation_count": 1,
+        "projected_upper_violation_count": 1,
+        "nonimproving_inside_count": 1,
+        "count": 64
+      }
+    },
+    {
+      "method": "point",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10202,
+      "updates": 1024,
+      "best_update": 256,
+      "initial_validation_cost": 0.6729547552122418,
+      "selected_validation_cost": 0.5643228670002312,
+      "charged_seconds": 6.437722400005441,
+      "common_seconds": 3.8228259999887086,
+      "fit_seconds": 0.3771749000006821,
+      "refresh_seconds": 0.8271087000030093,
+      "gate_seconds": 1.1041882999998052,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": true,
+          "trial_cost": 0.6198994299376297,
+          "validation_cost": 0.5643228670002312,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.493754399998579
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 0.6852803971646357,
+          "validation_cost": 0.5643228670002312,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.68217739998363
+        },
+        {
+          "updates": 768,
+          "accepted": true,
+          "trial_cost": 0.602053236551127,
+          "validation_cost": 0.5652951995925186,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.062092500011204
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 0.6989349329069346,
+          "validation_cost": 0.5652951995925186,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.437530800001696
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9502,
+      "test_cost": 0.7919149241452558,
+      "teacher_cost": 0.7063891200686259,
+      "initial_cost": 0.7953322541984553,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\warm.pt",
+        "sha256": "df3f6b758f5ce01af5ed68d2501de93b2e1f431c5b5911f5c69c73a561902589",
+        "budget": 30.0,
+        "validation_mean": 0.7295910706301902
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\parent.pt",
+        "sha256": "d3b5ff54bf13e7fad04e2f5348de9205f7973ed00c56dd35f5faf993fa3d2e16",
+        "budget": 7.5,
+        "validation_mean": 0.8754863937147842
+      },
+      "checkpoint_sha256": "5de4f325d0ec2b1ab8d7937e87491926f97e1216cd29a348c51f905d0c8f70d5",
+      "diagnostics": {
+        "point_mse": 0.0005390615191199643,
+        "set_mse": 6.50686431192362e-05,
+        "alpha": 0.5,
+        "inside_fraction": 0.296875,
+        "actual_advantage": -1.3871480043575354e-05,
+        "projected_actual_advantage": -5.9182394464315504e-05,
+        "model_advantage": -1.3395058270184017e-05,
+        "mean_anchor_gain": 0.00011263878134571759,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "upper",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10202,
+      "updates": 1024,
+      "best_update": 256,
+      "initial_validation_cost": 0.6729547552122418,
+      "selected_validation_cost": 0.5649418613515187,
+      "charged_seconds": 6.45003359997645,
+      "common_seconds": 3.8228259999887086,
+      "fit_seconds": 0.375199000001885,
+      "refresh_seconds": 0.8282630999747198,
+      "gate_seconds": 1.1185691999853589,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": true,
+          "trial_cost": 0.5951558848102215,
+          "validation_cost": 0.5649418613515187,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.501027299993439
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 0.596357732325344,
+          "validation_cost": 0.5649418613515187,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.706254099990474
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 0.6631147711941388,
+          "validation_cost": 0.5649418613515187,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.082137799996417
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 0.6281026641747751,
+          "validation_cost": 0.5649418613515187,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.449848399992334
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9502,
+      "test_cost": 0.7102634573532773,
+      "teacher_cost": 0.7063891200686259,
+      "initial_cost": 0.7953322541984553,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\warm.pt",
+        "sha256": "df3f6b758f5ce01af5ed68d2501de93b2e1f431c5b5911f5c69c73a561902589",
+        "budget": 30.0,
+        "validation_mean": 0.7295910706301902
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\parent.pt",
+        "sha256": "d3b5ff54bf13e7fad04e2f5348de9205f7973ed00c56dd35f5faf993fa3d2e16",
+        "budget": 7.5,
+        "validation_mean": 0.8754863937147842
+      },
+      "checkpoint_sha256": "b67d7a86006ec38d7542b3477f662dcf983e8942e55f45f8719f04e3dd8f1069",
+      "diagnostics": {
+        "point_mse": 0.0011115090484921035,
+        "set_mse": 0.00019165150298726735,
+        "alpha": 0.5,
+        "inside_fraction": 0.375,
+        "actual_advantage": 2.9214920347427628e-06,
+        "projected_actual_advantage": -6.55258587795417e-05,
+        "model_advantage": 5.481261469621762e-06,
+        "mean_anchor_gain": 0.00011331785975018065,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "adaptive",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10202,
+      "updates": 1024,
+      "best_update": 256,
+      "initial_validation_cost": 0.6729547552122418,
+      "selected_validation_cost": 0.5643228670002312,
+      "charged_seconds": 6.439888399967458,
+      "common_seconds": 3.8228259999887086,
+      "fit_seconds": 0.3758910999749787,
+      "refresh_seconds": 0.8343576999905054,
+      "gate_seconds": 1.1011447999917436,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": true,
+          "trial_cost": 0.6198994299376297,
+          "validation_cost": 0.5643228670002312,
+          "eta": 8.0,
+          "refresh": false,
+          "charged_seconds": 4.492264999978943
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 0.7175422279934656,
+          "validation_cost": 0.5643228670002312,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.700438199972268
+        },
+        {
+          "updates": 768,
+          "accepted": true,
+          "trial_cost": 0.602053236551127,
+          "validation_cost": 0.5652951995925186,
+          "eta": 8.0,
+          "refresh": false,
+          "charged_seconds": 6.078119099984178
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 0.786888166116041,
+          "validation_cost": 0.5652951995925186,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.4397057999740355
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9502,
+      "test_cost": 0.7919149241452558,
+      "teacher_cost": 0.7063891200686259,
+      "initial_cost": 0.7953322541984553,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\warm.pt",
+        "sha256": "df3f6b758f5ce01af5ed68d2501de93b2e1f431c5b5911f5c69c73a561902589",
+        "budget": 30.0,
+        "validation_mean": 0.7295910706301902
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\parent.pt",
+        "sha256": "d3b5ff54bf13e7fad04e2f5348de9205f7973ed00c56dd35f5faf993fa3d2e16",
+        "budget": 7.5,
+        "validation_mean": 0.8754863937147842
+      },
+      "checkpoint_sha256": "54e0399e41c95f8396772063804230c37d3426aaa4e3b2f2be55b02265e5cad0",
+      "diagnostics": {
+        "point_mse": 0.0005390615191199643,
+        "set_mse": 6.50686431192362e-05,
+        "alpha": 0.5,
+        "inside_fraction": 0.296875,
+        "actual_advantage": -1.3871480043575354e-05,
+        "projected_actual_advantage": -5.9182394464315504e-05,
+        "model_advantage": -1.3395058270184017e-05,
+        "mean_anchor_gain": 0.00011263878134571759,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "set25",
+      "alpha": 0.25,
+      "width": 64,
+      "seed": 10202,
+      "updates": 1024,
+      "best_update": 512,
+      "initial_validation_cost": 0.6729547552122418,
+      "selected_validation_cost": 0.5648061116144993,
+      "charged_seconds": 6.504979399993317,
+      "common_seconds": 3.8228259999887086,
+      "fit_seconds": 0.42564490003860556,
+      "refresh_seconds": 0.838592999993125,
+      "gate_seconds": 1.1019775999884587,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": true,
+          "trial_cost": 0.633670640943033,
+          "validation_cost": 0.5660883021568117,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.523535199987236
+        },
+        {
+          "updates": 512,
+          "accepted": true,
+          "trial_cost": 0.6211825018220807,
+          "validation_cost": 0.5648061116144993,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.744634700007737
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 0.6217600337707998,
+          "validation_cost": 0.5648061116144993,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.121319500001846
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 0.6310271273344199,
+          "validation_cost": 0.5648061116144993,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.5045870000030845
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9502,
+      "test_cost": 0.7395504272123503,
+      "teacher_cost": 0.7063891200686259,
+      "initial_cost": 0.7953322541984553,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\warm.pt",
+        "sha256": "df3f6b758f5ce01af5ed68d2501de93b2e1f431c5b5911f5c69c73a561902589",
+        "budget": 30.0,
+        "validation_mean": 0.7295910706301902
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9502\\parent.pt",
+        "sha256": "d3b5ff54bf13e7fad04e2f5348de9205f7973ed00c56dd35f5faf993fa3d2e16",
+        "budget": 7.5,
+        "validation_mean": 0.8754863937147842
+      },
+      "checkpoint_sha256": "d3622c52c9448ecbad4b90311e80dc6847a28ec5e87660a94f26458cdcf388b2",
+      "diagnostics": {
+        "point_mse": 0.000835172145808488,
+        "set_mse": 2.7468321636237357e-05,
+        "alpha": 0.25,
+        "inside_fraction": 0.9375,
+        "actual_advantage": -7.571914354513046e-06,
+        "projected_actual_advantage": -3.896122640208128e-05,
+        "model_advantage": -5.832346394913316e-06,
+        "mean_anchor_gain": 0.0001133634697258088,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "upper",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10203,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.9165627011747344,
+      "selected_validation_cost": 0.9165627011747344,
+      "charged_seconds": 6.481416300026467,
+      "common_seconds": 3.8761361000069883,
+      "fit_seconds": 0.3731670000415761,
+      "refresh_seconds": 0.8400549000070896,
+      "gate_seconds": 1.0838526000152342,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 1.151409998357913,
+          "validation_cost": 0.9165627011747344,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.5457177000062075
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 1.2391293992531067,
+          "validation_cost": 0.9165627011747344,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.745127800008049
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 2.3828700072032056,
+          "validation_cost": 0.9165627011747344,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.109649100020761
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 2.4161243355857884,
+          "validation_cost": 0.9165627011747344,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.4812317000178155
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9503,
+      "test_cost": 1.0431700975144467,
+      "teacher_cost": 0.7660606496519948,
+      "initial_cost": 1.0431700975144467,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9503\\warm.pt",
+        "sha256": "650a736dfcbb1ffc51c8407b16bb8b6b9c04e72ce9fadc9331cc30389f320c54",
+        "budget": 30.0,
+        "validation_mean": 0.7303305456620266
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9503\\parent.pt",
+        "sha256": "84f0aae45748258d119317f3e38a236e25589c3670d07879eb8ac36e1aa9cb5c",
+        "budget": 7.5,
+        "validation_mean": 0.9089672388526315
+      },
+      "checkpoint_sha256": "3ebe1528e5b89a17ab1a350c11390b86fa990f8de72e042059d665a40628cdb1",
+      "diagnostics": {
+        "point_mse": 0.00116222291948954,
+        "set_mse": 0.0003031998693929646,
+        "alpha": 0.5,
+        "inside_fraction": 0.09375,
+        "actual_advantage": 2.9265009417225397e-05,
+        "projected_actual_advantage": -1.309710280533308e-05,
+        "model_advantage": 3.313220211674506e-05,
+        "mean_anchor_gain": 1.4843709202788493e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "adaptive",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10203,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.9165627011747344,
+      "selected_validation_cost": 0.9165627011747344,
+      "charged_seconds": 6.469688800018048,
+      "common_seconds": 3.8761361000069883,
+      "fit_seconds": 0.37552350002806634,
+      "refresh_seconds": 0.8282966999686323,
+      "gate_seconds": 1.0788590000011027,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 1.9323822475710881,
+          "validation_cost": 0.9165627011747344,
+          "eta": 32.0,
+          "refresh": false,
+          "charged_seconds": 4.549663900019368
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 2.145656328018396,
+          "validation_cost": 0.9165627011747344,
+          "eta": 64.0,
+          "refresh": true,
+          "charged_seconds": 5.738996400003089
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 1.457526855448367,
+          "validation_cost": 0.9165627011747344,
+          "eta": 128.0,
+          "refresh": false,
+          "charged_seconds": 6.107244000013452
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 1.5678219517469911,
+          "validation_cost": 0.9165627011747344,
+          "eta": 256.0,
+          "refresh": false,
+          "charged_seconds": 6.469494200020563
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9503,
+      "test_cost": 1.0431700975144467,
+      "teacher_cost": 0.7660606496519948,
+      "initial_cost": 1.0431700975144467,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9503\\warm.pt",
+        "sha256": "650a736dfcbb1ffc51c8407b16bb8b6b9c04e72ce9fadc9331cc30389f320c54",
+        "budget": 30.0,
+        "validation_mean": 0.7303305456620266
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9503\\parent.pt",
+        "sha256": "84f0aae45748258d119317f3e38a236e25589c3670d07879eb8ac36e1aa9cb5c",
+        "budget": 7.5,
+        "validation_mean": 0.9089672388526315
+      },
+      "checkpoint_sha256": "5ef2b7ac901388be99eee02a259c07394760ce79382e00e5dad87e40fbeb7095",
+      "diagnostics": {
+        "point_mse": 0.00116222291948954,
+        "set_mse": 0.0003031998693929646,
+        "alpha": 0.5,
+        "inside_fraction": 0.09375,
+        "actual_advantage": 2.9265009417225397e-05,
+        "projected_actual_advantage": -1.309710280533308e-05,
+        "model_advantage": 3.313220211674506e-05,
+        "mean_anchor_gain": 1.4843709202788493e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "set25",
+      "alpha": 0.25,
+      "width": 64,
+      "seed": 10203,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.9165627011747344,
+      "selected_validation_cost": 0.9165627011747344,
+      "charged_seconds": 6.5623852999997325,
+      "common_seconds": 3.8761361000069883,
+      "fit_seconds": 0.42580819997237995,
+      "refresh_seconds": 0.8297276000084821,
+      "gate_seconds": 1.1042882999463473,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 1.2897745953367827,
+          "validation_cost": 0.9165627011747344,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.59111879998818
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 1.9827370927305026,
+          "validation_cost": 0.9165627011747344,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.80182349999086
+        },
+        {
+          "updates": 768,
+          "accepted": true,
+          "trial_cost": 0.8578276595783038,
+          "validation_cost": 1.0451781360635608,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.1812320000026375
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 1.9059032493592754,
+          "validation_cost": 1.0451781360635608,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.562187700008508
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9503,
+      "test_cost": 1.0431700975144467,
+      "teacher_cost": 0.7660606496519948,
+      "initial_cost": 1.0431700975144467,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9503\\warm.pt",
+        "sha256": "650a736dfcbb1ffc51c8407b16bb8b6b9c04e72ce9fadc9331cc30389f320c54",
+        "budget": 30.0,
+        "validation_mean": 0.7303305456620266
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9503\\parent.pt",
+        "sha256": "84f0aae45748258d119317f3e38a236e25589c3670d07879eb8ac36e1aa9cb5c",
+        "budget": 7.5,
+        "validation_mean": 0.9089672388526315
+      },
+      "checkpoint_sha256": "da0a00b3f075763e3667d2778e929801e1042231b3f84ee2d5a557102d5cc2cc",
+      "diagnostics": {
+        "point_mse": 0.00116222291948954,
+        "set_mse": 0.00024780569693839656,
+        "alpha": 0.25,
+        "inside_fraction": 0.09375,
+        "actual_advantage": 2.9265009417225397e-05,
+        "projected_actual_advantage": -1.01792239509353e-05,
+        "model_advantage": 3.313220211674506e-05,
+        "mean_anchor_gain": 1.4843709202788493e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "point",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10203,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.9165627011747344,
+      "selected_validation_cost": 0.9165627011747344,
+      "charged_seconds": 6.510073999990709,
+      "common_seconds": 3.8761361000069883,
+      "fit_seconds": 0.37458290002541617,
+      "refresh_seconds": 0.8270873000146821,
+      "gate_seconds": 1.1105583000171464,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 1.9323822475710881,
+          "validation_cost": 0.9165627011747344,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.566611699992791
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 3.155733066228949,
+          "validation_cost": 0.9165627011747344,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.759990499995183
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 2.098023994941437,
+          "validation_cost": 0.9165627011747344,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.136556199984625
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 3.0672778821931956,
+          "validation_cost": 0.9165627011747344,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.509886699990602
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9503,
+      "test_cost": 1.0431700975144467,
+      "teacher_cost": 0.7660606496519948,
+      "initial_cost": 1.0431700975144467,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9503\\warm.pt",
+        "sha256": "650a736dfcbb1ffc51c8407b16bb8b6b9c04e72ce9fadc9331cc30389f320c54",
+        "budget": 30.0,
+        "validation_mean": 0.7303305456620266
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9503\\parent.pt",
+        "sha256": "84f0aae45748258d119317f3e38a236e25589c3670d07879eb8ac36e1aa9cb5c",
+        "budget": 7.5,
+        "validation_mean": 0.9089672388526315
+      },
+      "checkpoint_sha256": "a39232a1296379ba109e26c90bf3391c290723e9438136823a76e440adb29c49",
+      "diagnostics": {
+        "point_mse": 0.00116222291948954,
+        "set_mse": 0.0003031998693929646,
+        "alpha": 0.5,
+        "inside_fraction": 0.09375,
+        "actual_advantage": 2.9265009417225397e-05,
+        "projected_actual_advantage": -1.309710280533308e-05,
+        "model_advantage": 3.313220211674506e-05,
+        "mean_anchor_gain": 1.4843709202788493e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "upper",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10204,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.942910997816493,
+      "selected_validation_cost": 0.942910997816493,
+      "charged_seconds": 6.5600102999887895,
+      "common_seconds": 3.914712400001008,
+      "fit_seconds": 0.37628050000057556,
+      "refresh_seconds": 0.8354518999985885,
+      "gate_seconds": 1.1263914000010118,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 4.5865545689734954,
+          "validation_cost": 0.942910997816493,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.591080899990629
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 4.675325525072618,
+          "validation_cost": 0.942910997816493,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.815459399978863
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 5.016487309654361,
+          "validation_cost": 0.942910997816493,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.187653599976329
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 5.12199211566196,
+          "validation_cost": 0.942910997816493,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.5598208000010345
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9504,
+      "test_cost": 0.79255904131569,
+      "teacher_cost": 0.7060478439020709,
+      "initial_cost": 0.79255904131569,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9504\\warm.pt",
+        "sha256": "ba1e51e2782d1c1995bb2f78727aad8af37349c3857433261f7b0a37f667123c",
+        "budget": 30.0,
+        "validation_mean": 0.7319188609640896
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9504\\parent.pt",
+        "sha256": "5372e6adadc9ef34b3f80ce5915bd4d49c8324b6cf88cb9f7be54b95e50b5555",
+        "budget": 7.5,
+        "validation_mean": 0.8722222812610951
+      },
+      "checkpoint_sha256": "825bb1992eaf1a44ada20067fe711ed7cdbffe981331510ea9a40f54b306eeaa",
+      "diagnostics": {
+        "point_mse": 0.000893734665730736,
+        "set_mse": 8.260638851607809e-05,
+        "alpha": 0.5,
+        "inside_fraction": 0.109375,
+        "actual_advantage": -1.0121446541511931e-05,
+        "projected_actual_advantage": -1.078000477665951e-05,
+        "model_advantage": -6.883403077402881e-06,
+        "mean_anchor_gain": 1.4179640045425843e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "adaptive",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10204,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.942910997816493,
+      "selected_validation_cost": 0.942910997816493,
+      "charged_seconds": 6.579066899983445,
+      "common_seconds": 3.914712400001008,
+      "fit_seconds": 0.3772247000015341,
+      "refresh_seconds": 0.8475968000420835,
+      "gate_seconds": 1.0951265000039712,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 3.9533919369730945,
+          "validation_cost": 0.942910997816493,
+          "eta": 32.0,
+          "refresh": false,
+          "charged_seconds": 4.629487800004426
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 3.641929422805866,
+          "validation_cost": 0.942910997816493,
+          "eta": 64.0,
+          "refresh": true,
+          "charged_seconds": 5.846376999979839
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 1.1805770233113835,
+          "validation_cost": 0.942910997816493,
+          "eta": 128.0,
+          "refresh": false,
+          "charged_seconds": 6.209622800000943
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 0.9972155111275214,
+          "validation_cost": 0.942910997816493,
+          "eta": 256.0,
+          "refresh": false,
+          "charged_seconds": 6.578871199977584
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9504,
+      "test_cost": 0.79255904131569,
+      "teacher_cost": 0.7060478439020709,
+      "initial_cost": 0.79255904131569,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9504\\warm.pt",
+        "sha256": "ba1e51e2782d1c1995bb2f78727aad8af37349c3857433261f7b0a37f667123c",
+        "budget": 30.0,
+        "validation_mean": 0.7319188609640896
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9504\\parent.pt",
+        "sha256": "5372e6adadc9ef34b3f80ce5915bd4d49c8324b6cf88cb9f7be54b95e50b5555",
+        "budget": 7.5,
+        "validation_mean": 0.8722222812610951
+      },
+      "checkpoint_sha256": "62fb41efbaece84dfef8f9da1d08ee8bf83f86e3cf2a94cf33c227c986eaafec",
+      "diagnostics": {
+        "point_mse": 0.000893734665730736,
+        "set_mse": 8.260638851607809e-05,
+        "alpha": 0.5,
+        "inside_fraction": 0.109375,
+        "actual_advantage": -1.0121446541511931e-05,
+        "projected_actual_advantage": -1.078000477665951e-05,
+        "model_advantage": -6.883403077402881e-06,
+        "mean_anchor_gain": 1.4179640045425843e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "point",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10204,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.942910997816493,
+      "selected_validation_cost": 0.942910997816493,
+      "charged_seconds": 6.575106599979335,
+      "common_seconds": 3.914712400001008,
+      "fit_seconds": 0.3769637999939732,
+      "refresh_seconds": 0.8316670000203885,
+      "gate_seconds": 1.1341597999853548,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 3.9533919369730945,
+          "validation_cost": 0.942910997816493,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.600239199993666
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 3.9641863398298973,
+          "validation_cost": 0.942910997816493,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.812237899983302
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 2.5504365377780087,
+          "validation_cost": 0.942910997816493,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.1824327999784146
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 2.6888588207393864,
+          "validation_cost": 0.942910997816493,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.574914799974067
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9504,
+      "test_cost": 0.79255904131569,
+      "teacher_cost": 0.7060478439020709,
+      "initial_cost": 0.79255904131569,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9504\\warm.pt",
+        "sha256": "ba1e51e2782d1c1995bb2f78727aad8af37349c3857433261f7b0a37f667123c",
+        "budget": 30.0,
+        "validation_mean": 0.7319188609640896
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9504\\parent.pt",
+        "sha256": "5372e6adadc9ef34b3f80ce5915bd4d49c8324b6cf88cb9f7be54b95e50b5555",
+        "budget": 7.5,
+        "validation_mean": 0.8722222812610951
+      },
+      "checkpoint_sha256": "c1c4e6910a284d9a7d3787c4ebf8f335287943b346167a7e2f7fec458736b945",
+      "diagnostics": {
+        "point_mse": 0.000893734665730736,
+        "set_mse": 8.260638851607809e-05,
+        "alpha": 0.5,
+        "inside_fraction": 0.109375,
+        "actual_advantage": -1.0121446541511931e-05,
+        "projected_actual_advantage": -1.078000477665951e-05,
+        "model_advantage": -6.883403077402881e-06,
+        "mean_anchor_gain": 1.4179640045425843e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "set25",
+      "alpha": 0.25,
+      "width": 64,
+      "seed": 10204,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.942910997816493,
+      "selected_validation_cost": 0.942910997816493,
+      "charged_seconds": 6.573117699997965,
+      "common_seconds": 3.914712400001008,
+      "fit_seconds": 0.426736900000833,
+      "refresh_seconds": 0.8290462000004482,
+      "gate_seconds": 1.0954796999576502,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 1.3710758490544546,
+          "validation_cost": 0.942910997816493,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.608275500009768
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 1.493125897130245,
+          "validation_cost": 0.942910997816493,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.8126275000104215
+        },
+        {
+          "updates": 768,
+          "accepted": true,
+          "trial_cost": 0.8680506235573056,
+          "validation_cost": 1.1286788088484896,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.19747539999662
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 1.2792770254662698,
+          "validation_cost": 1.1286788088484896,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.572925100015709
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9504,
+      "test_cost": 0.79255904131569,
+      "teacher_cost": 0.7060478439020709,
+      "initial_cost": 0.79255904131569,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9504\\warm.pt",
+        "sha256": "ba1e51e2782d1c1995bb2f78727aad8af37349c3857433261f7b0a37f667123c",
+        "budget": 30.0,
+        "validation_mean": 0.7319188609640896
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9504\\parent.pt",
+        "sha256": "5372e6adadc9ef34b3f80ce5915bd4d49c8324b6cf88cb9f7be54b95e50b5555",
+        "budget": 7.5,
+        "validation_mean": 0.8722222812610951
+      },
+      "checkpoint_sha256": "6fe47f3b0924258d32ee109f872eee3346d3b6ffa7d92dea0739ed497c1f6fd3",
+      "diagnostics": {
+        "point_mse": 0.000893734665730736,
+        "set_mse": 7.775852148084665e-05,
+        "alpha": 0.25,
+        "inside_fraction": 0.109375,
+        "actual_advantage": -1.0121446541511931e-05,
+        "projected_actual_advantage": -1.0771827075834087e-05,
+        "model_advantage": -6.883403077402881e-06,
+        "mean_anchor_gain": 1.4179640045425843e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "upper",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10205,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.828035636726276,
+      "selected_validation_cost": 0.828035636726276,
+      "charged_seconds": 6.481502000009641,
+      "common_seconds": 3.8464241000183392,
+      "fit_seconds": 0.37710769998375326,
+      "refresh_seconds": 0.834824200021103,
+      "gate_seconds": 1.1154624999617226,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 4.0354911932360205,
+          "validation_cost": 0.828035636726276,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.52244190001511
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 4.1942663375243185,
+          "validation_cost": 0.828035636726276,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.730619400012074
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 7.569207540586694,
+          "validation_cost": 0.828035636726276,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.10496399999829
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 8.107272664760558,
+          "validation_cost": 0.828035636726276,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.481323400017573
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9505,
+      "test_cost": 0.9530934760371914,
+      "teacher_cost": 0.7585575356586343,
+      "initial_cost": 0.9530934760371914,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9505\\warm.pt",
+        "sha256": "f88aaed45696425f816a44bccb2b1b0bac410864106de43800ce5d772e59babf",
+        "budget": 30.0,
+        "validation_mean": 0.7275909668019325
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9505\\parent.pt",
+        "sha256": "36a1615c07909bb2026ad3481603e2c438d8c3bf0ef79e474a943cc27990433e",
+        "budget": 7.5,
+        "validation_mean": 0.8939138279958703
+      },
+      "checkpoint_sha256": "4bb64a0f38654408c117d7a0119a0837251dd8c16eaf0b57ef25653e03c838c7",
+      "diagnostics": {
+        "point_mse": 0.00046374873868223066,
+        "set_mse": 1.962051191933612e-05,
+        "alpha": 0.5,
+        "inside_fraction": 0.21875,
+        "actual_advantage": -2.4485223007580694e-05,
+        "projected_actual_advantage": -2.4957073895650563e-05,
+        "model_advantage": -2.159888913721669e-05,
+        "mean_anchor_gain": 2.3984067785165528e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "set25",
+      "alpha": 0.25,
+      "width": 64,
+      "seed": 10205,
+      "updates": 1024,
+      "best_update": 256,
+      "initial_validation_cost": 0.828035636726276,
+      "selected_validation_cost": 0.7538939602253392,
+      "charged_seconds": 6.54214070001035,
+      "common_seconds": 3.8464241000183392,
+      "fit_seconds": 0.4278218999679666,
+      "refresh_seconds": 0.8394509000354446,
+      "gate_seconds": 1.1109448999923188,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": true,
+          "trial_cost": 0.7640040074628233,
+          "validation_cost": 0.7538939602253392,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.5375352000119165
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 0.808253501176103,
+          "validation_cost": 0.7538939602253392,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.775835100037511
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 0.7797363785547846,
+          "validation_cost": 0.7538939602253392,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.158761600032449
+        },
+        {
+          "updates": 1024,
+          "accepted": true,
+          "trial_cost": 0.7473362850336831,
+          "validation_cost": 1.0490934392796294,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.541960500035202
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9505,
+      "test_cost": 0.9809785297853354,
+      "teacher_cost": 0.7585575356586343,
+      "initial_cost": 0.9530934760371914,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9505\\warm.pt",
+        "sha256": "f88aaed45696425f816a44bccb2b1b0bac410864106de43800ce5d772e59babf",
+        "budget": 30.0,
+        "validation_mean": 0.7275909668019325
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9505\\parent.pt",
+        "sha256": "36a1615c07909bb2026ad3481603e2c438d8c3bf0ef79e474a943cc27990433e",
+        "budget": 7.5,
+        "validation_mean": 0.8939138279958703
+      },
+      "checkpoint_sha256": "0f1079793163ff5c67b22a3eb5d7bce92c53b9541c36363181d2065191b14285",
+      "diagnostics": {
+        "point_mse": 0.0005951562588402462,
+        "set_mse": 4.2877357112912785e-05,
+        "alpha": 0.25,
+        "inside_fraction": 0.6875,
+        "actual_advantage": 8.309549561661926e-07,
+        "projected_actual_advantage": -9.094378314065709e-06,
+        "model_advantage": 3.1100353409494068e-06,
+        "mean_anchor_gain": 2.4153238422907516e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "point",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10205,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.828035636726276,
+      "selected_validation_cost": 0.828035636726276,
+      "charged_seconds": 6.470703400031198,
+      "common_seconds": 3.8464241000183392,
+      "fit_seconds": 0.37684109996189363,
+      "refresh_seconds": 0.8268644000054337,
+      "gate_seconds": 1.1046399000042584,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 4.069472761422662,
+          "validation_cost": 0.828035636726276,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.538665500032948
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 2.4790165441725565,
+          "validation_cost": 0.828035636726276,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.731228200020269
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 7.1562813249966215,
+          "validation_cost": 0.828035636726276,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.1010452000191435
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 6.059822153591709,
+          "validation_cost": 0.828035636726276,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.4705116000259295
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9505,
+      "test_cost": 0.9530934760371914,
+      "teacher_cost": 0.7585575356586343,
+      "initial_cost": 0.9530934760371914,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9505\\warm.pt",
+        "sha256": "f88aaed45696425f816a44bccb2b1b0bac410864106de43800ce5d772e59babf",
+        "budget": 30.0,
+        "validation_mean": 0.7275909668019325
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9505\\parent.pt",
+        "sha256": "36a1615c07909bb2026ad3481603e2c438d8c3bf0ef79e474a943cc27990433e",
+        "budget": 7.5,
+        "validation_mean": 0.8939138279958703
+      },
+      "checkpoint_sha256": "3f0f538358b45ae6e578f29bc672c4d7e2cd490ce55b24c1a4ebe9ba7d776b1a",
+      "diagnostics": {
+        "point_mse": 0.00046374873868223066,
+        "set_mse": 1.962051191933612e-05,
+        "alpha": 0.5,
+        "inside_fraction": 0.21875,
+        "actual_advantage": -2.4485223007580694e-05,
+        "projected_actual_advantage": -2.4957073895650563e-05,
+        "model_advantage": -2.159888913721669e-05,
+        "mean_anchor_gain": 2.3984067785165528e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "adaptive",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10205,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 0.828035636726276,
+      "selected_validation_cost": 0.828035636726276,
+      "charged_seconds": 6.475275300035719,
+      "common_seconds": 3.8464241000183392,
+      "fit_seconds": 0.3769891999545507,
+      "refresh_seconds": 0.8347425000101794,
+      "gate_seconds": 1.1123245999915525,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 4.069472761422662,
+          "validation_cost": 0.828035636726276,
+          "eta": 32.0,
+          "refresh": false,
+          "charged_seconds": 4.522190700023202
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 2.3010046555344683,
+          "validation_cost": 0.828035636726276,
+          "eta": 64.0,
+          "refresh": true,
+          "charged_seconds": 5.730758600024274
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 5.727342526980127,
+          "validation_cost": 0.828035636726276,
+          "eta": 128.0,
+          "refresh": false,
+          "charged_seconds": 6.110951400012709
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 5.94430618341309,
+          "validation_cost": 0.828035636726276,
+          "eta": 256.0,
+          "refresh": false,
+          "charged_seconds": 6.475095800036797
+        }
+      ],
+      "family": "reaction",
+      "teacher_seed": 9505,
+      "test_cost": 0.9530934760371914,
+      "teacher_cost": 0.7585575356586343,
+      "initial_cost": 0.9530934760371914,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9505\\warm.pt",
+        "sha256": "f88aaed45696425f816a44bccb2b1b0bac410864106de43800ce5d772e59babf",
+        "budget": 30.0,
+        "validation_mean": 0.7275909668019325
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9505\\parent.pt",
+        "sha256": "36a1615c07909bb2026ad3481603e2c438d8c3bf0ef79e474a943cc27990433e",
+        "budget": 7.5,
+        "validation_mean": 0.8939138279958703
+      },
+      "checkpoint_sha256": "61b8c00664342db596d75a6ea1c690853cbb9965aad9d0ee26fe6d8710a09bd0",
+      "diagnostics": {
+        "point_mse": 0.00046374873868223066,
+        "set_mse": 1.962051191933612e-05,
+        "alpha": 0.5,
+        "inside_fraction": 0.21875,
+        "actual_advantage": -2.4485223007580694e-05,
+        "projected_actual_advantage": -2.4957073895650563e-05,
+        "model_advantage": -2.159888913721669e-05,
+        "mean_anchor_gain": 2.3984067785165528e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    }
+  ]
+}

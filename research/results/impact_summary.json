@@ -1,0 +1,291 @@
+{
+  "training_phases": {
+    "mechanism": 120,
+    "pilot": 14,
+    "replication": 50
+  },
+  "replication": {
+    "mechanical": {
+      "means": {
+        "clone": 2.8263767463870955,
+        "hamiltonian": 2.8645414529850024,
+        "selected_fixed": 2.8251974047965525,
+        "adaptive": 2.829827243277731,
+        "guided": 2.8261975037455023
+      },
+      "comparisons": {
+        "clone": {
+          "mean": -0.00017924264159292492,
+          "lower": -0.016731578338825864,
+          "upper": 0.016373093055640015,
+          "n": 5,
+          "wins": 2,
+          "relative_percent": -0.0063417816404842675
+        },
+        "hamiltonian": {
+          "mean": -0.03834394923949995,
+          "lower": -0.073294156722739,
+          "upper": -0.003393741756260886,
+          "n": 5,
+          "wins": 5,
+          "relative_percent": -1.3385719798030382
+        },
+        "selected_fixed": {
+          "mean": 0.0010000989489504341,
+          "lower": -0.0070691026270315776,
+          "upper": 0.009069300524932445,
+          "n": 5,
+          "wins": 2,
+          "relative_percent": 0.03539925908369046
+        },
+        "adaptive": {
+          "mean": -0.0036297395322285376,
+          "lower": -0.02381471716856274,
+          "upper": 0.01655523810410566,
+          "n": 5,
+          "wins": 3,
+          "relative_percent": -0.12826717746997618
+        }
+      },
+      "operations": {
+        "fit": 107,
+        "refresh": 50
+      },
+      "teacher_cost": 2.814376276251946,
+      "initial_student_cost": 3.0632363617442744,
+      "guided_wins_over_teacher": 1,
+      "mean_updates": {
+        "clone": 28937.6,
+        "hamiltonian": 29769.6,
+        "selected_fixed": 29673.6,
+        "adaptive": 29766.4,
+        "guided": 4019.2
+      },
+      "mean_common_seconds": 11.540966760006267
+    },
+    "reaction": {
+      "means": {
+        "clone": 0.7450163045676319,
+        "hamiltonian": 0.8226868248581167,
+        "selected_fixed": 0.8359973002163331,
+        "adaptive": 0.7310099779091888,
+        "guided": 0.7299927950762753
+      },
+      "comparisons": {
+        "clone": {
+          "mean": -0.015023509491356512,
+          "lower": -0.07103159272238779,
+          "upper": 0.040984573739674776,
+          "n": 5,
+          "wins": 3,
+          "relative_percent": -2.0165343227052435
+        },
+        "hamiltonian": {
+          "mean": -0.09269402978184141,
+          "lower": -0.16152656105124025,
+          "upper": -0.023861498512442555,
+          "n": 5,
+          "wins": 5,
+          "relative_percent": -11.267231585704284
+        },
+        "selected_fixed": {
+          "mean": -0.10600450514005774,
+          "lower": -0.2557290034791019,
+          "upper": 0.043719993198986395,
+          "n": 5,
+          "wins": 5,
+          "relative_percent": -12.6800056785622
+        },
+        "adaptive": {
+          "mean": -0.0010171828329133437,
+          "lower": -0.025796133030281658,
+          "upper": 0.02376176736445497,
+          "n": 5,
+          "wins": 3,
+          "relative_percent": -0.13914759902767804
+        }
+      },
+      "operations": {
+        "regularize": 44,
+        "fit": 66,
+        "refresh": 16
+      },
+      "teacher_cost": 0.7115057286447064,
+      "initial_student_cost": 0.8971886152728192,
+      "guided_wins_over_teacher": 3,
+      "mean_updates": {
+        "clone": 21356.8,
+        "hamiltonian": 21507.2,
+        "selected_fixed": 21731.2,
+        "adaptive": 21510.4,
+        "guided": 3232.0
+      },
+      "mean_common_seconds": 14.067827499995474
+    }
+  },
+  "noise": {
+    "mechanical": {
+      "none0": {
+        "points": 480,
+        "naive_predictions": 480,
+        "naive_false_positives": 2,
+        "guarded_predictions": 480,
+        "guarded_false_positives": 2,
+        "actual_improvements": 478,
+        "bound_violations": 9
+      },
+      "bias0.5": {
+        "points": 480,
+        "naive_predictions": 480,
+        "naive_false_positives": 241,
+        "guarded_predictions": 190,
+        "guarded_false_positives": 0,
+        "actual_improvements": 239,
+        "bound_violations": 2
+      },
+      "gaussian0.5": {
+        "points": 480,
+        "naive_predictions": 480,
+        "naive_false_positives": 296,
+        "guarded_predictions": 98,
+        "guarded_false_positives": 0,
+        "actual_improvements": 184,
+        "bound_violations": 0
+      },
+      "bias1.5": {
+        "points": 480,
+        "naive_predictions": 480,
+        "naive_false_positives": 340,
+        "guarded_predictions": 44,
+        "guarded_false_positives": 0,
+        "actual_improvements": 140,
+        "bound_violations": 1
+      },
+      "gaussian1.5": {
+        "points": 480,
+        "naive_predictions": 480,
+        "naive_false_positives": 413,
+        "guarded_predictions": 24,
+        "guarded_false_positives": 0,
+        "actual_improvements": 67,
+        "bound_violations": 0
+      }
+    },
+    "reaction": {
+      "none0": {
+        "points": 480,
+        "naive_predictions": 303,
+        "naive_false_positives": 0,
+        "guarded_predictions": 301,
+        "guarded_false_positives": 0,
+        "actual_improvements": 303,
+        "bound_violations": 0
+      },
+      "bias0.5": {
+        "points": 480,
+        "naive_predictions": 480,
+        "naive_false_positives": 328,
+        "guarded_predictions": 62,
+        "guarded_false_positives": 0,
+        "actual_improvements": 152,
+        "bound_violations": 3
+      },
+      "gaussian0.5": {
+        "points": 480,
+        "naive_predictions": 480,
+        "naive_false_positives": 450,
+        "guarded_predictions": 10,
+        "guarded_false_positives": 0,
+        "actual_improvements": 30,
+        "bound_violations": 2
+      },
+      "bias1.5": {
+        "points": 480,
+        "naive_predictions": 480,
+        "naive_false_positives": 449,
+        "guarded_predictions": 8,
+        "guarded_false_positives": 0,
+        "actual_improvements": 31,
+        "bound_violations": 6
+      },
+      "gaussian1.5": {
+        "points": 480,
+        "naive_predictions": 480,
+        "naive_false_positives": 476,
+        "guarded_predictions": 0,
+        "guarded_false_positives": 0,
+        "actual_improvements": 4,
+        "bound_violations": 3
+      }
+    }
+  },
+  "factorial": {
+    "nominal/nominal": {
+      "base_only/base": 0.8188271335101025,
+      "transfer/hjb_target": 0.6347618769012647,
+      "direct/hjb_target": 0.6339812705462883,
+      "direct/dpc": 0.6350978950734743,
+      "transfer/dpc": 0.6499924904465177
+    },
+    "nominal/shifted": {
+      "base_only/base": 2.826815094693857,
+      "transfer/hjb_target": 1.0568989459402705,
+      "direct/hjb_target": 1.2324084293298145,
+      "direct/dpc": 1.1309170561631217,
+      "transfer/dpc": 1.102509084935963
+    },
+    "changed/nominal": {
+      "base_only/base": 5.784374840962285,
+      "transfer/hjb_target": 0.8499054609731155,
+      "direct/hjb_target": 0.8595539697770495,
+      "direct/dpc": 0.8537868971834689,
+      "transfer/dpc": 0.8834401912447909
+    },
+    "changed/shifted": {
+      "base_only/base": 9.79437059944397,
+      "transfer/hjb_target": 1.3754107102666948,
+      "direct/hjb_target": 2.7209446905682473,
+      "direct/dpc": 1.7065860296626798,
+      "transfer/dpc": 1.4918465999162167
+    }
+  },
+  "building": {
+    "hjb_target": {
+      "cost": 22.215713323713523,
+      "qp_gap_percent": 0.008234183812942941,
+      "tracking_rms_temperature_deviation": 0.39463981629188466,
+      "mean_integrated_heating_control": 80.43907670811787,
+      "gpu_policy_median_seconds": 0.0004049150025821291,
+      "gpu_policy_p95_seconds": 0.0005653214955236762
+    },
+    "warm": {
+      "cost": 22.2281991562182,
+      "qp_gap_percent": 0.06444151971579659,
+      "tracking_rms_temperature_deviation": 0.3943616333398356,
+      "mean_integrated_heating_control": 80.44681649103696,
+      "gpu_policy_median_seconds": 0.0004004599977633916,
+      "gpu_policy_p95_seconds": 0.0005401780054671689
+    },
+    "dpc": {
+      "cost": 22.22714560968676,
+      "qp_gap_percent": 0.059698780794745776,
+      "tracking_rms_temperature_deviation": 0.3942327998354221,
+      "mean_integrated_heating_control": 80.4466485886409,
+      "gpu_policy_median_seconds": 0.00039965500618563963,
+      "gpu_policy_p95_seconds": 0.0004994100058684125
+    },
+    "short": {
+      "cost": 22.538455204918744,
+      "qp_gap_percent": 1.4611177876918013,
+      "tracking_rms_temperature_deviation": 0.4011252532955945,
+      "mean_integrated_heating_control": 80.01269003153793,
+      "gpu_policy_median_seconds": 0.00040242499817395584,
+      "gpu_policy_p95_seconds": 0.0004956279987527523
+    },
+    "qp": {
+      "cost": 22.213884191657186,
+      "cpu_median_seconds": 0.051792449987260625,
+      "tracking_rms_temperature_deviation": 0.39460306016648783
+    }
+  }
+}

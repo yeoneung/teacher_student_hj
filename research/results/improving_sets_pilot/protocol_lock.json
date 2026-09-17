@@ -1,0 +1,55 @@
+{
+  "config": {
+    "stage": "pilot",
+    "methods": [
+      "point",
+      "upper",
+      "adaptive",
+      "set25",
+      "set50",
+      "set75"
+    ],
+    "widths": [
+      16,
+      64
+    ],
+    "seeds": [
+      10101
+    ],
+    "teacher_seeds": [
+      9508
+    ],
+    "updates": 1024,
+    "batch": 256,
+    "gate_every": 256,
+    "refresh_every": 512,
+    "pool": 512,
+    "train_initials": 64,
+    "validation_initials": 128,
+    "test_initials": 512,
+    "diagnostic_initials": 4,
+    "diagnostic_pairs": 64,
+    "alpha_candidates": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "eta": 16.0,
+    "kappa": {
+      "mechanical": 0.000550492,
+      "reaction": 0.000417389
+    },
+    "kappa_status": "Fixed empirical directional estimates; not certified bounds for nonlinear systems.",
+    "initialization": "Same deployed analytic LQR; zero final residual layer; random hidden layers paired within width.",
+    "selection": "Within each run select the lowest validation-cost accepted checkpoint, including initialization. Alpha is selected by validation only within each task/width. Test data are generated after saving the selected checkpoint.",
+    "budget": "Matched 1024 updates. All preparation, queries, refresh, projection, gates, validation, copies, and graph capture included in charged seconds; teacher pretraining excluded. No wall-time superiority claim.",
+    "decision": "Run independent paired replications only if validation-selected sets reduce validation cost by at least 1% relative to BOTH point and adaptive in a task/width. Otherwise report exploratory results without a superiority claim.",
+    "distinction": "No continuation-audit branch. Empirical set is not certified. Exact sensitivity is the numerical derivative of the supplied teacher, with floating-point arithmetic."
+  },
+  "sources": {
+    "improving_sets_study.py": "db739246ddf0203b4bc29c5764a6f454b5f43b72bca9b1f22758bbbbd9f8665a",
+    "improving_sets.py": "2397d697d276324e89c47110e07fd78422dc853ebf257178dc48e1db1e68620d",
+    "impact_core.py": "73af53434141f1cb42a784ee4f96d1621b16fd2d94dccc58e3f09705fd136490",
+    "impact_learning.py": "fcfd2be3d261fdbec11235362d9655523c4236babf0127ac26477dcb97451505"
+  }
+}

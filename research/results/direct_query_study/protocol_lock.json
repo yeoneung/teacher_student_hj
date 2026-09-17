@@ -1,0 +1,152 @@
+{
+  "config": {
+    "original_conditions": [
+      [
+        8,
+        2,
+        "box",
+        0.5
+      ],
+      [
+        32,
+        2,
+        "box",
+        0.5
+      ],
+      [
+        32,
+        4,
+        "box",
+        2.0
+      ],
+      [
+        32,
+        4,
+        "ball",
+        0.5
+      ]
+    ],
+    "original_seeds": [
+      13101,
+      13102,
+      13103,
+      13104,
+      13105
+    ],
+    "new_interfaces": [
+      "student_basis",
+      "student_orthogonal",
+      "hybrid",
+      "pruned_hybrid"
+    ],
+    "structured_seeds": [
+      13201,
+      13202,
+      13203,
+      13204,
+      13205
+    ],
+    "structured_methods": [
+      "point",
+      "rank",
+      "face",
+      "full",
+      "student_basis",
+      "student_orthogonal",
+      "hybrid",
+      "pruned_hybrid"
+    ],
+    "structured_geometry": "d8,m4,R.5 box; P=[(e1+e2+e3)/sqrt3,e4,e5,e6]H for random orthogonal H. First three initial coordinates independently signed uniform magnitude6..10; others uniform[-.1,.1]. All teacher-cache states have k3,r1; every active normal and every student basis direction is visible.",
+    "training_runs": 120,
+    "training": {
+      "dimensions": [
+        8,
+        32
+      ],
+      "student_subspace_dimensions": [
+        2,
+        4
+      ],
+      "radii": [
+        0.5,
+        2.0
+      ],
+      "shapes": [
+        "ball",
+        "box"
+      ],
+      "seeds": [
+        13101,
+        13102,
+        13103,
+        13104,
+        13105
+      ],
+      "methods": [
+        "point",
+        "gain",
+        "rank",
+        "random",
+        "face",
+        "full"
+      ],
+      "updates": 4096,
+      "batch": 512,
+      "learning_rate": 0.003,
+      "hidden_width": 32,
+      "train_initials": 1024,
+      "validation_initials": 512,
+      "test_initials": 4096,
+      "dynamics": "x_next=.8*x+.2*u, horizon12; stage=.36||x||^2+.05||u||^2, terminal=||x||^2. Exact zero teacher has V=||x||^2, exact advantage=.09||u||^2+.32*x dot u.",
+      "data": "Same anisotropic initial-state law as the separate neural information study, extended to d dimensions. All12 teacher states are used. New seeds, independently generated train/validation/test initials.",
+      "student": "Nonlinear bias-free d->32 SiLU->m network with fixed random orthonormal d-by-m embedding P. Uniform radial rescaling preserves range(P) and enforces the ball or box constraint. Box output uses uniform scaling, not coordinate clipping.",
+      "interface": "Receiver has x, target v, known curvature, constraint and P. The linear Bellman coefficient is accessible only inside a scalar cost-difference oracle; full is a privileged derivative reference. Restriction is an experimental information interface, not a lower bound for agents given the analytic plant/value formula.",
+      "feedback": "One scalar query returns Q_x(u)-Q_x(0) for a feasible u. Common baseline teacher evaluation and target generation are excluded shared information. All value queries are counted per cached state. Full derivative responses are reported separately and are not charged as scalar queries.",
+      "methods_description": {
+        "point": "Targets only, missing normal set to zero.",
+        "gain": "One target-improvement scalar per active target; minimum-norm normal consistent with that scalar and known face.",
+        "rank": "Queries feasible directions in the student-visible normal span, exactly r=rank(P^T Gamma) queries.",
+        "random": "Same r scalar queries in random ambient normal-space directions; minimum-norm normal decoder.",
+        "face": "Queries all k normal-space basis directions, reconstructing the complete normal.",
+        "full": "Privileged exact normal-vector reference; no scalar-query budget equivalence to gradient calls is claimed."
+      },
+      "primary": "Across all cache states, rank and face reproduce the full projected quadratic coefficient to relative RMS error1e-9 or less, and count exactly r and k scalar queries respectively. This is a deterministic recovery/implementation check, not a statistical performance-superiority test.",
+      "secondary": "Paired final neural normalized local regret and12-step cost across five seeds. Rank versus full fidelity tolerance1e-3 normalized regret, reported per pair without a population equivalence claim. Gain and random-budget failures, query savings, finite-update differences and all adverse results retained. Unadjusted paired95%t intervals; no multiple-comparison significance claim.",
+      "predictions": [
+        "For a ball, gain/rank/face recover full information when the normal is relevant; rank uses zero queries for an orthogonal normal.",
+        "For a box, r may be smaller than k. Rank recovers the student cost model, whereas a gain scalar or r generic ambient queries need not do so.",
+        "Matching the recovered projected coefficient should reproduce full-information neural learning up to numerical differences; no claim of better optimization than full information.",
+        "Matched-update cost differences versus point/gain/random can vary by constraint and student space. Recovery itself does not guarantee closed-loop improvement."
+      ],
+      "selection": "All480 fits retained. Same initial parameters and minibatches within a seed/dimension/subspace/radius/shape. Final4096-update checkpoint saved before test evaluation; no early stopping, cost gate, rollback or test selection.",
+      "optimizer": "Captured Adam(.9,.999), epsilon1e-8, clip10; loss=[a||z||^2+b_latent dot z]/(a*d), where feasible action=Pz. Float32 parameters with float64 action geometry, loss coefficients and diagnostics.",
+      "budget": "Matched4096 updates, one timed CUDA process. Query construction, fitting and diagnostic times recorded separately. No end-to-end acceleration claim. Generic random and rank use equal scalar query counts; face generally uses more; full uses a different privileged interface."
+    },
+    "primary": "Exact projected-coefficient recovery and actual scalar counts for four new interfaces on all80 original caches and5 structural caches. Expected relevant=hybrid=min(k,m) on original caches. Structural counts relevant1,hybrid/pruned3,student4.",
+    "secondary": "Final paired normalized regret and closed-loop cost fidelity versus full information; tolerance1e-3 regret per pair, not population equivalence. All120 fits retained, no superiority hypothesis or checkpoint selection.",
+    "timing": "Synchronized GPU wall time for geometry, feasible-query construction, actual oracle response and decoding; common target preparation excluded. Orthogonal student basis construction included. One warmup plus three repeats in shuffled order per cache; cheap analytic oracle. Not end-to-end acceleration.",
+    "interpretation": "Follow-up conditions chosen after inspecting existing results. Original-cache fits reuse paired seeds, data and schedule, not new independent confirmation. Structural experiment is deliberately constructed shared-actuation geometry, not a naturally observed benchmark.",
+    "scope": "Exact value differences with supplied target/baseline, known isotropic curvature, fixed orthonormal P. Numerical rank uses frozen Gram eigenvalue threshold1e-10. No claim for analytic-gradient access or unknown curvature."
+  },
+  "source_sha256": "05bf7adc16765e43393ffa4ef521d61055d692e90debd9c239d66d59bb5bb9b5",
+  "controls_sha256": "abe00a99b567c7c1ed5eb79a062cf561d1968a8bdb8afd8bb57dd0b66c51351a",
+  "dependencies": {
+    "minimal_teaching.py": "b021b70e164980bc0cdbf7976c92725f018752c027d68658df448692c8792ff7",
+    "minimal_teaching_study.py": "5b7cba1fb599d63f3c5a2b7dadcd28cfe7afb28e341d3fb9122df2bef57daab7",
+    "experiments\\hj_gridfree\\engine.py": "2dae5002315abe379352344fae8a45c4ecf1ee2aa84cac8f56042c27898f7094"
+  },
+  "original_report_sha256": "9a79e1701a51ca71c6a2041f856b431c0ad77959b401223bba0187c2dbff4f11",
+  "checks": {
+    "passed": true,
+    "recovery_cases": 1536,
+    "maximum_error": 2.6645352591003757e-15,
+    "structured_counts": {
+      "student_basis": 4,
+      "student_orthogonal": 4,
+      "hybrid": 3,
+      "pruned_hybrid": 3,
+      "rank": 1,
+      "face": 3
+    }
+  }
+}

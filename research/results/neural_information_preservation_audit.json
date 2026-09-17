@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "preserved_research_files": 1055,
+  "expected_non_numerical_changes": [
+    "research/package_current.py",
+    "research/README.md"
+  ],
+  "new_neural_training_runs": 600,
+  "new_policy_verification": "research/results/neural_information_analysis.json",
+  "new_policy_analysis_sha256": "a0af63709a3ee3e91305d21ea4ebbefdcea2b949e3c33285145839bce4d24af6"
+}

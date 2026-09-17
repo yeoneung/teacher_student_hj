@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "new_training_phases": 184,
+  "phases": {
+    "mechanism": 120,
+    "pilot": 14,
+    "replication_v3": 50
+  },
+  "checked_policies": 184,
+  "finite_test_costs": 63488,
+  "maximum_mean_recomputation_error": 4.440892098500626e-16,
+  "local_action_evaluations": 4800,
+  "sampled_local_state_time_points": 320,
+  "local_states_reused_across_quality_and_noise": true,
+  "new_qp_states": 64,
+  "original_v10_files_preserved": 63,
+  "vendored_source_files_verified": 116,
+  "maximum_exact_telescoping_error": 3.940782297151557e-07,
+  "scope": "Arithmetic, finite-trajectory, policy-eligibility and provenance checks. Empirical curvature violations are counted, not suppressed. No population certificate."
+}

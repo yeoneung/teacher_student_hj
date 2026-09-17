@@ -1,0 +1,87 @@
+{
+  "config": {
+    "dimensions": [
+      8,
+      32
+    ],
+    "student_subspace_dimensions": [
+      2,
+      4
+    ],
+    "radii": [
+      0.5,
+      2.0
+    ],
+    "shapes": [
+      "ball",
+      "box"
+    ],
+    "seeds": [
+      13101,
+      13102,
+      13103,
+      13104,
+      13105
+    ],
+    "methods": [
+      "point",
+      "gain",
+      "rank",
+      "random",
+      "face",
+      "full"
+    ],
+    "updates": 4096,
+    "batch": 512,
+    "learning_rate": 0.003,
+    "hidden_width": 32,
+    "train_initials": 1024,
+    "validation_initials": 512,
+    "test_initials": 4096,
+    "dynamics": "x_next=.8*x+.2*u, horizon12; stage=.36||x||^2+.05||u||^2, terminal=||x||^2. Exact zero teacher has V=||x||^2, exact advantage=.09||u||^2+.32*x dot u.",
+    "data": "Same anisotropic initial-state law as the separate neural information study, extended to d dimensions. All12 teacher states are used. New seeds, independently generated train/validation/test initials.",
+    "student": "Nonlinear bias-free d->32 SiLU->m network with fixed random orthonormal d-by-m embedding P. Uniform radial rescaling preserves range(P) and enforces the ball or box constraint. Box output uses uniform scaling, not coordinate clipping.",
+    "interface": "Receiver has x, target v, known curvature, constraint and P. The linear Bellman coefficient is accessible only inside a scalar cost-difference oracle; full is a privileged derivative reference. Restriction is an experimental information interface, not a lower bound for agents given the analytic plant/value formula.",
+    "feedback": "One scalar query returns Q_x(u)-Q_x(0) for a feasible u. Common baseline teacher evaluation and target generation are excluded shared information. All value queries are counted per cached state. Full derivative responses are reported separately and are not charged as scalar queries.",
+    "methods_description": {
+      "point": "Targets only, missing normal set to zero.",
+      "gain": "One target-improvement scalar per active target; minimum-norm normal consistent with that scalar and known face.",
+      "rank": "Queries feasible directions in the student-visible normal span, exactly r=rank(P^T Gamma) queries.",
+      "random": "Same r scalar queries in random ambient normal-space directions; minimum-norm normal decoder.",
+      "face": "Queries all k normal-space basis directions, reconstructing the complete normal.",
+      "full": "Privileged exact normal-vector reference; no scalar-query budget equivalence to gradient calls is claimed."
+    },
+    "primary": "Across all cache states, rank and face reproduce the full projected quadratic coefficient to relative RMS error1e-9 or less, and count exactly r and k scalar queries respectively. This is a deterministic recovery/implementation check, not a statistical performance-superiority test.",
+    "secondary": "Paired final neural normalized local regret and12-step cost across five seeds. Rank versus full fidelity tolerance1e-3 normalized regret, reported per pair without a population equivalence claim. Gain and random-budget failures, query savings, finite-update differences and all adverse results retained. Unadjusted paired95%t intervals; no multiple-comparison significance claim.",
+    "predictions": [
+      "For a ball, gain/rank/face recover full information when the normal is relevant; rank uses zero queries for an orthogonal normal.",
+      "For a box, r may be smaller than k. Rank recovers the student cost model, whereas a gain scalar or r generic ambient queries need not do so.",
+      "Matching the recovered projected coefficient should reproduce full-information neural learning up to numerical differences; no claim of better optimization than full information.",
+      "Matched-update cost differences versus point/gain/random can vary by constraint and student space. Recovery itself does not guarantee closed-loop improvement."
+    ],
+    "selection": "All480 fits retained. Same initial parameters and minibatches within a seed/dimension/subspace/radius/shape. Final4096-update checkpoint saved before test evaluation; no early stopping, cost gate, rollback or test selection.",
+    "optimizer": "Captured Adam(.9,.999), epsilon1e-8, clip10; loss=[a||z||^2+b_latent dot z]/(a*d), where feasible action=Pz. Float32 parameters with float64 action geometry, loss coefficients and diagnostics.",
+    "budget": "Matched4096 updates, one timed CUDA process. Query construction, fitting and diagnostic times recorded separately. No end-to-end acceleration claim. Generic random and rank use equal scalar query counts; face generally uses more; full uses a different privileged interface."
+  },
+  "source_sha256": "5b7cba1fb599d63f3c5a2b7dadcd28cfe7afb28e341d3fb9122df2bef57daab7",
+  "interface_sha256": "b021b70e164980bc0cdbf7976c92725f018752c027d68658df448692c8792ff7",
+  "checks": {
+    "passed": true,
+    "query_recovery_cases": 576,
+    "maximum_coefficient_error": 8.326672684688674e-16,
+    "irrelevant_normal_zero_queries": true,
+    "box_gain_witness": [
+      {
+        "gain": 6.0,
+        "cost_A": -2.0,
+        "cost_B": -4.0
+      },
+      {
+        "gain": 6.0,
+        "cost_A": -4.0,
+        "cost_B": -2.0
+      }
+    ],
+    "cuda_device": "NVIDIA GeForce RTX 4080 SUPER"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "rows": [
+    {
+      "family": "mechanical",
+      "mode": "fresh",
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9501\\parent.pt",
+        "sha256": "00608c65d6a9c518686eda93d24bfa3e3f49025127988464447ab124068b521b",
+        "budget": 7.5,
+        "validation_mean": 3.012074873527472
+      },
+      "student": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9501\\hjb_target.pt",
+        "sha256": "f359c44156c66e580eb58c38b889e729fea9ac991fcd8d2285cd31e0003c2cec",
+        "budget": 30.0,
+        "validation_mean": 2.768067330333124
+      },
+      "teacher_cost": 2.5769287034979618,
+      "student_cost": 2.307053148236057,
+      "cost_difference": -0.2698755552619052,
+      "sum_teacher_advantages": -0.2698759493401349,
+      "telescoping_error": 3.940782297151557e-07,
+      "points": 320,
+      "false_positive_predictions": 0,
+      "predicted_improvements": 318,
+      "positive_curvature_fraction": 0.9968750000000001,
+      "median_fit_ratio": 14.40892409016982,
+      "kappa_quantiles": [
+        0.0002516366013714764,
+        0.0003097765359826986,
+        0.00036699476302085607,
+        0.0032623173991740083
+      ],
+      "mean_terms": {
+        "actual": -0.001686724683375843,
+        "target_model": -0.01686655915177147,
+        "fitting_term": 0.01122668385033698,
+        "noise_term": 0.0,
+        "curvature": 0.003953150618058642
+      }
+    },
+    {
+      "family": "mechanical",
+      "mode": "cached",
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9501\\parent.pt",
+        "sha256": "00608c65d6a9c518686eda93d24bfa3e3f49025127988464447ab124068b521b",
+        "budget": 7.5,
+        "validation_mean": 3.012074873527472
+      },
+      "student": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9501\\hjb_target.pt",
+        "sha256": "f359c44156c66e580eb58c38b889e729fea9ac991fcd8d2285cd31e0003c2cec",
+        "budget": 30.0,
+        "validation_mean": 2.768067330333124
+      },
+      "teacher_cost": 2.5769287034979618,
+      "student_cost": 2.307053148236057,
+      "cost_difference": -0.2698755552619052,
+      "sum_teacher_advantages": -0.2698759493401349,
+      "telescoping_error": 3.940782297151557e-07,
+      "points": 320,
+      "false_positive_predictions": 0,
+      "predicted_improvements": 313,
+      "positive_curvature_fraction": 0.9968750000000001,
+      "median_fit_ratio": 8.046724786738624,
+      "kappa_quantiles": [
+        0.0002511958368672196,
+        0.0002852599289961228,
+        0.0003066210786697678,
+        0.0032130658555256882
+      ],
+      "mean_terms": {
+        "actual": -0.001686724683375843,
+        "target_model": -0.0021988222465993113,
+        "fitting_term": 0.0009240764563278501,
+        "noise_term": -0.004365129511163026,
+        "curvature": 0.003953150618058642
+      }
+    },
+    {
+      "family": "reaction",
+      "mode": "fresh",
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\parent.pt",
+        "sha256": "4d96952996766fabfcaadc7bd396fd245eeaf2499522823f07887ec313104e5c",
+        "budget": 7.5,
+        "validation_mean": 0.9013826765127451
+      },
+      "student": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\hjb_target.pt",
+        "sha256": "fa62489cbefac40db4bcdcd525ac7c3c14c420a4af6ef74163e836b2b9375869",
+        "budget": 30.0,
+        "validation_mean": 0.7272274222506692
+      },
+      "teacher_cost": 1.5843423771014693,
+      "student_cost": 1.4017966364062042,
+      "cost_difference": -0.18254574069526514,
+      "sum_teacher_advantages": -0.18254606175085497,
+      "telescoping_error": 3.2105558983586135e-07,
+      "points": 640,
+      "false_positive_predictions": 2,
+      "predicted_improvements": 302,
+      "positive_curvature_fraction": 0.5546875,
+      "median_fit_ratio": 4.993423217288866,
+      "kappa_quantiles": [
+        0.00010791739744219784,
+        0.000164037577676009,
+        0.0002782591876078541,
+        0.001295287333348699
+      ],
+      "mean_terms": {
+        "actual": -0.0005704564429714219,
+        "target_model": -0.0007363397332581656,
+        "fitting_term": 0.0001376298955960245,
+        "noise_term": 0.0,
+        "curvature": 2.8253394690719163e-05
+      }
+    },
+    {
+      "family": "reaction",
+      "mode": "cached",
+      "teacher": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\parent.pt",
+        "sha256": "4d96952996766fabfcaadc7bd396fd245eeaf2499522823f07887ec313104e5c",
+        "budget": 7.5,
+        "validation_mean": 0.9013826765127451
+      },
+      "student": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9501\\hjb_target.pt",
+        "sha256": "fa62489cbefac40db4bcdcd525ac7c3c14c420a4af6ef74163e836b2b9375869",
+        "budget": 30.0,
+        "validation_mean": 0.7272274222506692
+      },
+      "teacher_cost": 1.5843423771014693,
+      "student_cost": 1.4017966364062042,
+      "cost_difference": -0.18254574069526514,
+      "sum_teacher_advantages": -0.18254606175085497,
+      "telescoping_error": 3.2105558983586135e-07,
+      "points": 640,
+      "false_positive_predictions": 11,
+      "predicted_improvements": 293,
+      "positive_curvature_fraction": 0.5546875,
+      "median_fit_ratio": 4.139349127878107,
+      "kappa_quantiles": [
+        0.00010793239424597267,
+        0.00019997276409641033,
+        0.00043402792924481935,
+        0.0012154284598969
+      ],
+      "mean_terms": {
+        "actual": -0.0005704564429714219,
+        "target_model": -0.00331305691964173,
+        "fitting_term": 0.0017096893954458834,
+        "noise_term": 0.0010046576865337046,
+        "curvature": 2.8253394690719163e-05
+      }
+    }
+  ],
+  "passed": true,
+  "scope": "Development: complete finite student trajectories; no population certificate."
+}

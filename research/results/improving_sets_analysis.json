@@ -1,0 +1,1326 @@
+{
+  "passed": true,
+  "phases": 56,
+  "cold_pilot": [
+    {
+      "family": "mechanical",
+      "width": 16,
+      "selected_method": "set25",
+      "validation_cost": 42.37983014178211,
+      "replication_trigger": false,
+      "threshold": 41.95603184036429
+    },
+    {
+      "family": "mechanical",
+      "width": 64,
+      "selected_method": "set25",
+      "validation_cost": 42.37983014178211,
+      "replication_trigger": false,
+      "threshold": 41.95603184036429
+    },
+    {
+      "family": "reaction",
+      "width": 16,
+      "selected_method": "set25",
+      "validation_cost": 1.8668868870660988,
+      "replication_trigger": false,
+      "threshold": 1.0043680398470827
+    },
+    {
+      "family": "reaction",
+      "width": 64,
+      "selected_method": "set25",
+      "validation_cost": 1.8668868870660988,
+      "replication_trigger": false,
+      "threshold": 0.825841629113011
+    }
+  ],
+  "warm_pilot": [
+    {
+      "family": "mechanical",
+      "selected_method": "set25",
+      "validation_cost": 3.2828279512549514,
+      "replication_trigger": false,
+      "threshold": 3.099012533502829
+    },
+    {
+      "family": "reaction",
+      "selected_method": "set25",
+      "validation_cost": 0.9382376821972744,
+      "replication_trigger": true,
+      "threshold": 1.038812053111556
+    }
+  ],
+  "replication_means": {
+    "point": {
+      "mean_cost": 0.9075932849990146,
+      "std_cost": 0.11127600005274366,
+      "mean_seconds": 6.52407279999461,
+      "mean_fit_seconds": 0.37629153999732806,
+      "selected_initial_count": 4,
+      "mean_point_mse": 0.0008691427052150604,
+      "mean_set_mse": 0.00012887700615999976,
+      "mean_inside_fraction": 0.171875,
+      "mean_actual_advantage": -4.837149710619665e-06,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 1
+    },
+    "adaptive": {
+      "mean_cost": 0.9075932849990146,
+      "std_cost": 0.11127600005274366,
+      "mean_seconds": 6.51671839999617,
+      "mean_fit_seconds": 0.376497739990009,
+      "selected_initial_count": 4,
+      "mean_point_mse": 0.0008691427052150604,
+      "mean_set_mse": 0.00012887700615999976,
+      "mean_inside_fraction": 0.171875,
+      "mean_actual_advantage": -4.837149710619665e-06,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 1
+    },
+    "upper": {
+      "mean_cost": 0.891262991640619,
+      "std_cost": 0.13578804996572824,
+      "mean_seconds": 6.52280679999385,
+      "mean_fit_seconds": 0.37527146000647915,
+      "selected_initial_count": 4,
+      "mean_point_mse": 0.0009836322110894882,
+      "mean_set_mse": 0.0001454922814272772,
+      "mean_inside_fraction": 0.175,
+      "mean_actual_advantage": -1.4785552949560416e-06,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 1
+    },
+    "set25": {
+      "mean_cost": 0.9026973963620621,
+      "std_cost": 0.12998229665454436,
+      "mean_seconds": 6.570051279990002,
+      "mean_fit_seconds": 0.42668027998879554,
+      "selected_initial_count": 3,
+      "mean_point_mse": 0.0009546463345843683,
+      "mean_set_mse": 0.0001367371468708748,
+      "mean_inside_fraction": 0.375,
+      "mean_actual_advantage": 1.485999019942174e-06,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 1
+    }
+  },
+  "comparisons": {
+    "point": {
+      "mean_difference": -0.004895888636952295,
+      "ci95": [
+        -0.041095069470895536,
+        0.03130329219699094
+      ],
+      "relative_percent": -0.5394364103253155,
+      "wins": 1,
+      "paired_differences": [
+        0.0,
+        -0.05236449693290546,
+        0.0,
+        0.0,
+        0.027885053748143984
+      ],
+      "baseline_cost": 0.9075932849990146
+    },
+    "adaptive": {
+      "mean_difference": -0.004895888636952295,
+      "ci95": [
+        -0.041095069470895536,
+        0.03130329219699094
+      ],
+      "relative_percent": -0.5394364103253155,
+      "wins": 1,
+      "paired_differences": [
+        0.0,
+        -0.05236449693290546,
+        0.0,
+        0.0,
+        0.027885053748143984
+      ],
+      "baseline_cost": 0.9075932849990146
+    },
+    "upper": {
+      "mean_difference": 0.011434404721443392,
+      "ci95": [
+        -0.008016319963983007,
+        0.030885129406869792
+      ],
+      "relative_percent": 1.2829439602776695,
+      "wins": 0,
+      "paired_differences": [
+        0.0,
+        0.029286969859072975,
+        0.0,
+        0.0,
+        0.027885053748143984
+      ],
+      "baseline_cost": 0.891262991640619
+    },
+    "teacher": {
+      "mean_difference": 0.16497202467521896,
+      "ci95": [
+        0.03917020616752376,
+        0.29077384318291416
+      ],
+      "relative_percent": 22.36225443866771,
+      "wins": 0,
+      "paired_differences": [
+        0.20565717682959828,
+        0.03316130714372445,
+        0.27710944786245184,
+        0.08651119741361912,
+        0.22242099412670113
+      ],
+      "baseline_cost": 0.7377253716868433
+    },
+    "initial": {
+      "mean_difference": -0.0055793546475922055,
+      "ci95": [
+        -0.043513878768840324,
+        0.032355169473655916
+      ],
+      "relative_percent": -0.6142791435969387,
+      "wins": 1,
+      "paired_differences": [
+        0.0,
+        -0.05578182698610501,
+        0.0,
+        0.0,
+        0.027885053748143984
+      ],
+      "baseline_cost": 0.9082767510096545
+    }
+  },
+  "standardized_probe_alpha": 0.25,
+  "probes": [
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 16,
+      "seed": 10101,
+      "method": "point",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 16,
+      "seed": 10101,
+      "method": "set50",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 16,
+      "seed": 10101,
+      "method": "set75",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 16,
+      "seed": 10101,
+      "method": "adaptive",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 16,
+      "seed": 10101,
+      "method": "upper",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 16,
+      "seed": 10101,
+      "method": "set25",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "set25",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "upper",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "set75",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "set50",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "point",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "adaptive",
+      "point_mse": 2.395147720507449,
+      "set_mse": 1.4394070512124695,
+      "inside_fraction": 0.09375,
+      "actual_advantage": -0.12492547334183743,
+      "upper_violation_count": 7,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 16,
+      "seed": 110101,
+      "method": "set25",
+      "point_mse": 0.014892380159713723,
+      "set_mse": 0.006963212056296032,
+      "inside_fraction": 0.078125,
+      "actual_advantage": 0.0010542587298384904,
+      "upper_violation_count": 4,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 16,
+      "seed": 110101,
+      "method": "set75",
+      "point_mse": 0.014892380159713723,
+      "set_mse": 0.006963212056296032,
+      "inside_fraction": 0.078125,
+      "actual_advantage": 0.0010542587298384904,
+      "upper_violation_count": 4,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 16,
+      "seed": 110101,
+      "method": "adaptive",
+      "point_mse": 0.0026843886387929684,
+      "set_mse": 0.0012416460379725985,
+      "inside_fraction": 0.140625,
+      "actual_advantage": 0.0002501601975847415,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 16,
+      "seed": 110101,
+      "method": "set50",
+      "point_mse": 0.014892380159713723,
+      "set_mse": 0.006963212056296032,
+      "inside_fraction": 0.078125,
+      "actual_advantage": 0.0010542587298384904,
+      "upper_violation_count": 4,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 16,
+      "seed": 110101,
+      "method": "point",
+      "point_mse": 0.0026843886387929684,
+      "set_mse": 0.0012416460379725985,
+      "inside_fraction": 0.140625,
+      "actual_advantage": 0.0002501601975847415,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 16,
+      "seed": 110101,
+      "method": "upper",
+      "point_mse": 0.014892380159713723,
+      "set_mse": 0.006963212056296032,
+      "inside_fraction": 0.078125,
+      "actual_advantage": 0.0010542587298384904,
+      "upper_violation_count": 4,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "adaptive",
+      "point_mse": 0.001630519526399778,
+      "set_mse": 0.0006194893115365036,
+      "inside_fraction": 0.890625,
+      "actual_advantage": 0.00013467483356079013,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "set75",
+      "point_mse": 0.014892380159713723,
+      "set_mse": 0.006963212056296032,
+      "inside_fraction": 0.078125,
+      "actual_advantage": 0.0010542587298384904,
+      "upper_violation_count": 4,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "point",
+      "point_mse": 0.014892380159713723,
+      "set_mse": 0.006963212056296032,
+      "inside_fraction": 0.078125,
+      "actual_advantage": 0.0010542587298384904,
+      "upper_violation_count": 4,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "upper",
+      "point_mse": 0.014892380159713723,
+      "set_mse": 0.006963212056296032,
+      "inside_fraction": 0.078125,
+      "actual_advantage": 0.0010542587298384904,
+      "upper_violation_count": 4,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "set25",
+      "point_mse": 0.014892380159713723,
+      "set_mse": 0.006963212056296032,
+      "inside_fraction": 0.078125,
+      "actual_advantage": 0.0010542587298384904,
+      "upper_violation_count": 4,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "pilot",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "set50",
+      "point_mse": 0.014892380159713723,
+      "set_mse": 0.006963212056296032,
+      "inside_fraction": 0.078125,
+      "actual_advantage": 0.0010542587298384904,
+      "upper_violation_count": 4,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "set25",
+      "point_mse": 0.011682265524442665,
+      "set_mse": 0.001817301407307803,
+      "inside_fraction": 0.03125,
+      "actual_advantage": 0.0009975524466098121,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "upper",
+      "point_mse": 0.011682265524442665,
+      "set_mse": 0.001817301407307803,
+      "inside_fraction": 0.03125,
+      "actual_advantage": 0.0009975524466098121,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "set75",
+      "point_mse": 0.011682265524442665,
+      "set_mse": 0.001817301407307803,
+      "inside_fraction": 0.03125,
+      "actual_advantage": 0.0009975524466098121,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "set50",
+      "point_mse": 0.011682265524442665,
+      "set_mse": 0.001817301407307803,
+      "inside_fraction": 0.03125,
+      "actual_advantage": 0.0009975524466098121,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "point",
+      "point_mse": 0.016921401269875742,
+      "set_mse": 0.0043186505169231825,
+      "inside_fraction": 0.609375,
+      "actual_advantage": 0.002168843857480411,
+      "upper_violation_count": 2,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "mechanical",
+      "width": 64,
+      "seed": 10101,
+      "method": "adaptive",
+      "point_mse": 0.012732055701266077,
+      "set_mse": 0.003695000785509181,
+      "inside_fraction": 0.671875,
+      "actual_advantage": 0.002039583533214841,
+      "upper_violation_count": 2,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "adaptive",
+      "point_mse": 0.0031980279871010905,
+      "set_mse": 0.0006741325544886665,
+      "inside_fraction": 0.109375,
+      "actual_advantage": 9.402701044820078e-05,
+      "upper_violation_count": 2,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "set75",
+      "point_mse": 0.004115652848514055,
+      "set_mse": 0.0019055282011101534,
+      "inside_fraction": 0.046875,
+      "actual_advantage": 0.00030822049145593845,
+      "upper_violation_count": 2,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "point",
+      "point_mse": 0.0031980279871010905,
+      "set_mse": 0.0006741325544886665,
+      "inside_fraction": 0.109375,
+      "actual_advantage": 9.402701044820078e-05,
+      "upper_violation_count": 2,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "upper",
+      "point_mse": 0.0031980279871010905,
+      "set_mse": 0.0006741325544886665,
+      "inside_fraction": 0.109375,
+      "actual_advantage": 9.402701044820078e-05,
+      "upper_violation_count": 2,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "set25",
+      "point_mse": 0.0019417160324987322,
+      "set_mse": 0.0008302537749283099,
+      "inside_fraction": 0.640625,
+      "actual_advantage": 0.00016918155246943076,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "warm",
+      "family": "reaction",
+      "width": 64,
+      "seed": 110101,
+      "method": "set50",
+      "point_mse": 0.0031980279871010905,
+      "set_mse": 0.0006741325544886665,
+      "inside_fraction": 0.109375,
+      "actual_advantage": 9.402701044820078e-05,
+      "upper_violation_count": 2,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10201,
+      "method": "adaptive",
+      "point_mse": 0.001286945683052832,
+      "set_mse": 0.00028777583718603424,
+      "inside_fraction": 0.046875,
+      "actual_advantage": -4.97260837765575e-06,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10201,
+      "method": "upper",
+      "point_mse": 0.001286945683052832,
+      "set_mse": 0.00028777583718603424,
+      "inside_fraction": 0.046875,
+      "actual_advantage": -4.97260837765575e-06,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10201,
+      "method": "point",
+      "point_mse": 0.001286945683052832,
+      "set_mse": 0.00028777583718603424,
+      "inside_fraction": 0.046875,
+      "actual_advantage": -4.97260837765575e-06,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10201,
+      "method": "set25",
+      "point_mse": 0.001286945683052832,
+      "set_mse": 0.00028777583718603424,
+      "inside_fraction": 0.046875,
+      "actual_advantage": -4.97260837765575e-06,
+      "upper_violation_count": 1,
+      "nonimproving_inside_count": 1,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10202,
+      "method": "point",
+      "point_mse": 0.0005390615191199645,
+      "set_mse": 1.3031437413346101e-05,
+      "inside_fraction": 0.390625,
+      "actual_advantage": -1.3871480043575354e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10202,
+      "method": "upper",
+      "point_mse": 0.0011115090484921032,
+      "set_mse": 9.610781374973319e-05,
+      "inside_fraction": 0.40625,
+      "actual_advantage": 2.9214920347427628e-06,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10202,
+      "method": "adaptive",
+      "point_mse": 0.0005390615191199645,
+      "set_mse": 1.3031437413346101e-05,
+      "inside_fraction": 0.390625,
+      "actual_advantage": -1.3871480043575354e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10202,
+      "method": "set25",
+      "point_mse": 0.0008351721458084881,
+      "set_mse": 2.7468321636240426e-05,
+      "inside_fraction": 0.9375,
+      "actual_advantage": -7.571914354513043e-06,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10203,
+      "method": "upper",
+      "point_mse": 0.00116222291948954,
+      "set_mse": 0.00024780569693833997,
+      "inside_fraction": 0.09375,
+      "actual_advantage": 2.92650094172254e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10203,
+      "method": "adaptive",
+      "point_mse": 0.00116222291948954,
+      "set_mse": 0.00024780569693833997,
+      "inside_fraction": 0.09375,
+      "actual_advantage": 2.92650094172254e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10203,
+      "method": "set25",
+      "point_mse": 0.00116222291948954,
+      "set_mse": 0.00024780569693833997,
+      "inside_fraction": 0.09375,
+      "actual_advantage": 2.92650094172254e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10203,
+      "method": "point",
+      "point_mse": 0.00116222291948954,
+      "set_mse": 0.00024780569693833997,
+      "inside_fraction": 0.09375,
+      "actual_advantage": 2.92650094172254e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10204,
+      "method": "upper",
+      "point_mse": 0.0008937346657307359,
+      "set_mse": 7.775852148084666e-05,
+      "inside_fraction": 0.109375,
+      "actual_advantage": -1.0121446541511931e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10204,
+      "method": "adaptive",
+      "point_mse": 0.0008937346657307359,
+      "set_mse": 7.775852148084666e-05,
+      "inside_fraction": 0.109375,
+      "actual_advantage": -1.0121446541511931e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10204,
+      "method": "point",
+      "point_mse": 0.0008937346657307359,
+      "set_mse": 7.775852148084666e-05,
+      "inside_fraction": 0.109375,
+      "actual_advantage": -1.0121446541511931e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10204,
+      "method": "set25",
+      "point_mse": 0.0008937346657307359,
+      "set_mse": 7.775852148084666e-05,
+      "inside_fraction": 0.109375,
+      "actual_advantage": -1.0121446541511931e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10205,
+      "method": "upper",
+      "point_mse": 0.00046374873868223045,
+      "set_mse": 1.8013537781431906e-05,
+      "inside_fraction": 0.21875,
+      "actual_advantage": -2.448522300758069e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10205,
+      "method": "set25",
+      "point_mse": 0.0005951562588402461,
+      "set_mse": 4.287735711291274e-05,
+      "inside_fraction": 0.6875,
+      "actual_advantage": 8.30954956166194e-07,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10205,
+      "method": "point",
+      "point_mse": 0.00046374873868223045,
+      "set_mse": 1.8013537781431906e-05,
+      "inside_fraction": 0.21875,
+      "actual_advantage": -2.448522300758069e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    },
+    {
+      "stage": "replication",
+      "family": "reaction",
+      "width": 64,
+      "seed": 10205,
+      "method": "adaptive",
+      "point_mse": 0.00046374873868223045,
+      "set_mse": 1.8013537781431906e-05,
+      "inside_fraction": 0.21875,
+      "actual_advantage": -2.448522300758069e-05,
+      "upper_violation_count": 0,
+      "nonimproving_inside_count": 0,
+      "count": 64
+    }
+  ],
+  "float_projection_checks": [
+    {
+      "stage": "pilot",
+      "key": "mechanical_w16_s10101_point",
+      "max_action_error": 0.0024605280681015405,
+      "normalized_error": 0.00019222875532043284
+    },
+    {
+      "stage": "pilot",
+      "key": "mechanical_w16_s10101_set50",
+      "max_action_error": 0.0024605280681015405,
+      "normalized_error": 0.00019222875532043284
+    },
+    {
+      "stage": "pilot",
+      "key": "mechanical_w16_s10101_set75",
+      "max_action_error": 0.006120141870573813,
+      "normalized_error": 0.00047813608363857907
+    },
+    {
+      "stage": "pilot",
+      "key": "mechanical_w16_s10101_adaptive",
+      "max_action_error": 0.0024605280681015405,
+      "normalized_error": 0.00019222875532043284
+    },
+    {
+      "stage": "pilot",
+      "key": "mechanical_w16_s10101_upper",
+      "max_action_error": 0.0024605280681015405,
+      "normalized_error": 0.00019222875532043284
+    },
+    {
+      "stage": "pilot",
+      "key": "mechanical_w16_s10101_set25",
+      "max_action_error": 0.00037050303752181703,
+      "normalized_error": 2.8945549806391954e-05
+    },
+    {
+      "stage": "pilot",
+      "key": "mechanical_w64_s10101_set25",
+      "max_action_error": 0.00037050303752181703,
+      "normalized_error": 2.8945549806391954e-05
+    },
+    {
+      "stage": "pilot",
+      "key": "mechanical_w64_s10101_upper",
+      "max_action_error": 0.0024605280681015405,
+      "normalized_error": 0.00019222875532043284
+    },
+    {
+      "stage": "pilot",
+      "key": "mechanical_w64_s10101_set75",
+      "max_action_error": 0.006120141870573813,
+      "normalized_error": 0.00047813608363857907
+    },
+    {
+      "stage": "pilot",
+      "key": "mechanical_w64_s10101_set50",
+      "max_action_error": 0.0024605280681015405,
+      "normalized_error": 0.00019222875532043284
+    },
+    {
+      "stage": "pilot",
+      "key": "mechanical_w64_s10101_point",
+      "max_action_error": 0.0024605280681015405,
+      "normalized_error": 0.00019222875532043284
+    },
+    {
+      "stage": "pilot",
+      "key": "mechanical_w64_s10101_adaptive",
+      "max_action_error": 0.0024605280681015405,
+      "normalized_error": 0.00019222875532043284
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w16_s110101_set25",
+      "max_action_error": 4.833122680437009e-06,
+      "normalized_error": 1.0679793192635975e-06
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w16_s110101_set75",
+      "max_action_error": 3.969941554080743e-05,
+      "normalized_error": 8.772414355639857e-06
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w16_s110101_adaptive",
+      "max_action_error": 1.0678235225699696e-05,
+      "normalized_error": 2.359578918499162e-06
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w16_s110101_set50",
+      "max_action_error": 1.4378419567799825e-05,
+      "normalized_error": 3.177211868480188e-06
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w16_s110101_point",
+      "max_action_error": 1.0678235225699696e-05,
+      "normalized_error": 2.359578918499162e-06
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w16_s110101_upper",
+      "max_action_error": 1.4378419567799825e-05,
+      "normalized_error": 3.177211868480188e-06
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w64_s110101_adaptive",
+      "max_action_error": 9.704617824801277e-06,
+      "normalized_error": 2.1444378352315075e-06
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w64_s110101_set75",
+      "max_action_error": 3.969941554080743e-05,
+      "normalized_error": 8.772414355639857e-06
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w64_s110101_point",
+      "max_action_error": 1.4378419567799825e-05,
+      "normalized_error": 3.177211868480188e-06
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w64_s110101_upper",
+      "max_action_error": 1.4378419567799825e-05,
+      "normalized_error": 3.177211868480188e-06
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w64_s110101_set25",
+      "max_action_error": 4.833122680437009e-06,
+      "normalized_error": 1.0679793192635975e-06
+    },
+    {
+      "stage": "pilot",
+      "key": "reaction_w64_s110101_set50",
+      "max_action_error": 1.4378419567799825e-05,
+      "normalized_error": 3.177211868480188e-06
+    },
+    {
+      "stage": "warm",
+      "key": "mechanical_w64_s10101_set25",
+      "max_action_error": 3.4921766995112493e-06,
+      "normalized_error": 2.728263046493163e-07
+    },
+    {
+      "stage": "warm",
+      "key": "mechanical_w64_s10101_upper",
+      "max_action_error": 5.337296343014567e-06,
+      "normalized_error": 4.1697627679801304e-07
+    },
+    {
+      "stage": "warm",
+      "key": "mechanical_w64_s10101_set75",
+      "max_action_error": 3.0581137821202615e-06,
+      "normalized_error": 2.3891513922814543e-07
+    },
+    {
+      "stage": "warm",
+      "key": "mechanical_w64_s10101_set50",
+      "max_action_error": 5.337296343014567e-06,
+      "normalized_error": 4.1697627679801304e-07
+    },
+    {
+      "stage": "warm",
+      "key": "mechanical_w64_s10101_point",
+      "max_action_error": 4.981741821087738e-06,
+      "normalized_error": 3.8919857977247954e-07
+    },
+    {
+      "stage": "warm",
+      "key": "mechanical_w64_s10101_adaptive",
+      "max_action_error": 5.954968795125513e-06,
+      "normalized_error": 4.6523193711918064e-07
+    },
+    {
+      "stage": "warm",
+      "key": "reaction_w64_s110101_adaptive",
+      "max_action_error": 2.818325713499436e-05,
+      "normalized_error": 6.22767882377458e-06
+    },
+    {
+      "stage": "warm",
+      "key": "reaction_w64_s110101_set75",
+      "max_action_error": 4.687822075767652e-05,
+      "normalized_error": 1.0358721183660323e-05
+    },
+    {
+      "stage": "warm",
+      "key": "reaction_w64_s110101_point",
+      "max_action_error": 2.818325713499436e-05,
+      "normalized_error": 6.22767882377458e-06
+    },
+    {
+      "stage": "warm",
+      "key": "reaction_w64_s110101_upper",
+      "max_action_error": 2.818325713499436e-05,
+      "normalized_error": 6.22767882377458e-06
+    },
+    {
+      "stage": "warm",
+      "key": "reaction_w64_s110101_set25",
+      "max_action_error": 2.674270427396171e-05,
+      "normalized_error": 5.909358606057746e-06
+    },
+    {
+      "stage": "warm",
+      "key": "reaction_w64_s110101_set50",
+      "max_action_error": 2.818325713499436e-05,
+      "normalized_error": 6.22767882377458e-06
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10201_adaptive",
+      "max_action_error": 1.719421485265936e-07,
+      "normalized_error": 3.799420599841839e-08
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10201_upper",
+      "max_action_error": 1.719421485265936e-07,
+      "normalized_error": 3.799420599841839e-08
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10201_point",
+      "max_action_error": 1.719421485265936e-07,
+      "normalized_error": 3.799420599841839e-08
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10201_set25",
+      "max_action_error": 1.719421485265936e-07,
+      "normalized_error": 3.799420599841839e-08
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10202_point",
+      "max_action_error": 6.518726211514876e-05,
+      "normalized_error": 1.4404485965189564e-05
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10202_upper",
+      "max_action_error": 3.2959537661881265e-05,
+      "normalized_error": 7.283097682965514e-06
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10202_adaptive",
+      "max_action_error": 6.518726211514876e-05,
+      "normalized_error": 1.4404485965189564e-05
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10202_set25",
+      "max_action_error": 1.0690701051159958e-05,
+      "normalized_error": 2.362333502785424e-06
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10203_upper",
+      "max_action_error": 1.6478204439414654e-05,
+      "normalized_error": 3.641203156527616e-06
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10203_adaptive",
+      "max_action_error": 1.6478204439414654e-05,
+      "normalized_error": 3.641203156527616e-06
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10203_set25",
+      "max_action_error": 1.2222471402942198e-05,
+      "normalized_error": 2.700810128712213e-06
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10203_point",
+      "max_action_error": 1.6478204439414654e-05,
+      "normalized_error": 3.641203156527616e-06
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10204_upper",
+      "max_action_error": 1.3534233373152061e-07,
+      "normalized_error": 2.990671311349094e-08
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10204_adaptive",
+      "max_action_error": 1.3534233373152061e-07,
+      "normalized_error": 2.990671311349094e-08
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10204_point",
+      "max_action_error": 1.3534233373152061e-07,
+      "normalized_error": 2.990671311349094e-08
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10204_set25",
+      "max_action_error": 1.3534233373152061e-07,
+      "normalized_error": 2.990671311349094e-08
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10205_upper",
+      "max_action_error": 1.3978627343840857e-07,
+      "normalized_error": 3.088869433284239e-08
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10205_set25",
+      "max_action_error": 3.592701419712395e-06,
+      "normalized_error": 7.938823552053659e-07
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10205_point",
+      "max_action_error": 1.3978627343840857e-07,
+      "normalized_error": 3.088869433284239e-08
+    },
+    {
+      "stage": "replication",
+      "key": "reaction_w64_s10205_adaptive",
+      "max_action_error": 1.3978627343840857e-07,
+      "normalized_error": 3.088869433284239e-08
+    }
+  ],
+  "projection_max_relative_error": 0.00047813608363857907,
+  "report_hashes": {
+    "pilot": "ef463a660cfc969f70b6f07a7fe0fa7f384a8c48bcb1c6f6276a05ec5623dcd5",
+    "warm": "cc0fb331993a03dbf01c3775a588a638cf066cc57b15660c5ad651102c61aeee",
+    "replication": "59e7f7e4da51613949cbd3b482dc5e0fbe4aee0fb0d34a61d34f5e019ea24d49"
+  }
+}

@@ -1,0 +1,1064 @@
+{
+  "config": {
+    "methods": [
+      "point",
+      "upper",
+      "adaptive",
+      "set25",
+      "set50",
+      "set75"
+    ],
+    "teacher_seed": 9508,
+    "seed": 10101,
+    "width": 64,
+    "updates": 1024,
+    "initialization": "Archived 7.5-second parent policy; paired across all methods.",
+    "geometry": "Same realized feasible proximal anchor, eta=16, empirical kappa, epsilon=0.",
+    "trainer": "Identical improving_sets_study.phase: batch256, gate256, refresh512, same queries and validation chances.",
+    "train_initials": 64,
+    "validation_initials": 128,
+    "test_initials": 512,
+    "diagnostic_pairs": 64,
+    "selection": "Checkpoints and alpha selected only by validation; retain all alpha test results as exploratory.",
+    "decision": "Independent paired replication only if validation-selected sets beat BOTH point and adaptive validation costs by at least 1% in a task.",
+    "inference": "One teacher/student/data pair per task. No population or equal-wall-budget claim. Cold-start pilot fully retained."
+  },
+  "rows": [
+    {
+      "method": "set25",
+      "alpha": 0.25,
+      "width": 64,
+      "seed": 10101,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 3.2828279512549514,
+      "selected_validation_cost": 3.2828279512549514,
+      "charged_seconds": 5.316862499981653,
+      "common_seconds": 3.133868300006725,
+      "fit_seconds": 0.3801610999798868,
+      "refresh_seconds": 0.6499962000234518,
+      "gate_seconds": 0.8591260999673977,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 3.1041445056148653,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 3.7379638999991585
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 3.0761474680631915,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 4.693602999992436
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 3.0969247200730465,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 5.009315200004494
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 3.172874414010958,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 5.316641299985349
+        }
+      ],
+      "family": "mechanical",
+      "test_cost": 3.2366541923310574,
+      "teacher_cost": 2.785142347046925,
+      "initial_cost": 3.2366541923310574,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\short.pt",
+        "sha256": "039caaaea251d255a54a57cc3b4cb447dae870228c3991460c7a82694bc32ed3",
+        "budget": 30.0,
+        "validation_mean": 2.752440848707552
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\parent.pt",
+        "sha256": "51a6876ad908d109a305fb6c20a164a8bb374898c5074532ee0a79c0d8285cab",
+        "budget": 7.5,
+        "validation_mean": 3.2556934302001297
+      },
+      "checkpoint_sha256": "dd5ec3a31eeb165f348187e6a20ead831c67be9c407ae8a1b6f317c771854934",
+      "diagnostics": {
+        "point_mse": 0.011682265524442669,
+        "set_mse": 0.0018173014073078065,
+        "alpha": 0.25,
+        "inside_fraction": 0.03125,
+        "actual_advantage": 0.0009975524466098121,
+        "projected_actual_advantage": -0.00043338728673818244,
+        "model_advantage": 0.001118954817675893,
+        "mean_anchor_gain": 0.0009930662036961295,
+        "upper_violation_count": 1,
+        "projected_upper_violation_count": 1,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "upper",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10101,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 3.2828279512549514,
+      "selected_validation_cost": 3.2828279512549514,
+      "charged_seconds": 5.212276000005659,
+      "common_seconds": 3.133868300006725,
+      "fit_seconds": 0.3282455999578815,
+      "refresh_seconds": 0.637778799951775,
+      "gate_seconds": 0.8590164999768604,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 34.7137357153821,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 3.685541300015757
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 40.10492368010681,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 4.6148792000021785
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 36.3937246758027,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.917992500006221
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 37.37045077180021,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 5.212090900022304
+        }
+      ],
+      "family": "mechanical",
+      "test_cost": 3.2366541923310574,
+      "teacher_cost": 2.785142347046925,
+      "initial_cost": 3.2366541923310574,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\short.pt",
+        "sha256": "039caaaea251d255a54a57cc3b4cb447dae870228c3991460c7a82694bc32ed3",
+        "budget": 30.0,
+        "validation_mean": 2.752440848707552
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\parent.pt",
+        "sha256": "51a6876ad908d109a305fb6c20a164a8bb374898c5074532ee0a79c0d8285cab",
+        "budget": 7.5,
+        "validation_mean": 3.2556934302001297
+      },
+      "checkpoint_sha256": "ec13d393f16cae8614dac2be049a963e47fc29d5871836469f5ea33c1b0f6a87",
+      "diagnostics": {
+        "point_mse": 0.011682265524442669,
+        "set_mse": 0.0023812035778844145,
+        "alpha": 0.5,
+        "inside_fraction": 0.03125,
+        "actual_advantage": 0.0009975524466098121,
+        "projected_actual_advantage": -0.0006484092166565772,
+        "model_advantage": 0.001118954817675893,
+        "mean_anchor_gain": 0.0009930662036961295,
+        "upper_violation_count": 1,
+        "projected_upper_violation_count": 2,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "set75",
+      "alpha": 0.75,
+      "width": 64,
+      "seed": 10101,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 3.2828279512549514,
+      "selected_validation_cost": 3.2828279512549514,
+      "charged_seconds": 5.253662500006612,
+      "common_seconds": 3.133868300006725,
+      "fit_seconds": 0.37591810000594705,
+      "refresh_seconds": 0.6379087000095751,
+      "gate_seconds": 0.8576510999700986,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 3.110907494855167,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 3.691963199991733
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 3.0538187681345246,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 4.633391600014875
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 3.1313225017203545,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.944130899995798
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 3.177077428535265,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 5.253487500012852
+        }
+      ],
+      "family": "mechanical",
+      "test_cost": 3.2366541923310574,
+      "teacher_cost": 2.785142347046925,
+      "initial_cost": 3.2366541923310574,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\short.pt",
+        "sha256": "039caaaea251d255a54a57cc3b4cb447dae870228c3991460c7a82694bc32ed3",
+        "budget": 30.0,
+        "validation_mean": 2.752440848707552
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\parent.pt",
+        "sha256": "51a6876ad908d109a305fb6c20a164a8bb374898c5074532ee0a79c0d8285cab",
+        "budget": 7.5,
+        "validation_mean": 3.2556934302001297
+      },
+      "checkpoint_sha256": "fc11dbe22315cb538c70834b34f7ce398107cfed53d0a19662e5639c7823278b",
+      "diagnostics": {
+        "point_mse": 0.011682265524442669,
+        "set_mse": 0.003083826084668551,
+        "alpha": 0.75,
+        "inside_fraction": 0.03125,
+        "actual_advantage": 0.0009975524466098121,
+        "projected_actual_advantage": -0.0008966604267341438,
+        "model_advantage": 0.001118954817675893,
+        "mean_anchor_gain": 0.0009930662036961295,
+        "upper_violation_count": 1,
+        "projected_upper_violation_count": 2,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "set50",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10101,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 3.2828279512549514,
+      "selected_validation_cost": 3.2828279512549514,
+      "charged_seconds": 5.268780100013828,
+      "common_seconds": 3.133868300006725,
+      "fit_seconds": 0.37651229999028146,
+      "refresh_seconds": 0.6370903999486472,
+      "gate_seconds": 0.8702371999970637,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 3.114531601524847,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 3.6933059000002686
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 3.0609891030616785,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 4.639394400001038
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 3.127961811702877,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.954874899995048
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 3.2092043391941436,
+          "validation_cost": 3.2828279512549514,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 5.268595500005176
+        }
+      ],
+      "family": "mechanical",
+      "test_cost": 3.2366541923310574,
+      "teacher_cost": 2.785142347046925,
+      "initial_cost": 3.2366541923310574,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\short.pt",
+        "sha256": "039caaaea251d255a54a57cc3b4cb447dae870228c3991460c7a82694bc32ed3",
+        "budget": 30.0,
+        "validation_mean": 2.752440848707552
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\parent.pt",
+        "sha256": "51a6876ad908d109a305fb6c20a164a8bb374898c5074532ee0a79c0d8285cab",
+        "budget": 7.5,
+        "validation_mean": 3.2556934302001297
+      },
+      "checkpoint_sha256": "b71f63816b62de8bf9b2f5d42b3a52b726e124760cf7245cdf25d8de43e18836",
+      "diagnostics": {
+        "point_mse": 0.011682265524442669,
+        "set_mse": 0.0023812035778844145,
+        "alpha": 0.5,
+        "inside_fraction": 0.03125,
+        "actual_advantage": 0.0009975524466098121,
+        "projected_actual_advantage": -0.0006484092166565772,
+        "model_advantage": 0.001118954817675893,
+        "mean_anchor_gain": 0.0009930662036961295,
+        "upper_violation_count": 1,
+        "projected_upper_violation_count": 2,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "point",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10101,
+      "updates": 1024,
+      "best_update": 768,
+      "initial_validation_cost": 3.2828279512549514,
+      "selected_validation_cost": 3.1530799480350398,
+      "charged_seconds": 5.2577948999824,
+      "common_seconds": 3.133868300006725,
+      "fit_seconds": 0.32844110002042726,
+      "refresh_seconds": 0.644688899978064,
+      "gate_seconds": 0.9009696999855805,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": true,
+          "trial_cost": 2.9653845695996788,
+          "validation_cost": 3.2019133367890444,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 3.6970839999848977
+        },
+        {
+          "updates": 512,
+          "accepted": true,
+          "trial_cost": 2.928641120786973,
+          "validation_cost": 3.1547028196005407,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 4.659596199984662
+        },
+        {
+          "updates": 768,
+          "accepted": true,
+          "trial_cost": 2.9167320955219607,
+          "validation_cost": 3.1530799480350398,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.962526599992998
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 2.9281424825837785,
+          "validation_cost": 3.1530799480350398,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 5.2576070000068285
+        }
+      ],
+      "family": "mechanical",
+      "test_cost": 3.1486066638701216,
+      "teacher_cost": 2.785142347046925,
+      "initial_cost": 3.2366541923310574,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\short.pt",
+        "sha256": "039caaaea251d255a54a57cc3b4cb447dae870228c3991460c7a82694bc32ed3",
+        "budget": 30.0,
+        "validation_mean": 2.752440848707552
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\parent.pt",
+        "sha256": "51a6876ad908d109a305fb6c20a164a8bb374898c5074532ee0a79c0d8285cab",
+        "budget": 7.5,
+        "validation_mean": 3.2556934302001297
+      },
+      "checkpoint_sha256": "e2b3db527e6faba248718ce5e1dcb5076f96bf7ba305344ff3afa610b07a4d79",
+      "diagnostics": {
+        "point_mse": 0.016921401269875746,
+        "set_mse": 0.00514257983529142,
+        "alpha": 0.5,
+        "inside_fraction": 0.53125,
+        "actual_advantage": 0.002168843857480411,
+        "projected_actual_advantage": -0.001261126930649801,
+        "model_advantage": 0.0018304883979666114,
+        "mean_anchor_gain": 0.001385837304350439,
+        "upper_violation_count": 2,
+        "projected_upper_violation_count": 1,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "adaptive",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 10101,
+      "updates": 1024,
+      "best_update": 768,
+      "initial_validation_cost": 3.2828279512549514,
+      "selected_validation_cost": 3.1303156904068983,
+      "charged_seconds": 5.2225161000096705,
+      "common_seconds": 3.133868300006725,
+      "fit_seconds": 0.32731779996538535,
+      "refresh_seconds": 0.6381471000204328,
+      "gate_seconds": 0.8778061999764759,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": true,
+          "trial_cost": 2.9653845695996788,
+          "validation_cost": 3.2019133367890444,
+          "eta": 32.0,
+          "refresh": false,
+          "charged_seconds": 3.67353220001678
+        },
+        {
+          "updates": 512,
+          "accepted": true,
+          "trial_cost": 2.933878681446522,
+          "validation_cost": 3.1421184982569557,
+          "eta": 64.0,
+          "refresh": true,
+          "charged_seconds": 4.606245700008003
+        },
+        {
+          "updates": 768,
+          "accepted": true,
+          "trial_cost": 2.8726101392408347,
+          "validation_cost": 3.1303156904068983,
+          "eta": 128.0,
+          "refresh": false,
+          "charged_seconds": 4.9221614000271074
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 2.891414060697808,
+          "validation_cost": 3.1303156904068983,
+          "eta": 256.0,
+          "refresh": false,
+          "charged_seconds": 5.2223257000150625
+        }
+      ],
+      "family": "mechanical",
+      "test_cost": 3.094024913809486,
+      "teacher_cost": 2.785142347046925,
+      "initial_cost": 3.2366541923310574,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\short.pt",
+        "sha256": "039caaaea251d255a54a57cc3b4cb447dae870228c3991460c7a82694bc32ed3",
+        "budget": 30.0,
+        "validation_mean": 2.752440848707552
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\mechanical_d32_h160_s9508\\parent.pt",
+        "sha256": "51a6876ad908d109a305fb6c20a164a8bb374898c5074532ee0a79c0d8285cab",
+        "budget": 7.5,
+        "validation_mean": 3.2556934302001297
+      },
+      "checkpoint_sha256": "ce8b05ea2869e5f32aa1fc062a9a631b2985d12f7e327a615e4536b36123638f",
+      "diagnostics": {
+        "point_mse": 0.012732055701266077,
+        "set_mse": 0.004311968877210026,
+        "alpha": 0.5,
+        "inside_fraction": 0.625,
+        "actual_advantage": 0.002039583533214841,
+        "projected_actual_advantage": -0.000879423487116617,
+        "model_advantage": 0.0021928009972585296,
+        "mean_anchor_gain": 0.0008943202594847127,
+        "upper_violation_count": 2,
+        "projected_upper_violation_count": 2,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "adaptive",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 110101,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 1.049305104153087,
+      "selected_validation_cost": 1.049305104153087,
+      "charged_seconds": 6.402125399996294,
+      "common_seconds": 3.7967289999942295,
+      "fit_seconds": 0.3629600000276696,
+      "refresh_seconds": 0.8061386999906972,
+      "gate_seconds": 1.1209541000134777,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 2.768871618642113,
+          "validation_cost": 1.049305104153087,
+          "eta": 32.0,
+          "refresh": false,
+          "charged_seconds": 4.479387200000929
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 1.7188853314094905,
+          "validation_cost": 1.049305104153087,
+          "eta": 64.0,
+          "refresh": true,
+          "charged_seconds": 5.671987100009574
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 3.30540084748328,
+          "validation_cost": 1.049305104153087,
+          "eta": 128.0,
+          "refresh": false,
+          "charged_seconds": 6.037974900013069
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 2.6390448719911612,
+          "validation_cost": 1.049305104153087,
+          "eta": 256.0,
+          "refresh": false,
+          "charged_seconds": 6.401946500001941
+        }
+      ],
+      "family": "reaction",
+      "test_cost": 0.8542822126535392,
+      "teacher_cost": 0.6708922879338335,
+      "initial_cost": 0.8542822126535392,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\warm.pt",
+        "sha256": "1a10687a49f49befd4ac4598cdcc8e8a32fb8d8ceb5fd75779b620b0400499c3",
+        "budget": 30.0,
+        "validation_mean": 0.7303393001942882
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\parent.pt",
+        "sha256": "d79a4087e6bbba8aea04986b6e73d9157e619767979d299fb2cbe41ac6848d39",
+        "budget": 7.5,
+        "validation_mean": 0.9043105878189688
+      },
+      "checkpoint_sha256": "59a8da38863419be3a25951a9af267575e6e006f6b57fa24947af5007a1dd8c3",
+      "diagnostics": {
+        "point_mse": 0.00319802798710109,
+        "set_mse": 0.0008052696520658111,
+        "alpha": 0.5,
+        "inside_fraction": 0.09375,
+        "actual_advantage": 9.402701044820078e-05,
+        "projected_actual_advantage": -2.820765592424305e-05,
+        "model_advantage": 0.00010044829299765646,
+        "mean_anchor_gain": 4.175280499466792e-05,
+        "upper_violation_count": 2,
+        "projected_upper_violation_count": 2,
+        "nonimproving_inside_count": 1,
+        "count": 64
+      }
+    },
+    {
+      "method": "set75",
+      "alpha": 0.75,
+      "width": 64,
+      "seed": 110101,
+      "updates": 1024,
+      "best_update": 512,
+      "initial_validation_cost": 1.049305104153087,
+      "selected_validation_cost": 1.0302782813419733,
+      "charged_seconds": 6.452279199991608,
+      "common_seconds": 3.7967289999942295,
+      "fit_seconds": 0.4139492999529466,
+      "refresh_seconds": 0.8079658000206109,
+      "gate_seconds": 1.0984404999471735,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": true,
+          "trial_cost": 0.8842313909941368,
+          "validation_cost": 1.1956061991850924,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.506981099984841
+        },
+        {
+          "updates": 512,
+          "accepted": true,
+          "trial_cost": 0.7836713996300116,
+          "validation_cost": 1.0302782813419733,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.706145600008313
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 1.1180311860489744,
+          "validation_cost": 1.0302782813419733,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.0793028000043705
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 1.1164260170247213,
+          "validation_cost": 1.0302782813419733,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.452099199988879
+        }
+      ],
+      "family": "reaction",
+      "test_cost": 0.9502072786985821,
+      "teacher_cost": 0.6708922879338335,
+      "initial_cost": 0.8542822126535392,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\warm.pt",
+        "sha256": "1a10687a49f49befd4ac4598cdcc8e8a32fb8d8ceb5fd75779b620b0400499c3",
+        "budget": 30.0,
+        "validation_mean": 0.7303393001942882
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\parent.pt",
+        "sha256": "d79a4087e6bbba8aea04986b6e73d9157e619767979d299fb2cbe41ac6848d39",
+        "budget": 7.5,
+        "validation_mean": 0.9043105878189688
+      },
+      "checkpoint_sha256": "cb0cc58903afe0509b829f0234e02178aa20b2a34b851f4d429f16075cc969d2",
+      "diagnostics": {
+        "point_mse": 0.004115652848514054,
+        "set_mse": 0.0025010482538968914,
+        "alpha": 0.75,
+        "inside_fraction": 0.03125,
+        "actual_advantage": 0.0003082204914559385,
+        "projected_actual_advantage": -3.2250637748867074e-05,
+        "model_advantage": 0.000326968557819578,
+        "mean_anchor_gain": 3.994906982569676e-05,
+        "upper_violation_count": 2,
+        "projected_upper_violation_count": 2,
+        "nonimproving_inside_count": 1,
+        "count": 64
+      }
+    },
+    {
+      "method": "point",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 110101,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 1.049305104153087,
+      "selected_validation_cost": 1.049305104153087,
+      "charged_seconds": 6.355031199986115,
+      "common_seconds": 3.7967289999942295,
+      "fit_seconds": 0.3638978999806568,
+      "refresh_seconds": 0.8057670000125654,
+      "gate_seconds": 1.0823821000522003,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 2.768871618642113,
+          "validation_cost": 1.049305104153087,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.463208600005601
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 2.147106483705843,
+          "validation_cost": 1.049305104153087,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.628702099988004
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 7.221226234013722,
+          "validation_cost": 1.049305104153087,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 5.992809599993052
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 2.9989378704402405,
+          "validation_cost": 1.049305104153087,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.354846799978986
+        }
+      ],
+      "family": "reaction",
+      "test_cost": 0.8542822126535392,
+      "teacher_cost": 0.6708922879338335,
+      "initial_cost": 0.8542822126535392,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\warm.pt",
+        "sha256": "1a10687a49f49befd4ac4598cdcc8e8a32fb8d8ceb5fd75779b620b0400499c3",
+        "budget": 30.0,
+        "validation_mean": 0.7303393001942882
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\parent.pt",
+        "sha256": "d79a4087e6bbba8aea04986b6e73d9157e619767979d299fb2cbe41ac6848d39",
+        "budget": 7.5,
+        "validation_mean": 0.9043105878189688
+      },
+      "checkpoint_sha256": "b7d15ae3d26acc6d065f537f632a34c6353bdf60d24d247683cbf6a3082ff20d",
+      "diagnostics": {
+        "point_mse": 0.00319802798710109,
+        "set_mse": 0.0008052696520658111,
+        "alpha": 0.5,
+        "inside_fraction": 0.09375,
+        "actual_advantage": 9.402701044820078e-05,
+        "projected_actual_advantage": -2.820765592424305e-05,
+        "model_advantage": 0.00010044829299765646,
+        "mean_anchor_gain": 4.175280499466792e-05,
+        "upper_violation_count": 2,
+        "projected_upper_violation_count": 2,
+        "nonimproving_inside_count": 1,
+        "count": 64
+      }
+    },
+    {
+      "method": "upper",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 110101,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 1.049305104153087,
+      "selected_validation_cost": 1.049305104153087,
+      "charged_seconds": 6.381651100004092,
+      "common_seconds": 3.7967289999942295,
+      "fit_seconds": 0.3617773000441957,
+      "refresh_seconds": 0.8134922000463121,
+      "gate_seconds": 1.096652800013544,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": false,
+          "trial_cost": 3.8717327944220434,
+          "validation_cost": 1.049305104153087,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.470224699995015
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 4.15344156988983,
+          "validation_cost": 1.049305104153087,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.657402300013928
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 5.230008879996036,
+          "validation_cost": 1.049305104153087,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.022193700016942
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 3.947021835595801,
+          "validation_cost": 1.049305104153087,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.381481399992481
+        }
+      ],
+      "family": "reaction",
+      "test_cost": 0.8542822126535392,
+      "teacher_cost": 0.6708922879338335,
+      "initial_cost": 0.8542822126535392,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\warm.pt",
+        "sha256": "1a10687a49f49befd4ac4598cdcc8e8a32fb8d8ceb5fd75779b620b0400499c3",
+        "budget": 30.0,
+        "validation_mean": 0.7303393001942882
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\parent.pt",
+        "sha256": "d79a4087e6bbba8aea04986b6e73d9157e619767979d299fb2cbe41ac6848d39",
+        "budget": 7.5,
+        "validation_mean": 0.9043105878189688
+      },
+      "checkpoint_sha256": "a1c5c6a453c63787077321b10b14610663279812dbff43b2b24732414b59ed7f",
+      "diagnostics": {
+        "point_mse": 0.00319802798710109,
+        "set_mse": 0.0008052696520658111,
+        "alpha": 0.5,
+        "inside_fraction": 0.09375,
+        "actual_advantage": 9.402701044820078e-05,
+        "projected_actual_advantage": -2.820765592424305e-05,
+        "model_advantage": 0.00010044829299765646,
+        "mean_anchor_gain": 4.175280499466792e-05,
+        "upper_violation_count": 2,
+        "projected_upper_violation_count": 2,
+        "nonimproving_inside_count": 1,
+        "count": 64
+      }
+    },
+    {
+      "method": "set25",
+      "alpha": 0.25,
+      "width": 64,
+      "seed": 110101,
+      "updates": 1024,
+      "best_update": 1024,
+      "initial_validation_cost": 1.049305104153087,
+      "selected_validation_cost": 0.9382376821972744,
+      "charged_seconds": 6.428114699985599,
+      "common_seconds": 3.7967289999942295,
+      "fit_seconds": 0.4133293999766465,
+      "refresh_seconds": 0.8036565999791492,
+      "gate_seconds": 1.1023984999628738,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": true,
+          "trial_cost": 0.7065521871725702,
+          "validation_cost": 0.9601768598148728,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.496554799989099
+        },
+        {
+          "updates": 512,
+          "accepted": false,
+          "trial_cost": 0.7366103322481101,
+          "validation_cost": 0.9601768598148728,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.678195399988908
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 0.7561027203712071,
+          "validation_cost": 0.9601768598148728,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.051696299982723
+        },
+        {
+          "updates": 1024,
+          "accepted": true,
+          "trial_cost": 0.7063983921864783,
+          "validation_cost": 0.9382376821972744,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.4279591999948025
+        }
+      ],
+      "family": "reaction",
+      "test_cost": 0.9939715035081081,
+      "teacher_cost": 0.6708922879338335,
+      "initial_cost": 0.8542822126535392,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\warm.pt",
+        "sha256": "1a10687a49f49befd4ac4598cdcc8e8a32fb8d8ceb5fd75779b620b0400499c3",
+        "budget": 30.0,
+        "validation_mean": 0.7303393001942882
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\parent.pt",
+        "sha256": "d79a4087e6bbba8aea04986b6e73d9157e619767979d299fb2cbe41ac6848d39",
+        "budget": 7.5,
+        "validation_mean": 0.9043105878189688
+      },
+      "checkpoint_sha256": "6a363be0a11a78f7d6081e3f18f0d7a0540208489b8ca5a6c170be8e590ca951",
+      "diagnostics": {
+        "point_mse": 0.0019417160324987322,
+        "set_mse": 0.0008302537749281666,
+        "alpha": 0.25,
+        "inside_fraction": 0.640625,
+        "actual_advantage": 0.00016918155246943074,
+        "projected_actual_advantage": -1.2137876676527328e-05,
+        "model_advantage": 0.00017722808734114018,
+        "mean_anchor_gain": 3.913042933295846e-05,
+        "upper_violation_count": 0,
+        "projected_upper_violation_count": 0,
+        "nonimproving_inside_count": 0,
+        "count": 64
+      }
+    },
+    {
+      "method": "set50",
+      "alpha": 0.5,
+      "width": 64,
+      "seed": 110101,
+      "updates": 1024,
+      "best_update": 0,
+      "initial_validation_cost": 1.049305104153087,
+      "selected_validation_cost": 1.049305104153087,
+      "charged_seconds": 6.464383799990173,
+      "common_seconds": 3.7967289999942295,
+      "fit_seconds": 0.4150730000110343,
+      "refresh_seconds": 0.8076395999523811,
+      "gate_seconds": 1.1239271000085864,
+      "nonfinite_updates": 0,
+      "events": [
+        {
+          "updates": 256,
+          "accepted": true,
+          "trial_cost": 0.8156088514492119,
+          "validation_cost": 1.105066916256904,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 4.4919364000088535
+        },
+        {
+          "updates": 512,
+          "accepted": true,
+          "trial_cost": 0.8062441037965439,
+          "validation_cost": 1.0705918717546916,
+          "eta": 16.0,
+          "refresh": true,
+          "charged_seconds": 5.695082199992612
+        },
+        {
+          "updates": 768,
+          "accepted": false,
+          "trial_cost": 0.9004045880092323,
+          "validation_cost": 1.0705918717546916,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.085419100010768
+        },
+        {
+          "updates": 1024,
+          "accepted": false,
+          "trial_cost": 1.1127535286829384,
+          "validation_cost": 1.0705918717546916,
+          "eta": 16.0,
+          "refresh": false,
+          "charged_seconds": 6.464060700003756
+        }
+      ],
+      "family": "reaction",
+      "test_cost": 0.8542822126535392,
+      "teacher_cost": 0.6708922879338335,
+      "initial_cost": 0.8542822126535392,
+      "teacher_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\warm.pt",
+        "sha256": "1a10687a49f49befd4ac4598cdcc8e8a32fb8d8ceb5fd75779b620b0400499c3",
+        "budget": 30.0,
+        "validation_mean": 0.7303393001942882
+      },
+      "initial_provenance": {
+        "path": "experiments\\results\\hj_target_primary_v9\\training\\reaction_d32_h320_s9508\\parent.pt",
+        "sha256": "d79a4087e6bbba8aea04986b6e73d9157e619767979d299fb2cbe41ac6848d39",
+        "budget": 7.5,
+        "validation_mean": 0.9043105878189688
+      },
+      "checkpoint_sha256": "0de6d1579f3cf6c9b940a3d7b74a273d6e47cd9284aad6df8e038471edb4b835",
+      "diagnostics": {
+        "point_mse": 0.00319802798710109,
+        "set_mse": 0.0008052696520658111,
+        "alpha": 0.5,
+        "inside_fraction": 0.09375,
+        "actual_advantage": 9.402701044820078e-05,
+        "projected_actual_advantage": -2.820765592424305e-05,
+        "model_advantage": 0.00010044829299765646,
+        "mean_anchor_gain": 4.175280499466792e-05,
+        "upper_violation_count": 2,
+        "projected_upper_violation_count": 2,
+        "nonimproving_inside_count": 1,
+        "count": 64
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "family": "mechanical",
+      "selected_method": "set25",
+      "validation_cost": 3.2828279512549514,
+      "replication_trigger": false,
+      "threshold": 3.099012533502829
+    },
+    {
+      "family": "reaction",
+      "selected_method": "set25",
+      "validation_cost": 0.9382376821972744,
+      "replication_trigger": true,
+      "threshold": 1.038812053111556
+    }
+  ]
+}

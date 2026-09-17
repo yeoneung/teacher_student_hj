@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv*/
+*.zip
+research/reference_inputs/
+research/reproductions/
+*.pt
+*.npz
+*.log
+*.aux
+*.out
+*.spl
+*.blg

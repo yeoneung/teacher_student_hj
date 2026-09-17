@@ -1,0 +1,1159 @@
+{
+  "projection": {
+    "random_cases": [
+      {
+        "dim": 2,
+        "case": 0,
+        "projection_error": 2.2887833992611187e-16,
+        "objective_error": 2.6645352591003757e-15,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.375824064733024e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 1,
+        "projection_error": 1.0644094441146315e-09,
+        "objective_error": 1.9539925233402755e-14,
+        "feasibility_violation": 0.0,
+        "gradient_error": 2.629407802601236e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 2,
+        "projection_error": 1.1962509291762806e-12,
+        "objective_error": 4.229505634611996e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.716653486028008e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 3,
+        "projection_error": 3.47850831088674e-12,
+        "objective_error": 1.942890293094024e-16,
+        "feasibility_violation": 4.440892098500626e-16,
+        "gradient_error": 7.717049221867e-12,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 4,
+        "projection_error": 2.7326411668087984e-13,
+        "objective_error": 5.506706202140776e-13,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 1.8561863157628977e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 5,
+        "projection_error": 3.661176181546029e-10,
+        "objective_error": 3.4459379794071765e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 9.531930800221744e-12,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 6,
+        "projection_error": 9.42055475210265e-16,
+        "objective_error": 8.881784197001252e-16,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.909361805971457e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 7,
+        "projection_error": 3.3422138886441676e-16,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.2029312535541976e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 8,
+        "projection_error": 2.2887833992611187e-16,
+        "objective_error": 4.440892098500626e-16,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.5203839843234164e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 9,
+        "projection_error": 1.0594031289491175e-09,
+        "objective_error": 9.983125437429408e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.1040679481766347e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 10,
+        "projection_error": 7.884152713500224e-13,
+        "objective_error": 2.964573031505324e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.1755709173353353e-12,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 11,
+        "projection_error": 1.648435585080268e-10,
+        "objective_error": 1.457167719820518e-16,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.18804965865138e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 12,
+        "projection_error": 1.6926458518685356e-10,
+        "objective_error": 1.922018100231071e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 5.163851568568134e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 13,
+        "projection_error": 8.639711784791987e-09,
+        "objective_error": 2.383870878475136e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 6.334133217933413e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 14,
+        "projection_error": 6.133411520192519e-09,
+        "objective_error": 1.0426402852203864e-08,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.15769632663887e-11,
+        "scipy_success": false
+      },
+      {
+        "dim": 2,
+        "case": 15,
+        "projection_error": 2.220446049250313e-16,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 2.5772717293648384e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 16,
+        "projection_error": 4.457810769296174e-12,
+        "objective_error": 1.509903313490213e-13,
+        "feasibility_violation": 5.551115123125783e-17,
+        "gradient_error": 5.210107900666117e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 17,
+        "projection_error": 8.410580386437904e-11,
+        "objective_error": 3.552713678800501e-15,
+        "feasibility_violation": 0.0,
+        "gradient_error": 5.960405502491994e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 18,
+        "projection_error": 8.23002271086028e-11,
+        "objective_error": 1.447020281375444e-11,
+        "feasibility_violation": 0.0,
+        "gradient_error": 6.18788575934559e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 19,
+        "projection_error": 1.5295311772062914e-14,
+        "objective_error": 1.021405182655144e-14,
+        "feasibility_violation": 4.440892098500626e-16,
+        "gradient_error": 8.105693893867283e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 20,
+        "projection_error": 4.0815124262839656e-10,
+        "objective_error": 2.4943602738858317e-11,
+        "feasibility_violation": 5.551115123125783e-17,
+        "gradient_error": 5.698250760133305e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 21,
+        "projection_error": 5.315252940576041e-09,
+        "objective_error": 3.963496197911809e-14,
+        "feasibility_violation": 1.1102230246251565e-16,
+        "gradient_error": 2.7956303938481142e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 22,
+        "projection_error": 4.6196751292924986e-10,
+        "objective_error": 4.692779498327582e-11,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.79378314821588e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 23,
+        "projection_error": 6.352889774804896e-11,
+        "objective_error": 1.0231815394945443e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 2.0093704478085783e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 24,
+        "projection_error": 1.8261967831390023e-08,
+        "objective_error": 1.0814460438268725e-11,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.2358825074443303e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 25,
+        "projection_error": 1.3677192598493042e-10,
+        "objective_error": 5.17808018685173e-12,
+        "feasibility_violation": 1.1102230246251565e-16,
+        "gradient_error": 1.3322765113343848e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 26,
+        "projection_error": 8.051679128773604e-10,
+        "objective_error": 2.8683722064215544e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 6.759326431904356e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 27,
+        "projection_error": 4.710277376051325e-16,
+        "objective_error": 0.0,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 2.2611956751461548e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 28,
+        "projection_error": 1.386030447808008e-11,
+        "objective_error": 6.217248937900877e-15,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 3.7470204716782973e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 2,
+        "case": 29,
+        "projection_error": 3.8482202248083614e-14,
+        "objective_error": 2.842170943040401e-14,
+        "feasibility_violation": 0.0,
+        "gradient_error": 7.82794273845866e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 0,
+        "projection_error": 1.3929183898472155e-08,
+        "objective_error": 4.4231285301066237e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.112718971465256e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 1,
+        "projection_error": 2.7780529351533593e-11,
+        "objective_error": 4.440892098500626e-16,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 5.1108894894014156e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 2,
+        "projection_error": 1.636048151759232e-11,
+        "objective_error": 6.394884621840902e-14,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.671818487622659e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 3,
+        "projection_error": 9.38991889892011e-13,
+        "objective_error": 1.7763568394002505e-14,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 7.255831491193021e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 4,
+        "projection_error": 1.6184142622847344e-16,
+        "objective_error": 0.0,
+        "feasibility_violation": 5.551115123125783e-17,
+        "gradient_error": 1.451074815861375e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 5,
+        "projection_error": 1.1392135416537296e-08,
+        "objective_error": 7.212008767965017e-13,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 3.125415481974869e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 6,
+        "projection_error": 2.4327617030578556e-08,
+        "objective_error": 1.0769718450376331e-12,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 5.092681831797563e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 7,
+        "projection_error": 9.900165855362755e-10,
+        "objective_error": 2.842170943040401e-14,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.3779556929403043e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 8,
+        "projection_error": 2.4609614441904857e-10,
+        "objective_error": 3.552713678800501e-15,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 3.4797054127011506e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 9,
+        "projection_error": 1.2791220956235709e-12,
+        "objective_error": 5.329070518200751e-15,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.756151028573186e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 10,
+        "projection_error": 5.166699562435545e-11,
+        "objective_error": 1.8189894035458565e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.6464074548139251e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 11,
+        "projection_error": 1.252200493599067e-10,
+        "objective_error": 2.5357493882438575e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 5.873301844872003e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 12,
+        "projection_error": 1.0104495293410848e-12,
+        "objective_error": 3.8191672047105385e-14,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.9828141612806576e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 13,
+        "projection_error": 1.889276137376319e-08,
+        "objective_error": 2.6769697569761775e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.5274362037162064e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 14,
+        "projection_error": 1.2679090149369882e-11,
+        "objective_error": 7.362999099314038e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.8841108107590117e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 15,
+        "projection_error": 6.267378358724685e-12,
+        "objective_error": 3.552713678800501e-15,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 5.910969491651485e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 16,
+        "projection_error": 9.208413575059287e-13,
+        "objective_error": 1.1679546219056647e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.0463363508961265e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 17,
+        "projection_error": 9.678699938266253e-16,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.798885650496686e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 18,
+        "projection_error": 2.14022336243268e-11,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 8.927365513500263e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 19,
+        "projection_error": 6.101214617153699e-10,
+        "objective_error": 2.0516921495072893e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 2.1937474059541273e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 20,
+        "projection_error": 5.935087083004136e-16,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.4076386984670535e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 21,
+        "projection_error": 9.860858679348518e-12,
+        "objective_error": 1.2665424264923786e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.3216272520821803e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 22,
+        "projection_error": 5.497075661425421e-16,
+        "objective_error": 8.881784197001252e-16,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.0357503743563257e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 23,
+        "projection_error": 8.613344399245838e-09,
+        "objective_error": 3.678835014397919e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.4145196125525672e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 24,
+        "projection_error": 3.640583280273501e-11,
+        "objective_error": 4.263256414560601e-14,
+        "feasibility_violation": 0.0,
+        "gradient_error": 2.3957724692991178e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 25,
+        "projection_error": 9.761916494637743e-16,
+        "objective_error": 7.105427357601002e-15,
+        "feasibility_violation": 0.0,
+        "gradient_error": 2.901110462971701e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 26,
+        "projection_error": 2.1302829485773032e-14,
+        "objective_error": 6.217248937900877e-15,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 8.19571077670389e-11,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 27,
+        "projection_error": 1.3597399555105182e-16,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.750599830709689e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 28,
+        "projection_error": 5.780277583330009e-11,
+        "objective_error": 3.552713678800501e-15,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.7303293787260827e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 3,
+        "case": 29,
+        "projection_error": 1.759456895623701e-10,
+        "objective_error": 2.0250467969162855e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 5.155662563538499e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 0,
+        "projection_error": 1.2359800573946715e-10,
+        "objective_error": 1.4210854715202004e-14,
+        "feasibility_violation": 1.1102230246251565e-16,
+        "gradient_error": 1.4391674518776654e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 1,
+        "projection_error": 3.85074410447572e-11,
+        "objective_error": 1.1927170362469042e-10,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.8618937502878907e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 2,
+        "projection_error": 6.64845103449762e-10,
+        "objective_error": 1.1368683772161603e-13,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 1.5588428325941095e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 3,
+        "projection_error": 1.5985380352725375e-15,
+        "objective_error": 7.105427357601002e-15,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.5994445767830712e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 4,
+        "projection_error": 3.8710682357592344e-13,
+        "objective_error": 7.105427357601002e-15,
+        "feasibility_violation": 0.0,
+        "gradient_error": 9.485141561071941e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 5,
+        "projection_error": 1.1535501567178611e-11,
+        "objective_error": 2.5224267119483557e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 7.956586500768026e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 6,
+        "projection_error": 1.1345876725380448e-13,
+        "objective_error": 2.7711166694643907e-13,
+        "feasibility_violation": 4.440892098500626e-16,
+        "gradient_error": 6.433493737745266e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 7,
+        "projection_error": 2.314032480508847e-14,
+        "objective_error": 2.4868995751603507e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.177262731744122e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 8,
+        "projection_error": 4.0611440195122354e-10,
+        "objective_error": 7.105427357601002e-15,
+        "feasibility_violation": 0.0,
+        "gradient_error": 2.2085564488349974e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 9,
+        "projection_error": 1.811732907091255e-09,
+        "objective_error": 2.921751729445532e-11,
+        "feasibility_violation": 0.0,
+        "gradient_error": 2.2357333762101916e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 10,
+        "projection_error": 6.922220526417403e-16,
+        "objective_error": 7.105427357601002e-15,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.864908476065466e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 11,
+        "projection_error": 4.78009707253385e-09,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.1078813422216172e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 12,
+        "projection_error": 1.659849976708457e-08,
+        "objective_error": 3.319655661471188e-11,
+        "feasibility_violation": 0.0,
+        "gradient_error": 2.2772255192649027e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 13,
+        "projection_error": 1.214776334462974e-09,
+        "objective_error": 4.405471543122985e-10,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.69610128561726e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 14,
+        "projection_error": 9.29271916695221e-11,
+        "objective_error": 7.574385563202668e-12,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 2.5997213271011788e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 15,
+        "projection_error": 3.115649187115782e-10,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.8867604145711425e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 16,
+        "projection_error": 2.3339599021987644e-09,
+        "objective_error": 8.385825367440702e-11,
+        "feasibility_violation": 5.551115123125783e-17,
+        "gradient_error": 2.266478560386531e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 17,
+        "projection_error": 5.5937508517545e-10,
+        "objective_error": 1.9184653865522705e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 7.699147985817945e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 18,
+        "projection_error": 5.513126139173525e-10,
+        "objective_error": 1.7763568394002505e-15,
+        "feasibility_violation": 4.440892098500626e-16,
+        "gradient_error": 2.0415669155227079e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 19,
+        "projection_error": 3.291683141759019e-11,
+        "objective_error": 1.9042545318370685e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 2.649515273844827e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 20,
+        "projection_error": 3.36641751794505e-14,
+        "objective_error": 0.0,
+        "feasibility_violation": 4.440892098500626e-16,
+        "gradient_error": 2.3711925756231267e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 21,
+        "projection_error": 2.0661803443425974e-11,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.0420810880873432e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 22,
+        "projection_error": 1.5940136058484822e-15,
+        "objective_error": 7.105427357601002e-15,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.7725771961352166e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 23,
+        "projection_error": 1.250849481533344e-13,
+        "objective_error": 1.7053025658242404e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.389294013165454e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 24,
+        "projection_error": 6.227931388026098e-14,
+        "objective_error": 1.6697754290362354e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 9.285177071660655e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 25,
+        "projection_error": 1.838177753451612e-12,
+        "objective_error": 1.4210854715202004e-14,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.2508323266047228e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 26,
+        "projection_error": 5.642854200712933e-08,
+        "objective_error": 7.084111075528199e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 6.411218222979187e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 27,
+        "projection_error": 2.7073691402322005e-12,
+        "objective_error": 7.105427357601002e-15,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.0727743138261303e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 28,
+        "projection_error": 1.2948022971838113e-14,
+        "objective_error": 1.2789769243681803e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.2016805328585178e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 8,
+        "case": 29,
+        "projection_error": 6.246644138524131e-11,
+        "objective_error": 1.5987211554602254e-13,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 6.525516793587371e-10,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 0,
+        "projection_error": 2.0713327332690675e-12,
+        "objective_error": 1.1368683772161603e-13,
+        "feasibility_violation": 5.551115123125783e-17,
+        "gradient_error": 3.7896110693935725e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 1,
+        "projection_error": 4.561553409330961e-10,
+        "objective_error": 1.5165824152063578e-10,
+        "feasibility_violation": 0.0,
+        "gradient_error": 6.561663212778512e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 2,
+        "projection_error": 1.435779982272304e-12,
+        "objective_error": 2.6943780540023e-11,
+        "feasibility_violation": 1.1102230246251565e-16,
+        "gradient_error": 6.103745064933719e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 3,
+        "projection_error": 1.014415310164876e-12,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 3.646552837466288e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 4,
+        "projection_error": 1.021647989949087e-08,
+        "objective_error": 1.2505552149377763e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.1651384563579086e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 5,
+        "projection_error": 1.3075513544758398e-10,
+        "objective_error": 4.121147867408581e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.506610196131078e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 6,
+        "projection_error": 5.459837577608153e-15,
+        "objective_error": 2.842170943040401e-14,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 5.528209889860136e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 7,
+        "projection_error": 6.483765466501451e-10,
+        "objective_error": 2.5693225325085223e-11,
+        "feasibility_violation": 0.0,
+        "gradient_error": 8.177743204829113e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 8,
+        "projection_error": 2.0733912571985085e-11,
+        "objective_error": 2.8421709430404007e-13,
+        "feasibility_violation": 0.0,
+        "gradient_error": 5.216306497857204e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 9,
+        "projection_error": 2.4017504455885565e-09,
+        "objective_error": 9.066525308298878e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 6.8817773701823626e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 10,
+        "projection_error": 3.6302526638660517e-10,
+        "objective_error": 1.6996182239381596e-11,
+        "feasibility_violation": 0.0,
+        "gradient_error": 5.111618794906292e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 11,
+        "projection_error": 3.6657131200885413e-10,
+        "objective_error": 3.439026841078885e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 6.07962558074604e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 12,
+        "projection_error": 7.396704655046934e-09,
+        "objective_error": 3.035438567167148e-11,
+        "feasibility_violation": 0.0,
+        "gradient_error": 7.407682911519942e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 13,
+        "projection_error": 1.0875548755507033e-14,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 5.24056154027619e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 14,
+        "projection_error": 4.8253225876918014e-08,
+        "objective_error": 1.1340262062731199e-11,
+        "feasibility_violation": 0.0,
+        "gradient_error": 1.0385372783972002e-08,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 15,
+        "projection_error": 6.351315034622181e-13,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 9.929928435070678e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 16,
+        "projection_error": 1.968418174815097e-11,
+        "objective_error": 1.2505552149377763e-12,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 8.353026714758016e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 17,
+        "projection_error": 1.3842101869193833e-14,
+        "objective_error": 2.842170943040401e-14,
+        "feasibility_violation": 0.0,
+        "gradient_error": 6.772525651399519e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 18,
+        "projection_error": 5.35421604637592e-13,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 9.49172029862666e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 19,
+        "projection_error": 6.543637329647797e-13,
+        "objective_error": 2.842170943040401e-14,
+        "feasibility_violation": 8.881784197001252e-16,
+        "gradient_error": 5.170607941806793e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 20,
+        "projection_error": 3.3798443090571345e-12,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 2.9107604104794405e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 21,
+        "projection_error": 9.568475707970466e-15,
+        "objective_error": 5.684341886080802e-14,
+        "feasibility_violation": 8.881784197001252e-16,
+        "gradient_error": 9.417428614710843e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 22,
+        "projection_error": 9.995079596577572e-16,
+        "objective_error": 0.0,
+        "feasibility_violation": 0.0,
+        "gradient_error": 4.777340967265786e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 23,
+        "projection_error": 1.0694940194108715e-09,
+        "objective_error": 1.3073986337985843e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 9.346924567665837e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 24,
+        "projection_error": 2.7798502905214834e-10,
+        "objective_error": 3.950617610826157e-12,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 5.887243137436826e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 25,
+        "projection_error": 2.70127202086011e-13,
+        "objective_error": 5.684341886080802e-14,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 1.248204695158961e-08,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 26,
+        "projection_error": 9.397694534541565e-10,
+        "objective_error": 2.3305801732931286e-12,
+        "feasibility_violation": 0.0,
+        "gradient_error": 5.0036597087910195e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 27,
+        "projection_error": 1.350105731174494e-09,
+        "objective_error": 0.0,
+        "feasibility_violation": 2.220446049250313e-16,
+        "gradient_error": 6.976460298346865e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 28,
+        "projection_error": 1.270081709226906e-07,
+        "objective_error": 1.1527845344971865e-10,
+        "feasibility_violation": 0.0,
+        "gradient_error": 7.231858667466895e-09,
+        "scipy_success": true
+      },
+      {
+        "dim": 32,
+        "case": 29,
+        "projection_error": 6.779570263881396e-10,
+        "objective_error": 3.524291969370097e-12,
+        "feasibility_violation": 1.1102230246251565e-16,
+        "gradient_error": 1.1890283424520476e-08,
+        "scipy_success": true
+      }
+    ],
+    "edge_projections": [
+      [
+        [
+          0.4743416490252569,
+          0.15811388300841897
+        ]
+      ],
+      [
+        [
+          0.2,
+          0.1
+        ]
+      ],
+      [
+        [
+          1.0,
+          0.0
+        ]
+      ]
+    ]
+  },
+  "finite_horizon_lq": {
+    "dim": 8,
+    "horizon": 20,
+    "trajectories": 128,
+    "teacher": "globally feasible zero linear feedback",
+    "alpha": 0.5,
+    "policies": [
+      {
+        "policy": "set_projection",
+        "mean_teacher_cost": 3.329049968133117,
+        "mean_cost": 2.782772330486706,
+        "mean_cost_difference": -0.5462776376464107,
+        "mean_distance_bound": -0.5419206023039974,
+        "cauchy_bound": -0.5419206023039972,
+        "mean_set_distance_squared": 4.4774744392030046e-32,
+        "max_telescoping_error": 2.55351295663786e-15,
+        "max_upper_bound_violation": 9.194034422677078e-17,
+        "minimum_membership_fraction": 1.0
+      },
+      {
+        "policy": "shared_constant",
+        "mean_teacher_cost": 3.329049968133117,
+        "mean_cost": 3.756660710496007,
+        "mean_cost_difference": 0.42761074236289,
+        "mean_distance_bound": 3.7267936472321503,
+        "cauchy_bound": 3.9673957591624505,
+        "mean_set_distance_squared": 3.686336375939073,
+        "max_telescoping_error": 2.831068712794149e-15,
+        "max_upper_bound_violation": 1.394717674685353e-15,
+        "minimum_membership_fraction": 0.0
+      }
+    ]
+  },
+  "one_step": {
+    "teacher_action": 0.0,
+    "point_targets": [
+      1.0,
+      2.0
+    ],
+    "point_best_constant": 1.5,
+    "point_minimum_mse": 0.25,
+    "set_zero_loss_constant": 1.0,
+    "alpha": 0.5,
+    "teacher_cost": 2.5,
+    "point_cost": 0.25,
+    "set_cost": 0.5,
+    "interpretation": "Strictly smaller approximation error does not imply smaller control cost."
+  },
+  "passed": true,
+  "sources": {
+    "verify_improving_sets.py": "71ed717276b3caad33c435dbda7f0c9c99c3163102a8fe4db5de644eb7f499cc",
+    "improving_sets.py": "2397d697d276324e89c47110e07fd78422dc853ebf257178dc48e1db1e68620d"
+  }
+}
