@@ -23,12 +23,11 @@ J.~Carius, F.~Farshidian, M.~Hutter,
 
 \bibitem{cheng2020mamba}
 C.-A. Cheng, A.~Kolobov, A.~Agarwal,
-  \href{https://arxiv.org/abs/2007.00795}{Policy improvement via imitation of
-  multiple oracles} (2020).
-\newblock \href {http://arxiv.org/abs/2007.00795} {\path{arXiv:2007.00795}},
-  \href {https://doi.org/10.48550/arXiv.2007.00795}
-  {\path{doi:10.48550/arXiv.2007.00795}}.
-\newline\urlprefix\url{https://arxiv.org/abs/2007.00795}
+  \href{https://proceedings.neurips.cc/paper/2020/hash/3c56fe2f24038c4d22b9eb0aca78f590-Abstract.html}{Policy
+  improvement via imitation of multiple oracles}, in: Advances in Neural
+  Information Processing Systems, Vol.~33, Curran Associates, Inc., 2020, pp.
+  5587--5598.
+\newline\urlprefix\url{https://proceedings.neurips.cc/paper/2020/hash/3c56fe2f24038c4d22b9eb0aca78f590-Abstract.html}
 
 \bibitem{levine2013guided}
 S.~Levine, V.~Koltun,
@@ -86,22 +85,17 @@ A.~Schlaginhaufen, M.~Kamgarpour, Identifiability and generalizability in
   Machine Learning Research, PMLR, 2023, pp. 30224--30251.
 
 \bibitem{pinkus1986recovery}
-A.~Pinkus, $n$-widths and optimal recovery, in: C.~de~Boor (Ed.), Proceedings
-  of Symposia in Applied Mathematics, Vol.~36, American Mathematical Society,
-  1986, pp. 51--66.
+A.~Pinkus, $n$-widths and optimal recovery, in: C.~de~Boor (Ed.), Approximation
+  Theory, Vol.~36 of Proceedings of Symposia in Applied Mathematics, American
+  Mathematical Society, 1986, pp. 51--66.
+\newblock \href {https://doi.org/10.1090/psapm/036/864365}
+  {\path{doi:10.1090/psapm/036/864365}}.
 
 \bibitem{foucart2021recovery}
 S.~Foucart, Instances of computational optimal recovery: Refined
   approximability models, Journal of Complexity 62 (2021) 101503.
 \newblock \href {https://doi.org/10.1016/j.jco.2020.101503}
   {\path{doi:10.1016/j.jco.2020.101503}}.
-
-\bibitem{silver2014dpg}
-D.~Silver, G.~Lever, N.~Heess, T.~Degris, D.~Wierstra, M.~Riedmiller,
-  \href{https://proceedings.mlr.press/v32/silver14.html}{Deterministic policy
-  gradient algorithms}, in: Proceedings of the 31st International Conference on
-  Machine Learning, Vol.~32, 2014, pp. 387--395.
-\newline\urlprefix\url{https://proceedings.mlr.press/v32/silver14.html}
 
 \bibitem{heess2015svg}
 N.~Heess, G.~Wayne, D.~Silver, T.~Lillicrap, T.~Erez, Y.~Tassa,
