@@ -1,0 +1,14 @@
+\begin{table}[htbp]\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrr@{}}\toprule
+Task & Reference & $\Delta$ cost & 95\% CI & Wins\\\midrule
+Mechanical & Cloning & -0.000179 & [-0.016732, +0.016373] & 2/5\\
+Mechanical & Cached H & -0.038344 & [-0.073294, -0.003394] & 5/5\\
+Mechanical & Selected fixed & +0.001000 & [-0.007069, +0.009069] & 2/5\\
+Mechanical & Adaptive & -0.003630 & [-0.023815, +0.016555] & 3/5\\
+Reaction & Cloning & -0.015024 & [-0.071032, +0.040985] & 3/5\\
+Reaction & Cached H & -0.092694 & [-0.161527, -0.023861] & 5/5\\
+Reaction & Selected fixed & -0.106005 & [-0.255729, +0.043720] & 5/5\\
+Reaction & Adaptive & -0.001017 & [-0.025796, +0.023762] & 3/5\\
+\bottomrule\end{tabular}
+\caption{Paired arithmetic cost differences across five teacher/student/data replications. Intervals use a two-sided $t$ calculation with four degrees of freedom; comparisons are exploratory and not multiplicity-adjusted.}
+\end{table}

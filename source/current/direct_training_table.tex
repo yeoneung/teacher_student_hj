@@ -1,0 +1,11 @@
+\begin{table}[htbp]\centering\small
+\caption{Additional interface checks: means over five paired seeds. All exact-recovery interfaces agree to the reported precision; full-reference values are shown. These checks reuse four conditions and add a constructed shared-actuation condition.}\label{tab:direct-training}
+\begin{tabular}{lrrrr}\toprule
+Condition & Fits & Regret & Cost & Max. $|\Delta\mathcal R|$\\\midrule
+box, $d=8,m=2,R=0.5$ & 20 & 0.585439 & 8.101119 & $0$\\
+box, $d=32,m=2,R=0.5$ & 20 & 0.900619 & 15.475675 & $0$\\
+box, $d=32,m=4,R=2$ & 20 & 0.820332 & 15.014408 & $0$\\
+ball, $d=32,m=4,R=0.5$ & 20 & 0.715371 & 15.313708 & $8.03\times10^{-13}$\\
+Shared actuation & 40 & 0.523674 & 189.698903 & $0$\\
+\bottomrule\end{tabular}
+\end{table}

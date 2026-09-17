@@ -1,0 +1,119 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{sun2017aggrevated}
+W.~Sun, A.~Venkatraman, G.~J. Gordon, B.~Boots, J.~A. Bagnell,
+  \href{https://proceedings.mlr.press/v70/sun17d.html}{Deeply {AggreVaTeD}:
+  Differentiable imitation learning for sequential prediction}, in: Proceedings
+  of the 34th International Conference on Machine Learning, Vol.~70, 2017, pp.
+  3309--3318.
+\newline\urlprefix\url{https://proceedings.mlr.press/v70/sun17d.html}
+
+\bibitem{carius2020mpcnet}
+J.~Carius, F.~Farshidian, M.~Hutter,
+  \href{https://arxiv.org/abs/1909.05197}{{MPC-Net}: A first principles guided
+  policy search}, IEEE Robotics and Automation Letters 5~(2) (2020) 2897--2904.
+\newblock \href {https://doi.org/10.1109/LRA.2020.2974653}
+  {\path{doi:10.1109/LRA.2020.2974653}}.
+\newline\urlprefix\url{https://arxiv.org/abs/1909.05197}
+
+\bibitem{cheng2020mamba}
+C.-A. Cheng, A.~Kolobov, A.~Agarwal,
+  \href{https://arxiv.org/abs/2007.00795}{Policy improvement via imitation of
+  multiple oracles} (2020).
+\newblock \href {http://arxiv.org/abs/2007.00795} {\path{arXiv:2007.00795}},
+  \href {https://doi.org/10.48550/arXiv.2007.00795}
+  {\path{doi:10.48550/arXiv.2007.00795}}.
+\newline\urlprefix\url{https://arxiv.org/abs/2007.00795}
+
+\bibitem{levine2013guided}
+S.~Levine, V.~Koltun,
+  \href{https://proceedings.mlr.press/v28/levine13.html}{Guided policy search},
+  in: Proceedings of the 30th International Conference on Machine Learning,
+  Vol.~28, 2013, pp. 1--9.
+\newline\urlprefix\url{https://proceedings.mlr.press/v28/levine13.html}
+
+\bibitem{czarnecki2019distilling}
+W.~M. Czarnecki, R.~Pascanu, S.~Osindero, S.~Jayakumar, G.~Swirszcz,
+  M.~Jaderberg,
+  \href{https://proceedings.mlr.press/v89/czarnecki19a.html}{Distilling policy
+  distillation}, in: Proceedings of the Twenty-Second International Conference
+  on Artificial Intelligence and Statistics, Vol.~89, 2019, pp. 1331--1340.
+\newline\urlprefix\url{https://proceedings.mlr.press/v89/czarnecki19a.html}
+
+\bibitem{abdolmaleki2018mpo}
+A.~Abdolmaleki, J.~T. Springenberg, Y.~Tassa, R.~Munos, N.~Heess,
+  M.~Riedmiller, \href{https://openreview.net/forum?id=S1ANxQW0b}{Maximum a
+  posteriori policy optimisation}, in: International Conference on Learning
+  Representations, 2018.
+\newline\urlprefix\url{https://openreview.net/forum?id=S1ANxQW0b}
+
+\bibitem{geist2019regularized}
+M.~Geist, B.~Scherrer, O.~Pietquin,
+  \href{https://proceedings.mlr.press/v97/geist19a.html}{A theory of
+  regularized {Markov} decision processes}, in: Proceedings of the 36th
+  International Conference on Machine Learning, Vol.~97, 2019, pp. 2160--2169.
+\newline\urlprefix\url{https://proceedings.mlr.press/v97/geist19a.html}
+
+\bibitem{kundu2024policy}
+S.~Kundu, K.~Kunisch, Policy iteration for {Hamilton--Jacobi--Bellman}
+  equations with control constraints, Computational Optimization and
+  Applications 87 (2024) 785--809, published online in 2021.
+\newblock \href {https://doi.org/10.1007/s10589-021-00278-3}
+  {\path{doi:10.1007/s10589-021-00278-3}}.
+
+\bibitem{lee2025pideeponet}
+J.~Y. Lee, Y.~Kim, \href{https://arxiv.org/abs/2406.10920}{{Hamilton--Jacobi}
+  based policy-iteration via deep operator learning}, Neurocomputing 646 (2025)
+  130515.
+\newblock \href {https://doi.org/10.1016/j.neucom.2025.130515}
+  {\path{doi:10.1016/j.neucom.2025.130515}}.
+\newline\urlprefix\url{https://arxiv.org/abs/2406.10920}
+
+\bibitem{spigler2025ppd}
+G.~Spigler, \href{https://openreview.net/forum?id=WfVXe88oMh}{Proximal policy
+  distillation}, Transactions on Machine Learning Research (2025).
+\newline\urlprefix\url{https://openreview.net/forum?id=WfVXe88oMh}
+
+\bibitem{schlaginhaufen2023identifiability}
+A.~Schlaginhaufen, M.~Kamgarpour, Identifiability and generalizability in
+  constrained inverse reinforcement learning, in: Proceedings of the 40th
+  International Conference on Machine Learning, Vol. 202 of Proceedings of
+  Machine Learning Research, PMLR, 2023, pp. 30224--30251.
+
+\bibitem{pinkus1986recovery}
+A.~Pinkus, $n$-widths and optimal recovery, in: C.~de~Boor (Ed.), Proceedings
+  of Symposia in Applied Mathematics, Vol.~36, American Mathematical Society,
+  1986, pp. 51--66.
+
+\bibitem{foucart2021recovery}
+S.~Foucart, Instances of computational optimal recovery: Refined
+  approximability models, Journal of Complexity 62 (2021) 101503.
+\newblock \href {https://doi.org/10.1016/j.jco.2020.101503}
+  {\path{doi:10.1016/j.jco.2020.101503}}.
+
+\bibitem{silver2014dpg}
+D.~Silver, G.~Lever, N.~Heess, T.~Degris, D.~Wierstra, M.~Riedmiller,
+  \href{https://proceedings.mlr.press/v32/silver14.html}{Deterministic policy
+  gradient algorithms}, in: Proceedings of the 31st International Conference on
+  Machine Learning, Vol.~32, 2014, pp. 387--395.
+\newline\urlprefix\url{https://proceedings.mlr.press/v32/silver14.html}
+
+\bibitem{heess2015svg}
+N.~Heess, G.~Wayne, D.~Silver, T.~Lillicrap, T.~Erez, Y.~Tassa,
+  \href{https://proceedings.neurips.cc/paper/2015/hash/148510031349642de5ca0c544f31b2ef-Abstract.html}{Learning
+  continuous control policies by stochastic value gradients}, in: Advances in
+  Neural Information Processing Systems, Vol.~28, 2015.
+\newline\urlprefix\url{https://proceedings.neurips.cc/paper/2015/hash/148510031349642de5ca0c544f31b2ef-Abstract.html}
+
+\bibitem{yang2020pcpo}
+T.-Y. Yang, J.~Rosca, K.~Narasimhan, P.~J. Ramadge,
+  \href{https://arxiv.org/abs/2010.03152}{Projection-based constrained policy
+  optimization}, International Conference on Learning Representations (2020).
+\newline\urlprefix\url{https://arxiv.org/abs/2010.03152}
+
+\end{thebibliography}

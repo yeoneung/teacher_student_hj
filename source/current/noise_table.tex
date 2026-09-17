@@ -1,0 +1,16 @@
+\begin{table}[htbp]\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrr@{}}\toprule
+Task & Noise & Naive FP/pred. & Margin FP/pred. & Coverage (\%)\\\midrule
+Mechanical & none 0 & 2/480 & 2/480 & 100.0\\
+Mechanical & bias 0.5 & 241/480 & 0/190 & 39.6\\
+Mechanical & gaussian 0.5 & 296/480 & 0/98 & 20.4\\
+Mechanical & bias 1.5 & 340/480 & 0/44 & 9.2\\
+Mechanical & gaussian 1.5 & 413/480 & 0/24 & 5.0\\
+Reaction & none 0 & 0/303 & 0/301 & 62.7\\
+Reaction & bias 0.5 & 328/480 & 0/62 & 12.9\\
+Reaction & gaussian 0.5 & 450/480 & 0/10 & 2.1\\
+Reaction & bias 1.5 & 449/480 & 0/8 & 1.7\\
+Reaction & gaussian 1.5 & 476/480 & 0/0 & 0.0\\
+\bottomrule\end{tabular}
+\caption{Independent local-action diagnostics over five teacher seeds and three checkpoint qualities: 480 action evaluations on 160 state/time points per task and noise condition, with states reused across teacher qualities. A fixed empirical curvature quantile comes from separate calibration trajectories. Ratios count false positive improvement predictions; zero predictions imply abstention. This calibrated margin is not a certified upper bound, and no student is retrained in this diagnostic.}
+\end{table}

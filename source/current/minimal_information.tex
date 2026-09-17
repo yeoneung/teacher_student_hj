@@ -1,0 +1,154 @@
+\section{Minimal teaching information}\label{sec:minimal-information}
+The student need not recover the entire normal vector in
+Eq.~\eqref{eq:cost-preserving-loss}. We characterize the part affecting
+its cost comparisons under a specified scalar-feedback interface.
+
+\subsection{Interface}
+At a fixed teacher state, let
+\begin{equation}\label{eq:minimal-model}
+ Q(u)=a\|u\|^2+b^\top u+c,\qquad
+ v=\arg\min_{u\in U}Q(u),\qquad n=2av+b\in-N_U(v).
+\end{equation}
+Here $a>0$, $U$ is a centered ball or box of radius or half-width $R>0$, and
+$N_U(v)=\{w:w^\top(u-v)\leq0\text{ for all }u\in U\}$.
+The receiver knows $a,U,v$ and orthonormal $P\in\R^{d\times m}$;
+its actions lie in $S\cap U$, $S=\operatorname{range}(P)$.
+It has no access to $b,n$. A feasible query returns $Q(u)-Q(0)$, giving
+\begin{equation}\label{eq:minimal-response}
+ y(u)=Q(u)-Q(0)-a\|u\|^2+2av^\top u=n^\top u.
+\end{equation}
+We count additional scalar responses, with target and baseline supplied.
+The bound excludes arbitrary encoded messages, derivative access and
+learners allowed to recompute $b$ from the full analytic model.
+This is an abstract restricted teaching interface, not a demonstrated
+communication bottleneck in a deployed controller.
+
+Let orthonormal $\Gamma\in\R^{d\times k}$ span
+$K=\operatorname{span}(-N_U(v))$; $k=0$ for interior targets.
+For student actions, only $\beta=P^\top n$ matters:
+\begin{equation}\label{eq:student-normal}
+ Q(Pz)-Q(Pz')=a(\|z\|^2-\|z'\|^2)
+       +(-2aP^\top v+\beta)^\top(z-z').
+\end{equation}
+Normal differences in $K\cap S^\perp$ are therefore irrelevant.
+The recovery requirement covers every feasible pair in $S\cap U$;
+it is stronger than recovering only the comparisons used by a
+particular fitted network.
+
+\begin{proposition}\label{prop:minimal-information}
+Fixed feasible queries with row matrix $W$ determine every cost
+difference in $S\cap U$, uniformly over models sharing $a,U,v$, iff
+\begin{equation}\label{eq:kernel-information}
+ \ker(W\Gamma)\subseteq\ker(P^\top\Gamma).
+\end{equation}
+The minimum worst-case count is
+\begin{equation}\label{eq:information-rank}
+ r=\operatorname{rank}(P^\top\Gamma)\leq\min(k,m).
+\end{equation}
+This lower bound includes deterministic adaptive queries and is attained
+by a feasible nonadaptive construction.
+\end{proposition}
+\begin{proof}
+Write $n=\Gamma\eta$. Observations $W\Gamma\eta$ determine
+$P^\top\Gamma\eta$ precisely under Eq.~\eqref{eq:kernel-information}.
+Since $S\cap U$ contains a neighborhood of zero in $S$, a coefficient
+difference changes a feasible cost difference. Necessity holds within
+the normal cone: small opposite perturbations of a relative-interior
+normal along an unobserved direction in $K$ remain admissible and,
+by strong convexity, preserve the unique target $v$.
+
+With $q<r$ queries, the row space of $W\Gamma$ cannot contain that
+of $P^\top\Gamma$. For adaptive queries, follow the transcript at a
+relative-interior normal and perturb within the common kernel of those
+queries. Both perturbations preserve every response and subsequent
+query, but change the student coefficient.
+
+For attainment, choose orthonormal $E\in\R^{m\times r}$ spanning
+$\operatorname{range}(P^\top\Gamma)$. Query $u_j=\alpha PE_j$,
+$\alpha=R/2$, where $R$ is the ball radius or box half-width. Each
+query has norm $\alpha$ and is feasible. The responses satisfy
+$y=\alpha E^\top\beta$, so $\beta=Ey/\alpha$. If $r=0$, no query
+is required.
+\end{proof}
+
+\subsection{Direct-query controls}
+For any orthogonal $H\in\R^{m\times m}$, the $m$ feasible queries
+$u_j=\alpha PH_j$ give $y=\alpha H^\top\beta$ and
+$\beta=Hy/\alpha$. Thus both the student coordinate basis and a random
+orthogonal student basis recover exactly. A hybrid choosing full-normal
+recovery when $k<m$ and student-basis recovery otherwise uses
+$\min(k,m)$ responses. It already attains the bound whenever
+$r=\min(k,m)$; relevant queries then offer no count advantage.
+Interior targets need no query for any method.
+
+A strict query-count advantage over the hybrid occurs when $r<\min(k,m)$.
+We focus on the nontrivial case $r>0$. For example,
+let $d=8$, $K=\operatorname{span}(e_1,e_2,e_3)$ and
+\begin{equation}\label{eq:shared-actuation}
+ P=[g,e_4,e_5,e_6]H,\qquad
+ g=(e_1+e_2+e_3)/\sqrt3,
+\end{equation}
+with a generic orthogonal $4\times4$ matrix $H$. Here $k=3,m=4,r=1$.
+All three active coordinate normals and all four student coordinate
+directions are visible, so deleting zero directions alone does not
+attain the bound. The student can act on only their shared combination.
+Recognizing this dependency, by any equivalent rank-revealing method,
+reduces three hybrid queries to one.
+
+\subsection{Learning rule}
+At each cached state, form $\Gamma,E$ from $U,v,P$, collect the
+$r$ responses, and train $u=Pz_\theta(x)$ with
+\begin{equation}\label{eq:minimal-loss}
+ L_{\rm relevant}(z;x)=a\|z\|^2+
+          (-2aP^\top v+Ey/\alpha)^\top z=Q(Pz)-Q(0).
+\end{equation}
+This preserves the full-information objective and its parameter
+gradients where differentiable, without reconstructing $n$ or
+requiring the student to realize $v$. Response error $e$ gives
+\begin{equation}\label{eq:minimal-noise}
+ \|\widehat\beta-\beta\|\leq\frac{\|e\|}{\alpha},\qquad
+ |\widehat{\Delta Q}-\Delta Q|
+ \leq\frac{\|e\|}{\alpha}\|z-z'\|.
+\end{equation}
+The result is statewise and requires known curvature, exact geometry
+and fixed $P$; ordinary hidden width does not imply a fixed output
+space. Equation~\eqref{eq:minimal-noise} is a local error bound.
+
+\subsection{Approximate alignment}
+Exact rank can increase under arbitrarily small perturbations of $P$.
+If a bound $\|n\|\leq M$ is available, a truncated construction instead
+gives a continuous error tradeoff. Let $E_q$ contain the first $q$ left
+singular vectors of $P^\top\Gamma$, padding its singular values $\sigma_j$
+with zeros beyond the spectrum.
+Querying $\alpha PE_q$ and decoding noisy responses as above yields
+\begin{equation}\label{eq:truncated-feedback}
+ \|\widehat\beta-\beta\|^2\leq
+ M^2\sigma_{q+1}^2+\|e\|^2/\alpha^2.
+\end{equation}
+Indeed, $\beta=P^\top\Gamma\eta$, $\|\eta\|=\|n\|\leq M$;
+the omitted singular components have norm at most $M\sigma_{q+1}$
+and are orthogonal to the decoded response error. Multiplying the
+square root of this bound by $\|z-z'\|$ bounds the cost-difference
+error. This is an approximation upper bound requiring $M$, not an
+exact recovery or approximate-query optimality claim. Numerical rank
+tolerances must therefore be interpreted against the discarded spectrum.
+
+\subsection{Ball and box constraints}
+At an active ball target, $n=-\lambda v$, $k=1$. If $P^\top v\ne0$,
+one scalar is necessary and sufficient. The target gain gives
+\begin{equation}\label{eq:gain-normal}
+ G=Q(0)-Q(v)=(a+\lambda)R^2,\qquad\lambda=G/R^2-a.
+\end{equation}
+It recovers the full radial-slack loss, whereas scalar weighting of
+MSE omits that slack. If $P^\top v=0$, no additional information is needed.
+
+For a box with $k$ active coordinates, $\Gamma$ contains their coordinate
+vectors and generically $r=\min(k,m)$. Gain alone can fail: with
+$a=1$, $U=[-1,1]^2$, $b_A=(-3,-5)$ and $b_B=(-5,-3)$ both yield
+$v=(1,1)$ and $G=6$. Yet costs relative to zero at $(1,0),(0,1)$
+are $(-2,-4)$ for $A$ and $(-4,-2)$ for $B$.
+
+In the HJ model, $b$ contains $B^\top\nabla V^\phi$; the rank thus
+counts hidden future-cost directions relevant to this student.
+For an approximate continuation model, recovery preserves that model;
+policy transfer still requires the stated remainder and occupancy bounds.

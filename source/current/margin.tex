@@ -1,0 +1,65 @@
+\subsection{Transfer bounds}
+For a fixed teacher, set $u_0=\phi_t(x)$, $y_0=F_t(x,u_0)$ and
+$p=\nabla V_{t+1}^\phi(y_0)$. Assume the teaching sensitivity
+$\widehat p$ satisfies
+\begin{align}
+ \|B_t^\top(\widehat p-p)\|&\leq\varepsilon,\\
+ V_{t+1}^\phi(y_0+B_tv)-V_{t+1}^\phi(y_0)-p^\top B_tv
+ &\leq\tfrac\kappa2\|v\|^2
+\end{align}
+on the relevant feasible segments. An $L$-Lipschitz teacher gradient
+permits $\kappa=L\|B_t\|^2$; the implementation does not know this bound.
+
+\begin{proposition}
+Let $r>0$, $\rho\geq0$, and
+$\widehat q(u)=r\|u\|^2+(l+B_t^\top\widehat p)^\top u$.
+Let $u_+$ minimize $\widehat q(u)+\rho\|u-u_0\|^2/2$ over the closed
+convex feasible set, and put $d=u_+-u_0$. Then
+\begin{equation}\label{eq:impact-target}
+ A_t^\phi(x,u_+)\leq-(r+\rho-\kappa/2)\|d\|^2+\varepsilon\|d\|.
+\end{equation}
+For a fitted feasible action $u=u_++e$,
+\begin{align}\label{eq:impact-fitted}
+ A_t^\phi(x,u)\leq{}&-(r+\rho)\|d\|^2
+ +\|\nabla\widehat q(u_+)\|\|e\|+r\|e\|^2\notag\\
+ &+\varepsilon\|d+e\|+\tfrac\kappa2\|d+e\|^2
+ =:M_t^\phi(x,u).
+\end{align}
+If these assumptions hold on student trajectories with integrable bounds,
+$J(\pi)-J(\phi)\leq\E\sum_tM_t^\phi(x_t^\pi,\pi_t(x_t^\pi))$.
+\end{proposition}
+\begin{proof}
+The proximal variational inequality and quadratic expansion give
+$\widehat q(u_+)-\widehat q(u_0)\leq-(r+\rho)\|d\|^2$.
+Expansion at $u_+$ bounds fitting by
+$\|\nabla\widehat q(u_+)\|\|e\|+r\|e\|^2$.
+Sensitivity error and continuation remainder contribute at most
+$\varepsilon\|u-u_0\|$ and $\kappa\|u-u_0\|^2/2$.
+Summing along student trajectories proves the policy bound.
+\end{proof}
+
+For $r+\rho-\kappa/2>0$, the sufficient target test is
+$(r+\rho-\kappa/2)\|d\|>\varepsilon$. With
+$\widehat g=2ru_0+l+B_t^\top\widehat p$ and $\kappa\geq0$,
+nonexpansivity gives
+\begin{equation}
+ \|d\|\leq\frac{\|\widehat g\|}{2r+\rho}.
+\end{equation}
+Hence $\varepsilon\geq\|\widehat g\|$ prevents every nonzero step
+from passing this test for any $\rho$. This limits the certificate,
+not the possibility of actual improvement.
+
+\subsection{Continuation accounting}
+Define $G=\widehat q(u_0)-\widehat q(u_+)$ and the signed fitting
+contribution $R=\widehat q(u)-\widehat q(u_+)$. Then
+\begin{equation}\label{eq:impact-accounting}
+ A_t^\phi(x,u)=-G+R+
+ [B_t^\top(p-\widehat p)]^\top(u-u_0)+C,
+\end{equation}
+where $C$ is the exact teacher-value remainder. Using a cached covector
+from another state contributes to the sensitivity discrepancy. A
+teacher continuation after the tested action evaluates the advantage
+exactly in the known simulator. Measured remainders verify this identity
+but do not supply prospective curvature bounds. The audit procedure
+uses sampled advantages to choose fitting, refresh or regularization;
+it does not estimate certified $\varepsilon$ or $\kappa$.

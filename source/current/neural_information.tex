@@ -1,0 +1,59 @@
+\section{Neural loss intervention}\label{sec:neural-information}
+This separate study varies constraints, capacity and loss information
+in the eight-dimensional system of Section~\ref{sec:neural-setup}, with
+ball constraints. Its learned output matrix is not the fixed embedding
+required by Proposition~\ref{prop:minimal-information}.
+
+\subsection{Student}
+The student is a bias-free $8\to w\to8$ SiLU network with radial
+projection, $w\in\{2,4,16\}$. Actions lie in its output matrix's column
+span. Width 16 can represent the target exactly by
+$\operatorname{SiLU}(s)-\operatorname{SiLU}(-s)=s$, verified numerically.
+Zero output weights initialize every student at the teacher; first-layer
+weights are paired across losses.
+
+
+\subsection{Protocol}
+Up to common division by action dimension, the losses are
+\begin{align}
+ L_{\rm point}&=\|u-v\|^2,\\
+ L_{\rm restored}&=\|u-v\|^2+(n/a)^\top(u-v),\\
+ L_{\rm weight}&=(1+\|n\|/(2aR))\|u-v\|^2,\\
+ L_{\rm shuffled}&=\|u-v\|^2+(n_\sigma/a)^\top(u-v).
+\end{align}
+The fixed random permutation $\sigma$ breaks the state--normal
+association. Restoration equals Bellman regret divided by $a$;
+weighting omits radial slack. At $R=32$ all normals vanish.
+
+The initial study crosses $R\in\{0.5,2,8,32\}$, three widths, four
+losses and five seeds (240 fits), with restored-minus-point at
+$R=2,w=2$ as primary. Confirmation selects the initial severe-constraint
+secondary condition $R=0.5,w=2$ as primary, with ten independent seeds,
+$R\in\{0.5,2,32\}$, all widths and losses (360 fits). Its plan, source
+hashes and seeds are frozen before training. Samples are not pooled.
+Paired 95\% $t$ intervals use seed means and are not multiplicity-adjusted.
+
+\subsection{Results}
+\input{current/neural_information_results}
+\input{current/neural_information_table}
+\begin{figure}[htbp]\centering
+ \includegraphics[width=\linewidth]{figures/neural_information_transfer.pdf}
+ \caption{Top: restored-minus-point local regret and paired 95\% $t$
+ intervals for the initial and independent samples. Bottom: confirmation
+ loss decomposition on held-out teacher states and capacity response.}
+ \label{fig:neural-information}
+\end{figure}
+
+
+Figure~\ref{fig:paired-effects} shows all ten confirmation-primary
+paired effects. Their mean is $-0.10011$ and median $-0.03639$; the
+two largest reductions account for 71.8\% of the summed reduction.
+All signs favor restoration, but the typical paired effect is smaller
+than the mean. The prespecified mean and its interval remain the
+primary analysis; this descriptive plot exposes heterogeneity.
+\begin{figure}[htbp]\centering
+\includegraphics[width=.93\linewidth]{figures/neural_paired_effects.pdf}
+\caption{All ten independent confirmation-primary paired differences
+in normalized Bellman regret. Lines mark the mean and median.}
+\label{fig:paired-effects}
+\end{figure}

@@ -1,0 +1,44 @@
+\section{Complete minimal-feedback results}\label{app:minimal-comparisons}
+Each entry reports five independent seed means; all methods share the initialization, data and 4,096-update budget within a seed. The full-face method is retained in the machine-readable results and the fidelity audit. Intervals below are paired 95\% $t$ intervals for relevant-query minus target-only regret, with no adjustment across the 16 secondary comparisons. Recovery, not superiority in this table, is the primary endpoint.
+\begin{table}[htbp]\centering\scriptsize
+\caption{Normalized local Bellman regret for every prespecified condition. Smaller is better. Relevant uses the minimum scalar-query construction; full uses privileged exact normal vectors.}\label{tab:minimal-policies}
+\begin{tabular}{lrrrrr}\toprule
+Shape; $d,m,R$ & Target & Gain & Random & Relevant & Full\\\midrule
+ball; 8,2,0.5 & 0.69427 & 0.59141 & 0.59141 & 0.59141 & 0.59141\\
+ball; 8,2,2 & 0.71503 & 0.65222 & 0.65222 & 0.65222 & 0.65222\\
+ball; 8,4,0.5 & 0.38279 & 0.34317 & 0.34317 & 0.34317 & 0.34317\\
+ball; 8,4,2 & 0.41671 & 0.39429 & 0.39429 & 0.39429 & 0.39429\\
+ball; 32,2,0.5 & 0.93161 & 0.84013 & 0.84013 & 0.84013 & 0.84013\\
+ball; 32,2,2 & 0.93528 & 0.90773 & 0.90773 & 0.90773 & 0.90773\\
+ball; 32,4,0.5 & 0.85415 & 0.71537 & 0.71537 & 0.71537 & 0.71537\\
+ball; 32,4,2 & 0.85541 & 0.80166 & 0.80166 & 0.80166 & 0.80166\\
+box; 8,2,0.5 & 0.71992 & 0.58590 & 0.58641 & 0.58544 & 0.58544\\
+box; 8,2,2 & 0.71504 & 0.59140 & 0.59140 & 0.59140 & 0.59140\\
+box; 8,4,0.5 & 0.45383 & 0.38937 & 0.38900 & 0.38887 & 0.38887\\
+box; 8,4,2 & 0.39893 & 0.34412 & 0.34412 & 0.34412 & 0.34412\\
+box; 32,2,0.5 & 0.93335 & 0.90285 & 0.90632 & 0.90062 & 0.90062\\
+box; 32,2,2 & 0.93947 & 0.92451 & 0.92451 & 0.92451 & 0.92451\\
+box; 32,4,0.5 & 0.86405 & 0.81009 & 0.81197 & 0.80780 & 0.80780\\
+box; 32,4,2 & 0.86617 & 0.82033 & 0.82033 & 0.82033 & 0.82033\\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[htbp]\centering\scriptsize
+\caption{All paired relevant-query minus target-only differences. Cost is the complete 12-step closed-loop cost, whereas regret is measured on the held-out teacher-state pool.}\label{tab:minimal-differences}
+\begin{tabular}{lrr}\toprule
+Shape; $d,m,R$ & Regret difference [95\% CI] & Cost difference [95\% CI]\\\midrule
+ball; 8,2,0.5 & -0.10286 [-0.12893, -0.07680] & -0.08206 [-0.11111, -0.05302]\\
+ball; 8,2,2 & -0.06282 [-0.08203, -0.04361] & -0.11445 [-0.15633, -0.07258]\\
+ball; 8,4,0.5 & -0.03962 [-0.07955, +0.00031] & -0.03757 [-0.08616, +0.01102]\\
+ball; 8,4,2 & -0.02242 [-0.06062, +0.01578] & -0.03332 [-0.10633, +0.03969]\\
+ball; 32,2,0.5 & -0.09148 [-0.10093, -0.08203] & -0.10667 [-0.12492, -0.08842]\\
+ball; 32,2,2 & -0.02754 [-0.03663, -0.01845] & -0.04519 [-0.07492, -0.01546]\\
+ball; 32,4,0.5 & -0.13878 [-0.14871, -0.12885] & -0.17655 [-0.19985, -0.15324]\\
+ball; 32,4,2 & -0.05376 [-0.06418, -0.04334] & -0.10600 [-0.14875, -0.06325]\\
+box; 8,2,0.5 & -0.13448 [-0.17990, -0.08906] & -0.17735 [-0.23849, -0.11620]\\
+box; 8,2,2 & -0.12364 [-0.17123, -0.07605] & -0.21152 [-0.29792, -0.12512]\\
+box; 8,4,0.5 & -0.06495 [-0.10745, -0.02246] & -0.10366 [-0.16229, -0.04503]\\
+box; 8,4,2 & -0.05481 [-0.11787, +0.00825] & -0.09722 [-0.21235, +0.01791]\\
+box; 32,2,0.5 & -0.03273 [-0.04732, -0.01815] & -0.09151 [-0.14473, -0.03828]\\
+box; 32,2,2 & -0.01496 [-0.02663, -0.00328] & -0.05216 [-0.09303, -0.01130]\\
+box; 32,4,0.5 & -0.05624 [-0.07451, -0.03798] & -0.20451 [-0.28722, -0.12179]\\
+box; 32,4,2 & -0.04584 [-0.06910, -0.02259] & -0.17173 [-0.26299, -0.08047]\\
+\bottomrule\end{tabular}\end{table}

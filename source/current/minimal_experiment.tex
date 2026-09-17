@@ -1,0 +1,50 @@
+\section{Minimal-feedback experiment}\label{sec:minimal-experiment}
+We test Proposition~\ref{prop:minimal-information} on the system in
+Section~\ref{sec:neural-setup}, with $d\in\{8,32\}$, balls or boxes,
+$R\in\{0.5,2\}$ and $m\in\{2,4\}$. The student is a bias-free
+$d\to32\to m$ SiLU network followed by fixed orthonormal $P$.
+Uniform scaling by latent Euclidean norm for balls or embedded maximum
+absolute coordinate for boxes enforces feasibility while preserving
+$\operatorname{range}(P)$. Parameters are float32; geometry and
+coefficients are float64.
+
+\subsection{Interfaces and protocol}
+The 480-fit grid uses five seeds and six interfaces: target only
+(set the unknown normal to zero), gain (one scalar per active target),
+relevant ($r$ student-visible queries), random ($r$ ambient normal-space
+queries with minimum-norm decoding), full face ($k$ normal-basis queries),
+and privileged full information. Gain uses the minimum-norm normal
+consistent with the response and known face. All methods fit
+Eq.~\eqref{eq:minimal-loss}, normalized by $ad$.
+
+Four direct controls are evaluated on all 80 caches: student basis,
+random orthogonal student basis, hybrid, and pruned hybrid. The last
+deletes normal coordinate directions orthogonal to the student and
+student coordinate directions orthogonal to the normal space, then
+chooses the smaller remaining basis. It does not combine linearly
+dependent directions. Direct controls add 80 fits using the original
+five paired seeds in four representative conditions
+(Table~\ref{tab:direct-training}). These conditions were chosen after
+inspection of the grid; they check interface fidelity and are not an
+independent performance confirmation.
+
+Another 40 fits use five new seeds, eight interfaces (the four direct
+controls plus target, relevant, full face and full information), and
+Eq.~\eqref{eq:shared-actuation} with $d=8,m=4,R=0.5$. The first three
+initial coordinates have independent random signs and magnitudes
+uniform on $[6,10]$; the others are uniform on $[-0.1,0.1]$. All 12
+teacher states have exactly those three active coordinates. This is a
+constructed shared-actuation test of $k=3,m=4,r=1$, not a naturally
+occurring benchmark. A latent rotation makes all student axes visible.
+
+Protocols, seeds and numerical-source hashes are fixed before their
+respective fits. The primary checks exact coefficient recovery to
+relative RMS tolerance $10^{-9}$ and actual scalar query counts.
+Secondary regret fidelity uses tolerance $10^{-3}$ per pair against
+full information, without a population equivalence claim. All 600
+fits are retained. The scalar oracle excludes shared target/baseline
+preparation; full-vector derivatives use a different interface.
+The analytic coefficient is hidden by experimental restriction only.
+
+\subsection{Results}
+\input{current/minimal_results}

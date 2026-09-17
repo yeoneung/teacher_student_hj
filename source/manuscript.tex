@@ -1,0 +1,67 @@
+\documentclass[preprint,11pt]{elsarticle}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,hyperref,mathtools,array}
+\usepackage[section]{placeins}
+\hypersetup{hidelinks}
+\setlength{\emergencystretch}{2em}
+\newtheorem{proposition}{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\journal{Applied Soft Computing}
+\makeatletter
+\def\ps@pprintTitle{\let\@oddhead\@empty\let\@evenhead\@empty
+\def\@oddfoot{\hfil\thepage\hfil}
+\let\@evenfoot\@oddfoot}
+\makeatother
+\begin{document}
+\begin{frontmatter}
+\title{Information loss and minimal feedback in teacher--student policy learning: a Hamilton--Jacobi analysis}
+\author{Anonymous research manuscript}
+\begin{abstract}\input{current/abstract}\end{abstract}
+\begin{keyword}
+Teacher--student learning \sep Hamilton--Jacobi--Bellman equation \sep
+Policy improvement \sep Sensitivity learning \sep Constrained control
+\end{keyword}
+\end{frontmatter}
+\clearpage
+\section{Introduction}\input{current/introduction}
+
+\input{current/theory}
+\input{current/minimal_information}
+\input{current/neural_setup}
+\input{current/minimal_experiment}
+\input{current/neural_information}
+\input{current/transfer_limits}
+\input{current/discussion}
+\input{current/conclusion}
+\begin{samepage}
+\section*{Research assistance}
+OpenAI Codex assisted with formulation, code, experiments, analysis and writing.
+\end{samepage}
+\section*{Data and code availability}
+Code, protocols, simulation outputs and checkpoints are available at
+\url{https://github.com/yeoneung/teacher_student_hj}.
+Versioned artifacts and checksums are provided in
+\href{https://github.com/yeoneung/teacher_student_hj/releases/tag/v1.0.0}{release v1.0.0};
+\ref{app:reproducibility} specifies the file layout.
+\appendix
+\section{Policy-gradient identity and transfer bounds}\label{app:transfer}
+\input{current/gradient}
+\input{current/margin}
+\input{current/minimal_original_results}
+\input{current/minimal_comparisons}
+\input{current/approximate_experiment}
+\input{current/improving_sets}
+\input{current/algorithm}
+\input{current/protocol}
+\input{current/results}
+\input{current/set_experiments}
+\input{current/dynamics}
+\input{current/appendix}
+\input{current/set_appendix}
+\input{current/set_pilot_tables}
+\begingroup\small\setlength{\bibsep}{0pt}
+\bibliographystyle{elsarticle-num}
+\bibliography{hj_gridfree_references,hj_v7_references,hj_v9_references,improving_sets_references,minimal_information_references}
+\endgroup
+\end{document}

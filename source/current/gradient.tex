@@ -1,0 +1,19 @@
+\subsection{Teacher gradient}
+For a differentiable policy $\pi_\theta$ with teacher parameters
+$\theta_\phi$, freeze teacher states and covectors in
+\begin{equation}
+ \mathcal S_\phi(\theta)=\E\sum_{t=0}^{H-1}
+ \left[c_t(x_t^\phi,\pi_\theta(t,x_t^\phi))
+ +(p_{t+1}^\phi)^\top F_t(x_t^\phi,\pi_\theta(t,x_t^\phi))\right].
+\end{equation}
+When differentiation and expectation commute, reverse differentiation gives
+\begin{align}
+ \left.\nabla_\theta\mathcal S_\phi\right|_{\theta_\phi}
+ &=\left.\nabla_\theta J(\pi_\theta)\right|_{\theta_\phi}\\
+ &=\E\sum_t(D_\theta\pi_{\theta_\phi}(t,x_t^\phi))^\top
+                  [c_u+F_u^\top p_{t+1}^\phi].
+\end{align}
+Here $D_\theta\pi$ holds the state fixed; the covectors carry feedback
+effects. Every decision time contributes. The proximal term has zero
+gradient at the teacher. This identity holds at $\theta_\phi$; repeated
+student updates can change both occupancy and covectors.

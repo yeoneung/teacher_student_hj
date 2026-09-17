@@ -1,0 +1,51 @@
+\section{Continuation-audited teaching}
+The nonlinear diagnostic procedure keeps teacher $\phi$ fixed and
+maintains accepted student $\psi$ and trainable proposal $\pi_\theta$.
+The initial student is a weaker pretrained policy of the same architecture.
+
+\subsection{Updates and audit rule}
+The initial cache contains 4,096 state/time pairs sampled with replacement
+from initial-student trajectories, storing features, base-controller
+outputs and projected teacher covectors. Proximal targets are fitted
+with normalized action MSE, Adam learning rate 0.002 and batch 512.
+The coefficient $\eta=\rho/(2r)$ starts at 16. Blocks contain 128 updates,
+with timing checks every 16.
+
+After each block, sample 16 state/time pairs from proposal trajectories
+on four fixed training initials. Let $\bar A_+$ and $\bar A_\pi$ be
+mean exact teacher advantages of fresh targets and proposal actions:
+\begin{equation}\label{eq:operation}
+ \operatorname{operation}=\begin{cases}
+ \text{regularize},&\bar A_+\geq-10^{-7},\\
+ \text{fit},&\bar A_+<-10^{-7}\ \text{and}\ \bar A_\pi>\bar A_+/2,\\
+ \text{refresh},&\text{otherwise}.
+ \end{cases}
+\end{equation}
+Regularization doubles $\eta$ up to 4,096. Fitting preserves proposal
+and Adam state below 1,024 updates since the last reset. Refresh replaces
+a 64-entry cache window using proposal trajectories on eight training
+initials; the other 4,032 initial entries stay fixed.
+
+A target using the nearest cached covector, under RMS state distance
+plus $10|t-t'|/H$, is also evaluated. Its cost is charged and logged
+but does not change the branch. The rule does not separately identify
+sensitivity, curvature and coverage errors.
+
+\subsection{Acceptance and budget}
+Each audit evaluates full proposal cost on 512 training initials.
+Accept finite cost within $10^{-7}(1+|J_{\rm incumbent}|)$ of the
+incumbent. Acceptance updates only the student. Accepted proposals are
+evaluated on 256 validation initials and become eligible if evaluation
+and copying finish within budget. Return the eligible policy with lowest
+validation cost, using initialization as fallback.
+
+The fitting branch may retain a rejected proposal internally; it remains
+ineligible until accepted. Otherwise rejection restores the incumbent.
+Adam resets after acceptance or rejection unless fitting carries forward.
+
+The 30-second teaching budget includes graph/cache preparation, queries,
+continuations, fitting, rejections, validation and synchronized copies.
+Teacher and initial-student pretraining have separate 30- and 7.5-second
+budgets. Common process/CUDA initialization and final disk writing are
+excluded; late checkpoints cannot be selected. Reverse sweeps avoid a
+state-space grid but retain horizon-dependent storage and audit rollouts.

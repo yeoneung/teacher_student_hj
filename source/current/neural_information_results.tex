@@ -1,0 +1,39 @@
+The initial primary is inconclusive: regret difference $+0.000318$
+with 95\% interval $[-0.016912,0.017548]$ and one win in five pairs.
+The severe-constraint secondary improves in all five pairs at widths
+2 and 4, though the width-2 interval crosses zero.
+
+Independent confirmation at $R=0.5,w=2$ reduces normalized regret from
+0.549027 to 0.448915 (18.23\%). The paired difference is $-0.100112$
+$[-0.198038,-0.002185]$, with ten wins. Eight effects lie between
+$-0.03884$ and $-0.03238$; two are $-0.37530$ and $-0.34355$.
+The width-4 secondary also has ten wins but interval
+$[-0.139534,0.002312]$.
+
+In the confirmation primary, action MSE rises from 0.020590 to
+0.022357 while the normal contribution falls from 0.047222 to
+0.034574. Exact regret, their sum with MSE multiplied by $8a$, falls
+from 0.062047 to 0.050671. Weight-only regret is 0.504262; restored
+minus weight is $-0.055347$ $[-0.057134,-0.053560]$. Weighting achieves
+smaller weighted-distance loss (0.036247 versus 0.042683) but larger
+omitted slack (0.020673 versus 0.007989). Shuffled-normal regret is
+0.635812, with restored-minus-shuffled difference $-0.186897$
+$[-0.247484,-0.126310]$. These are post-fit decompositions, without a
+claim of unique causal mediation.
+
+At $R=32$, parameter tensors are identical across losses (135 paired
+checks). At $R=0.5,w=16$, confirmation regrets are 0.000298 for point
+and 0.000309 for restored. At $R=2,w=2$ the secondary difference is
+$-0.010305$ $[-0.018903,-0.001706]$, whereas $R=2,w=4$ is adverse:
+$+0.017940$ $[0.004030,0.031849]$. All conditions appear in
+Table~\ref{tab:neural-information}.
+
+Confirmation-primary closed-loop cost falls from 8.204291 to 8.103785
+(1.23\%), with ten wins but interval $[-0.232391,0.031378]$. Both
+means beat teacher cost 8.713862, so this experiment does not reproduce
+the exact witness's teacher-worsening outcome. Rare-state cost falls
+from 61.154090 to 60.134279; common-state cost rises from 2.225335
+to 2.232217. Restored-minus-weight cost is $-0.025450$
+$[-0.026580,-0.024321]$. All 600 saved policies reproduce reported
+means; decomposition errors are below $3.1\times10^{-14}$ and
+telescoping errors below $7.4\times10^{-14}$.

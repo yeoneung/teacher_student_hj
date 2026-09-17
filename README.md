@@ -4,6 +4,8 @@ Research materials for **Information loss and minimal feedback in teacher-studen
 
 The study asks which future-cost information a constrained teacher action can lose, and which part a fixed student output space needs. Under an explicit quadratic value-difference interface, the required exact scalar-query count is `rank(P.T @ Gamma)`. The rank proof uses classical linear recovery; the contribution is its teacher-constraint/student-representation interpretation and controlled evidence.
 
+[Read the manuscript](manuscript.pdf) or browse its [LaTeX source](source/manuscript.tex).
+
 ## Findings and limits
 
 - Exact examples have identical improving targets but opposite cost effects after globally optimal shared-student fitting.

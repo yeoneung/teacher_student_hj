@@ -1,0 +1,60 @@
+\section{Audit experiment protocol}\label{app:audit-protocol}
+\subsection{Tasks and policies}
+The synthetic known-model tasks are a mechanical ring with 16 nodes,
+32 states and horizon 160, and a reaction ring with 32 states and
+horizon 320. Both use control-affine dynamics, quadratic input costs
+and RMS constraints (\ref{app:dynamics}). One timed experiment runs
+at a time on an RTX 4080 SUPER, PyTorch 2.7.1 and CUDA 11.8.
+
+All policies use a node-shared residual actor with two width-64 SiLU
+layers and time, local, neighboring and pooled state features. A bounded
+residual is added to a projected linearized-LQR base, then projected
+to the input set. Mechanical teachers are 30-second Short policies
+trained with 16-step rollouts and the stated terminal penalty; reaction
+teachers are 30-second Warm DPC policies using full-horizon derivatives.
+Initial students are 7.5-second Short policies. These pretrained inputs
+are separate from the teaching runs.
+
+\subsection{Comparators and evaluation}
+Five paired teacher/student/data replications per task compare cloning,
+cached Hamiltonian fitting, fixed targets, adaptive targets and audited
+teaching. Within a replicate they share the teacher, initial student,
+cache, architecture, 512 training initials, 256 validation initials and
+30-second allocation. After saving each selected policy, generate 512
+separate test initials shared across methods and teacher.
+
+Cloning fits teacher actions. Cached Hamiltonian fitting uses the
+normalized proximal quadratic with $\eta=16$. Fixed targets also use
+16, selected from $\{16,64,256\}$ in a separate 15-second validation
+experiment. Adaptive fitting doubles $\eta$ on rejection, invalid
+predicted reduction or an actual-to-predicted reduction ratio below
+0.25; it halves $\eta$ above 0.75, within $[0.25,4096]$. Teacher and
+cache remain fixed.
+
+Baselines gate acceptance and reset Adam every 512 updates; audited
+teaching checks every 128 and may retain fitting state. Thus schedules,
+coverage and retention change jointly. Common covector preparation is
+charged even to cloning. Report seed-mean test costs and paired 95\%
+$t$ intervals with four degrees of freedom, without multiplicity
+adjustment, test-based exclusion or retuning.
+
+\subsection{Diagnostics}
+Each selected student supplies 32 state/time pairs from four independent
+diagnostic trajectories. Fresh covectors and teacher continuations
+evaluate Eq.~\eqref{eq:impact-accounting}; all post-fit targets use
+$\eta=16$. The 160 pairs per task are dependent samples and differ
+from training targets and complete test-trajectory sums.
+
+An action-level experiment crosses five teacher seeds, checkpoint
+budgets 7.5/15/30 seconds, and five sensitivity conditions: unperturbed,
+fixed bias or Gaussian noise at relative magnitudes 0.5/1.5. Each
+task/seed reuses 32 weak-student state/time pairs. The per-coordinate
+scale is $\max(\operatorname{RMS}(B^\top p),2r\bar u)$. Injected norms
+are known; no student is retrained.
+
+Curvature is calibrated independently as 1.5 times the 95th percentile
+of positive directional-remainder coefficients on two complete
+trajectories per task (\ref{app:diagnostics}): $0.000550492$ and
+$0.000417389$. These fixed empirical values are assessed by violations,
+false positives and coverage. Improvement/worsening thresholds are
+$-10^{-8}$/$10^{-8}$; violation tolerance is $10^{-7}$.

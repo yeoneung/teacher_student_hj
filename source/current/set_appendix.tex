@@ -1,0 +1,48 @@
+\section{Set geometry and checks}\label{app:set-geometry}
+Let $C=\{u:\|u\|\leq R_U,\ \|u-m\|\leq R\}$ be nonempty. For a source $s$,
+first compute its projections $p_U$ and $p_B$ onto the individual balls.
+If $p_U$ lies in the second ball it is the projection onto $C$; if $p_B$
+lies in the first ball it is the projection. Otherwise both boundaries
+are active. With $d=\|m\|>0$, $e=m/d$ and
+\begin{equation}
+ h=\frac{R_U^2+d^2-R^2}{2d},\qquad
+ s_\perp=s-(s^\top e)e,
+\end{equation}
+the intersection of the boundaries lies in $u^\top e=h$ and has radius
+$\sqrt{R_U^2-h^2}$ about $he$. Its closest point is
+\begin{equation}
+ \operatorname{proj}_C s=he+\sqrt{R_U^2-h^2}\,
+                       \frac{s_\perp}{\|s_\perp\|}.
+\end{equation}
+In the non-tangent both-active case $s_\perp$ is nonzero; otherwise a
+single-ball projection is already feasible. Tangency collapses the radius
+to zero. Concentric balls are handled by a single-ball case. Thus no
+iterative optimization or state-space grid is required for the tested geometry.
+
+The implementation is compared with an independent SciPy SLSQP solution on
+120 random feasible intersections in dimensions 2, 3, 8 and 32, with
+additional concentric, singleton and tangent cases. Central finite differences
+check the squared-distance gradient. These checks test the supplied geometry,
+not the validity of an empirical nonlinear curvature bound.
+
+For a finite-horizon exact-model check, use $n=8$, horizon 20,
+$x_{t+1}=Ax_t+Bu_t$, $A=0.86I+0.025(S+S^\top)$ with cyclic shift $S$,
+$B=0.15I$, $Q=0.1I$, $r=0.07$, terminal matrix $P_{20}=I$, and
+$\|u\|\leq2$. The globally feasible zero teacher has
+$P_t=Q+A^\top P_{t+1}A$ and value $x^\top P_tx$. Use its exact quadratic
+gradient and $\kappa_t=2\lambda_{\max}(B^\top P_{t+1}B)$, the exact
+upper-model minimizer as anchor, $\alpha=1/2$, and 128 standard-normal
+initial states from the documented random seed. Project the constant
+source $0.1\mathbf1$ at every student-visited state.
+
+The mean teacher cost is 3.329050 and the projected policy cost is 2.782772,
+a difference of $-0.546278$, bounded above by $-0.541921$ in
+Eq.~\eqref{eq:set-policy-bound}. Every evaluated action belongs to its set.
+The unprojected constant policy instead has cost 3.756661; its positive
+cost difference 0.427611 is below the corresponding distance bound 3.726794.
+The maximum telescoping error across both policies is below
+$3\times10^{-15}$. These are full-trajectory numerical checks of an analytic
+quadratic model, not learned-policy performance or a nonlinear certificate.
+The one-step constant-policy example in \ref{sec:sets} independently
+checks strict approximation relaxation, its adverse cost comparison, and
+the singleton limit for an exact minimizer anchor.

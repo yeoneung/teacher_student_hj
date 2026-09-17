@@ -1,0 +1,37 @@
+\section{Controlled neural experiments}\label{sec:neural-setup}
+The two neural studies use horizon 12 and the exact system
+\begin{equation}\label{eq:neural-system}
+ x_{t+1}=0.8x_t+0.2u_t,\quad u_t\in U,\quad
+ c_t=0.36\|x_t\|^2+0.05\|u_t\|^2,\quad g=\|x_{12}\|^2.
+\end{equation}
+Teacher $\phi=0$ has $V_t^\phi(x)=\|x\|^2$ and advantage
+\begin{equation}\label{eq:neural-advantage}
+ A_t^\phi(x,u)=a\|u\|^2+b(x)^\top u,\qquad a=0.09,\quad b(x)=0.32x.
+\end{equation}
+The coefficient includes quadratic continuation $0.2^2$. The target is
+$v=\operatorname{proj}_U(-16x/9)$, with normal $n=2av+b(x)$.
+
+Except in the specified shared-actuation construction, initial states
+have probability 0.1 of a randomly signed first coordinate of magnitude
+uniform on $[6,10]$ and others uniform on $[-0.1,0.1]$. Otherwise the
+first coordinate is uniform on $[-0.1,0.1]$ and others on $[-1,1]$.
+This anisotropic law is common to all radii; changing $R$ also changes
+the feasible control problem.
+
+Each fit uses 1,024 training initials and their 12 teacher states,
+512 independent validation initials and 4,096 test initials. Paired
+methods share initialization, data and minibatches. Adam uses 4,096
+updates, batch 512, learning rate 0.003, moments $(0.9,0.999)$,
+epsilon $10^{-8}$ and norm clipping at 10. Zero output weights initialize
+the student at the teacher. The final checkpoint is saved before test
+evaluation, without selection, gate or rollback. Validation curves are
+descriptive. Fits run sequentially on an RTX 4080 SUPER.
+
+The local endpoint on held-out teacher states is
+\begin{equation}\label{eq:normalized-regret}
+ \mathcal R(\pi)=\frac{\E[A^\phi(x,\pi(x))-A^\phi(x,v(x))]}
+                         {\E[-A^\phi(x,v(x))]}.
+\end{equation}
+Zero realizes the target; one equals teacher regret. Full 12-step
+costs are evaluated separately on student trajectories. The studies
+use different output parameterizations and are analyzed separately.

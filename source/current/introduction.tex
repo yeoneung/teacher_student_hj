@@ -1,0 +1,57 @@
+A teacher can supply an improving action at every training state while
+a student fitted to those actions becomes worse. Input constraints can
+hide the cost of deviating from a target, and a shared policy must trade
+off deviations across states. We ask which teacher information must be
+retained for that tradeoff to preserve cost comparisons.
+
+The setting is deterministic feedback control with known differentiable
+dynamics and a common cost. Hamilton--Jacobi (HJ) policy evaluation
+defines the teacher's future-cost sensitivity; Hamilton--Jacobi--Bellman
+(HJB) improvement uses it to compare actions. The teacher need not be
+optimal. Converting its improvement signal into supervision introduces
+two obstructions. Constrained targets can be identical despite opposite
+cost effects of their best shared regression fit. Nonempty improvement
+sets can also be jointly unrealizable, even when the student class
+contains a policy that improves average cost. We give exact examples
+with complete coverage and globally solved fitting.
+
+For a known isotropic quadratic teaching model, the missing information
+is a normal component at the constrained target. A student restricted
+to a fixed output space needs only the projection of that component
+into its own space. We prove that the minimum number of exact scalar
+value-difference queries is $\operatorname{rank}(P^\top\Gamma)$, where
+$P$ spans student outputs and $\Gamma$ spans normal ambiguity, and
+construct feasible queries attaining it. A gain scalar suffices on a
+ball but can fail on a box. Direct student-basis queries also recover
+exactly. A hybrid using the smaller of normal and student dimensions
+already attains the bound for generic relative position; strict savings
+require additional alignment. A spectral truncation bound describes
+the approximation error when that alignment is perturbed.
+
+Cost-aware imitation, Hamiltonian fitting and improvement from imperfect
+oracles are established in AggreVaTeD, MPC-Net and MAMBA
+\cite{sun2017aggrevated,carius2020mpcnet,cheng2020mamba}. Related foundations
+include guided policy search, distillation and regularized improvement
+\cite{levine2013guided,czarnecki2019distilling,abdolmaleki2018mpo,geist2019regularized},
+constrained HJB policy iteration~\cite{kundu2024policy}, viscosity-based
+operator learning~\cite{lee2025pideeponet} and proximal policy
+distillation~\cite{spigler2025ppd}. Constraint-induced ambiguity is studied
+in inverse reinforcement learning~\cite{schlaginhaufen2023identifiability};
+the kernel criterion used here belongs to classical linear information
+recovery~\cite{pinkus1986recovery,foucart2021recovery}. Our contribution
+is the specific information requirement obtained by combining teacher
+constraint geometry with student representation.
+
+
+The evidence separates exact information recovery from policy improvement.
+A 480-fit grid and 120 direct-interface checks compare feasible queries
+with full information, student-space controls and a simple hybrid.
+A constructed shared-actuation case tests positive rank below both
+ambient dimensions; random embeddings identify where there is no
+advantage over the hybrid. A separate 600-fit loss intervention tests
+normal restoration, scalar weighting, shuffled information and
+constraint/capacity controls. Its initial primary is inconclusive;
+independent confirmation finds lower Bellman regret despite higher
+action MSE, with heterogeneous effects and uncertain closed-loop benefit.
+Conditional transfer bounds, joint-realizability examples and the full
+nonlinear audit and set studies are supplied in the appendices.

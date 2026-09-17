@@ -1,0 +1,25 @@
+\section{Transfer to policy cost}\label{sec:transfer-limits}
+Preserving teacher-state cost comparisons does not certify an updated
+policy. Summed advantages must be evaluated on student trajectories;
+approximate continuation additionally requires sensitivity and curvature
+control. The bounds in \ref{app:transfer} separate target gain, fitting
+error, sensitivity discrepancy and continuation remainder. Local
+improvement sets do not remove the shared-policy constraint: an exact
+three-context example has nonempty sets with no common student,
+although average-cost improvement is attainable (\ref{sec:sets}).
+
+Separate nonlinear studies test these limits. In 50 continuation-audit
+fits, the guided policy reduces cost relative to its initialization by
+7.74\% and 18.64\% on mechanics and reaction tasks, but remains 0.42\%
+and 2.60\% above its teacher. The comparison does not establish an
+advantage over adaptive regularization. Sampled fitting costs can exceed local target gains,
+and 26 of 4,800 perturbed-action checks violate the empirical curvature
+bound (\ref{app:audit-protocol}--\ref{app:audit-results}).
+
+A 56-fit improvement-set study retains an independent five-seed
+comparison: mean cost is 0.54\% below point-target fitting, with a
+paired interval crossing zero, and 1.28\% above upper-model fitting.
+All five selected set policies remain worse than their teacher
+(\ref{sec:set-experiments}). These different procedures neither
+establish general optimization superiority nor identify the same
+causal mechanism as the controlled loss intervention.

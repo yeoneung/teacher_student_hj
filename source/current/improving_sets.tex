@@ -1,0 +1,104 @@
+\section{Improvement sets}\label{sec:sets}
+An advantage sublevel set allows the student to choose among actions
+meeting a specified improvement requirement.
+
+\subsection{Construction}
+At $z=(t,x)$, let $u_0=\phi_t(x)$, $y_0=F_t(x,u_0)$,
+$p=\nabla V^\phi_{t+1}(y_0)$, and
+$\widehat q_z(u)=r_t\|u\|^2+(l_t+B_t^\top\widehat p)^\top u$.
+Assume compact convex nonempty $U$, $u_0\in U$, $r_t>0$, and, for all
+$u\in U$,
+\begin{align}
+ \|B_t^\top(\widehat p-p)\|&\leq\varepsilon_z,\\
+ V^\phi_{t+1}(y_0+B_t(u-u_0))-V^\phi_{t+1}(y_0)
+ -p^\top B_t(u-u_0)&\leq\tfrac{\kappa_z}{2}\|u-u_0\|^2,
+\end{align}
+with $\varepsilon_z,\kappa_z\geq0$. The upper model
+\begin{equation}\label{eq:set-model}
+ \mathcal B_z(u)=\widehat q_z(u)-\widehat q_z(u_0)
+ +\varepsilon_z\|u-u_0\|+\tfrac{\kappa_z}{2}\|u-u_0\|^2
+\end{equation}
+satisfies $A_z^\phi(u)\leq\mathcal B_z(u)$ and $\mathcal B_z(u_0)=0$.
+For a feasible candidate $w_z$, define the realized anchor and gain
+\begin{equation}
+ a_z=\begin{cases}w_z,&\mathcal B_z(w_z)<0,\\u_0,&\text{otherwise},\end{cases}
+ \qquad\widehat g_z=-\mathcal B_z(a_z)\geq0.
+\end{equation}
+Use this same anchor for point and set supervision. For $0<\alpha\leq1$,
+\begin{equation}\label{eq:improving-set}
+ C_\alpha(z)=\{u\in U:\mathcal B_z(u)\leq-\alpha\widehat g_z\}.
+\end{equation}
+\begin{proposition}\label{prop:set}
+The set $C_\alpha(z)$ is nonempty, compact and convex, contains $a_z$,
+and every member satisfies $A_z^\phi(u)\leq-\alpha\widehat g_z$.
+Its projection is unique and nonexpansive, and
+\begin{equation}\label{eq:set-gradient}
+ \nabla_u\operatorname{dist}(u,C_\alpha(z))^2
+ =2\{u-\operatorname{proj}_{C_\alpha(z)}u\}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Continuity and strong convexity of $\mathcal B_z$, compactness of $U$,
+and $-\widehat g_z\leq-\alpha\widehat g_z$ give the set properties.
+The advantage inequality follows from its definition; the projection
+claims follow from the convex projection variational inequality.
+\end{proof}
+At $\alpha=1$ the set is a singleton only if the anchor minimizes
+$\mathcal B_z$. When $\widehat g_z=0$, it still permits modeled
+non-worsening actions.
+
+\subsection{Cost bound}
+For a distribution $\mu$ and feasible policy class $\Pi$,
+\begin{equation}
+ L_{\rm set}(\pi)=\E_\mu\operatorname{dist}(\pi(z),C_\alpha(z))^2
+ \leq\E_\mu\|\pi(z)-a_z\|^2=L_{\rm point}(\pi).
+\end{equation}
+Lower set loss need not mean lower cost. For equiprobable costs
+$(u-1)^2,(u-2)^2$, $U=[-3,3]$, teacher zero and constant students,
+the best point fit is 1.5 with MSE 0.25 and cost 0.25. At
+$\alpha=1/2$, constant 1 has zero set loss but cost 0.5; teacher cost is 2.5.
+
+\begin{proposition}\label{prop:set-cost}
+Suppose the upper-model assumptions hold on trajectories of a feasible
+student $\pi$. Let $L_z$ be a Lipschitz constant of $\mathcal B_z$ on $U$
+and $\delta_z=\operatorname{dist}(\pi(z),C_\alpha(z))$. With finite expectations,
+\begin{align}\label{eq:set-policy-bound}
+ J(\pi)-J(\phi)&\leq-\alpha\E\sum_t\widehat g_{z_t}
+                       +\E\sum_tL_{z_t}\delta_{z_t}\\
+ &\leq-\alpha\E\sum_t\widehat g_{z_t}
+ +\sqrt{\E\sum_tL_{z_t}^2}\sqrt{\E\sum_t\delta_{z_t}^2},\nonumber
+ \qquad z_t&=(t,x_t^\pi).\nonumber
+\end{align}
+An admissible constant is
+\begin{equation}
+ L_z=\sup_{u\in U}\|2r_tu+l_t+B_t^\top\widehat p\|
+       +\varepsilon_z+\kappa_z\operatorname{diam}(U).
+\end{equation}
+\end{proposition}
+\begin{proof}
+For $v=\operatorname{proj}_{C_\alpha(z)}\pi(z)$,
+$A_z^\phi(\pi(z))\leq\mathcal B_z(v)+L_z\|\pi(z)-v\|
+\leq-\alpha\widehat g_z+L_z\delta_z$.
+Sum along student trajectories and apply Cauchy--Schwarz. The displayed
+$L_z$ bounds the three terms of Eq.~\eqref{eq:set-model}.
+\end{proof}
+An upper-model error $\xi_z$ adds $\E\sum_t\xi_{z_t}$. Cache loss
+requires a coverage argument to control this student-occupancy bound.
+
+\subsection{Projection loss}
+For $\varepsilon_z=0$ and a Euclidean input ball of radius
+$R_U=\sqrt n\,\bar u$, set $a=r_t+\kappa_z/2$,
+$h_z=2r_tu_0+l_t+B_t^\top p$ and $m_z=u_0-h_z/(2a)$. Then
+\begin{equation}
+ C_\alpha(z)=U\cap\{u:\|u-m_z\|\leq R_z\},\qquad
+ R_z^2=\frac{\|h_z\|^2/(4a)-\alpha\widehat g_z}{a}.
+\end{equation}
+Projection uses single-ball projections or their boundary intersection,
+with linear arithmetic cost in action dimension (\ref{app:set-geometry}).
+This formula is restricted to the stated geometry and isotropic costs.
+The implementation caches set parameters, recomputes projection at every
+update, and detaches it when differentiating squared distance, as justified
+by Eq.~\eqref{eq:set-gradient}. The teacher stays fixed; deployment uses
+only the student. Unlike policy-update projection~\cite{yang2020pcpo},
+this projection defines action-level supervision.
+\input{current/joint_realizability}

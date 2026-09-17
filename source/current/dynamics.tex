@@ -1,0 +1,18 @@
+\section{Dynamics, costs and policy inputs}\label{app:dynamics}
+All ring indices are periodic, and $\langle z\rangle=n^{-1}\sum_i z_i$. The
+mechanical system uses $h=0.08$, coupling 2.5, RMS control bound 3.2, and
+\begin{align}
+ v_i^+&=v_i+h[5\sin q_i+2.5\{\sin(q_{i-1}-q_i)+\sin(q_{i+1}-q_i)\}+u_i-0.2v_i],\\
+ q_i^+&=q_i+hv_i^+,\\
+ c(x,u)&=h\langle2(1-\cos q_i)+0.08v_i^2+0.04u_i^2+0.2(1-\cos(q_i-q_{i+1}))\rangle,\\
+ g(x)&=\langle8(1-\cos q_i)+0.4v_i^2\rangle.
+\end{align}
+Initial positions are $2.2z_i+0.6z_0$ and velocities $1.5w_i$, where the
+variables are independent uniform $[-1,1]$ except the common $z_0$.
+The reaction system uses $h=0.05$, coupling 2 and RMS bound 0.8:
+\begin{align}
+ x_i^+&=x_i+h[2(x_{i-1}+x_{i+1}-2x_i)+1.2x_i-0.4x_i^3+u_i],\\
+ c(x,u)&=h\langle x_i^2+0.1u_i^2+0.1(x_i-x_{i+1})^2\rangle,
+ \qquad g(x)=3\langle x_i^2\rangle.
+\end{align}
+Initial values are $1.4z_i+z_0$.

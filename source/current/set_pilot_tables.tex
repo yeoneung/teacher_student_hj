@@ -1,0 +1,28 @@
+\section{Exploratory set comparisons}\label{app:set-pilots}
+These one-pair-per-task comparisons report every relaxation, including unsuccessful runs. They are exploratory and do not supply confidence intervals across independent training runs. Each entry is the mean over 512 test initials. Table~\ref{tab:set-base} uses zero-residual analytic-base initialization; Table~\ref{tab:set-warm} uses the pretrained width-64 student. The validation-only criterion and disjoint replication are specified in \ref{sec:set-experiments}.
+\begin{table}[htbp]\centering\small
+\caption{Analytic-base initialization: test cost by task and student width. All mechanical students and all set students select their initial policy.}\label{tab:set-base}
+\begin{tabular}{lrrrr}\toprule
+ & \multicolumn{2}{c}{Mechanics} & \multicolumn{2}{c}{Reaction} \\
+Method & Width 16 & Width 64 & Width 16 & Width 64 \\ \midrule
+Point anchor & 43.812646 & 43.812646 & 0.972505 & 1.325053 \\
+Adaptive point & 43.812646 & 43.812646 & 0.972505 & 0.801105 \\
+Upper model & 43.812646 & 43.812646 & 1.325053 & 1.325053 \\
+Set $\alpha=0.25$ & 43.812646 & 43.812646 & 1.325053 & 1.325053 \\
+Set $\alpha=0.50$ & 43.812646 & 43.812646 & 1.325053 & 1.325053 \\
+Set $\alpha=0.75$ & 43.812646 & 43.812646 & 1.325053 & 1.325053 \\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[htbp]\centering\small
+\caption{Pretrained-student pilot. Validation costs select relaxation and determine replication eligibility; test costs are not used for those decisions.}\label{tab:set-warm}
+\begin{tabular}{lrrrr}\toprule
+ & \multicolumn{2}{c}{Mechanics} & \multicolumn{2}{c}{Reaction} \\
+Method & Validation & Test & Validation & Test \\ \midrule
+Point anchor & 3.153080 & 3.148607 & 1.049305 & 0.854282 \\
+Adaptive point & 3.130316 & 3.094025 & 1.049305 & 0.854282 \\
+Upper model & 3.282828 & 3.236654 & 1.049305 & 0.854282 \\
+Set $\alpha=0.25$ & 3.282828 & 3.236654 & 0.938238 & 0.993972 \\
+Set $\alpha=0.50$ & 3.282828 & 3.236654 & 1.049305 & 0.854282 \\
+Set $\alpha=0.75$ & 3.282828 & 3.236654 & 1.030278 & 0.950207 \\
+\bottomrule\end{tabular}\end{table}
+\par
+Training uses float32 neural updates and projection parameters; the independent diagnostic reconstruction and exact checks use float64. Across all 56 saved students, comparing float32 projections with the float64 formula on their diagnostic states gives maximum action error divided by the control-ball radius below $4.79\times10^{-4}$. This finite-precision check does not make the empirically bounded nonlinear model a certificate. Checkpoints, per-initial-state costs, sampled actions and source hashes accompany every run.

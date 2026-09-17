@@ -1,0 +1,18 @@
+Constrained teacher actions can discard future-cost information needed
+by a shared student policy. Hamilton--Jacobi policy evaluation identifies
+the missing normal component; the student's output space determines
+which part matters. For a known isotropic quadratic model and a fixed
+output space, we characterize the minimum number of exact scalar
+value-difference queries preserving all student cost comparisons.
+Feasible queries attain this rank bound. Direct student-basis queries
+and a simple hybrid are also exact: fewer queries than the hybrid
+require rank below both the normal and student dimensions. Across
+480 neural fits and 120 direct-interface checks, recovered information
+reproduces full-information learning. Random embeddings give no saving
+over the hybrid; a constructed shared-actuation geometry requires one
+query instead of three. A spectral bound quantifies approximate alignment
+and response error. Separately, a 600-fit loss intervention confirms
+lower Bellman regret despite higher action MSE under severe constraints,
+with heterogeneous effects, adverse conditions and uncertain closed-loop
+benefit. Exact failure examples and nonlinear transfer studies delimit
+what preserved teaching information can guarantee.

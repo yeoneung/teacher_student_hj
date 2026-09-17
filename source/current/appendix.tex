@@ -1,0 +1,66 @@
+\section{Diagnostic calibration}\label{app:diagnostics}
+The independent curvature calibration uses two complete student trajectories
+per task. The teaching policies are 7.5-second Short checkpoints. Calibration
+students are unaudited proximal-target policies: 256-update fitting cycles,
+full training-cost acceptance, teacher promotion on acceptance, and an
+agreement-ratio coefficient schedule starting at 16. They use a 30-second
+total allocation and separate teacher seed 9501. These policies supply calibration trajectories only.
+Reverse differentiation evaluates each fixed teacher's value gradient at
+the next state after its own action. The positive directional-remainder
+coefficient is the larger of $2[C]_+/\|u-u_0\|^2$ for the tested student
+action and proximal target, with a $10^{-20}$ denominator floor. Take its
+95th percentile and multiply by 1.5 for the fixed empirical parameter.
+This coefficient uses realized remainders and is not a prospective bound.
+
+On these complete calibration trajectories, the maximum difference between
+summed exact teacher advantages and the independently evaluated policy
+cost difference is $3.94\times10^{-7}$. 
+
+The perturbation experiment uses 150 task/teacher/quality/noise cases with
+32 sampled actions each. It does not retrain students. Bound-violation
+counts by condition (none, bias 0.5, Gaussian 0.5, bias 1.5, Gaussian 1.5)
+are $(9,2,0,1,0)$ in mechanics and $(0,3,2,6,3)$ in reaction.
+\input{current/noise_table}
+
+\section{Paired uncertainty}\label{app:uncertainty}
+\input{current/uncertainty_table}
+Each audit interval concerns the five paired teacher/student/data replications.
+States within a trajectory and repeated actions under different perturbations
+are not counted as independent replications. All selected policies and raw
+per-state costs are supplied, including runs worse than their teacher.
+
+\section{Reproducibility}\label{app:reproducibility}
+The repository is
+\url{https://github.com/yeoneung/teacher_student_hj}.
+Its \href{https://github.com/yeoneung/teacher_student_hj/releases/tag/v1.0.0}{v1.0.0 release}
+provides \texttt{research-artifacts-v1.zip}. Extracting this archive gives
+\texttt{research/README.md} for environment and execution instructions,
+\texttt{research/results/} for protocols, simulation outcomes and
+checkpoints, and the analysis scripts in \texttt{research/}.
+The release's \texttt{artifact-manifest.json} records asset and file hashes.
+The reference archives \path{07_supporting_evidence.zip} and
+\path{08_data_and_checkpoints.zip}, available in the same release,
+are required by \texttt{verify\_evidence.py -{}-stage-inputs}.
+
+The package supplies numerical-source and policy hashes, checkpoint
+eligibility, raw costs, diagnostic arrays, environment versions and
+entry points. Teacher construction, validation and test records remain
+separate. Analysis re-evaluates stored policies without retraining.
+
+The loss intervention includes 600 final policies and separate initial
+and confirmation protocols. The confirmation plan hashes the initial
+report and both numerical entry points before training. Checks verify
+normal/radial decompositions and inactive-constraint parameter equality.
+The minimal-information study supplies 480 policies, 80 caches with
+actual query counts and a frozen protocol. Its analysis verifies
+source/cache/checkpoint hashes and recovered coefficients. Separate
+120-case algebraic checks cover sub-bound indistinguishability and
+response error; these are not training replications.
+
+The direct-query follow-up supplies 120 additional policies, all
+re-evaluated, and scalar-count/timing records for 85 caches. Four
+conditions reuse grid data for fidelity checks; the constructed
+shared-actuation condition uses new seeds. The 2,304 approximate-feedback
+checks are algebraic, not training replications. Across the distinct
+studies the paper reports 1,306 fitted policies; their samples and
+statistics are not pooled.

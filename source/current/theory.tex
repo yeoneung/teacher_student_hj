@@ -1,0 +1,65 @@
+\section{Hamilton--Jacobi formulation}
+For deterministic dynamics $\dot x=f(t,x,u)$, running cost $\ell$ and
+terminal cost $g$, a fixed feasible teacher $\phi$ has value
+\begin{equation}
+ V^\phi(t,x)=\int_t^T\ell(s,x_s^\phi,\phi(s,x_s^\phi))\,ds+g(x_T^\phi),
+ \qquad J(\phi)=\E_{x_0}V^\phi(0,x_0).
+\end{equation}
+In a smooth region it satisfies policy evaluation,
+\begin{equation}
+ V_t^\phi+H(t,x,\phi,\nabla V^\phi)=0,
+ \qquad H(t,x,u,p)=\ell(t,x,u)+p^\top f(t,x,u).
+\end{equation}
+The optimal HJB equation instead minimizes over actions:
+\input{current/hjb_identity}
+
+For $x_{t+1}=F_t(x_t,u_t)$, the discrete counterpart is
+\begin{align}
+ A_t^\phi(x,u)&=c_t(x,u)+V_{t+1}^\phi(F_t(x,u))-V_t^\phi(x),\\
+ J(\pi)-J(\phi)&=\E_{x_0}\sum_{t=0}^{H-1}
+ A_t^\phi(x_t^\pi,\pi_t(x_t^\pi)).
+\end{align}
+Differentiating the fixed teacher's feedback trajectory gives
+\begin{equation}
+ p_t=c_x+(D_x\phi_t)^\top c_u+
+       (F_x+F_uD_x\phi_t)^\top p_{t+1},\qquad p_H=\nabla g.
+\end{equation}
+One reverse sweep obtains the covectors without a state-space grid or
+fitted scalar critic~\cite{silver2014dpg,heess2015svg}. At projection
+boundaries, automatic differentiation uses the implemented branch.
+
+\subsection{Feasible targets}
+For control-affine dynamics and isotropic quadratic action cost, write
+\begin{equation}
+ F_t(x,u)=a_t(x)+B_tu,\quad
+ c_t(x,u)=c_{0t}(x)+r_t\|u\|^2+l_t^\top u,\quad
+ b_t=l_t+B_t^\top p_{t+1}.
+\end{equation}
+The local Bellman model is $q_t(u)=r_t\|u\|^2+b_t^\top u$, up to
+an action-independent constant. For Euler dynamics $F=x+hf$ and
+$c=h\ell$, $q_t/h$ is the control-dependent Hamiltonian with frozen
+next-state covector. For closed convex $U$ and $r_t>0$,
+\begin{align}
+ u_t^+&=\arg\min_{u\in U}\{q_t(u)+\tfrac\rho2\|u-u_t^\phi\|^2\},\\
+ &=\operatorname{proj}_U\frac{\rho u_t^\phi-b_t}{2r_t+\rho}.
+\end{align}
+Anisotropic costs require metric projection. The same local expansion
+is used at the final decision; its terminal remainder need not vanish.
+For fixed state and teacher action, nonexpansivity gives
+\begin{equation}
+ \|u^+(\widehat p)-u^+(p)\|
+ \leq\frac{\|B^\top(\widehat p-p)\|}{2r+\rho}.
+\end{equation}
+
+\subsection{Information lost at constraints}
+Put $Q_\rho=q+\rho\|u-u^\phi\|^2/2$ and $a=r+\rho/2$. Then
+\begin{equation}\label{eq:v9-normal}
+ Q_\rho(u)-Q_\rho(u^+)=a\|u-u^+\|^2+
+              \nabla Q_\rho(u^+)^\top(u-u^+).
+\end{equation}
+The normal term is nonnegative on $U$ and vanishes for an interior
+target. For a ball, if both actions lie on its sphere and
+$\nabla Q_\rho(u^+)=-\lambda u^+$, the difference becomes
+$(a+\lambda/2)\|u-u^+\|^2$. General feasible students require the
+additional term derived below.
+\input{current/information_loss}

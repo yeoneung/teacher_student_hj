@@ -1,0 +1,25 @@
+\begin{equation}
+ \partial_t V^*+\min_{u\in U}H(t,x,u,\nabla_xV^*)=0,
+ \qquad V^*(T,x)=g(x).
+\end{equation}
+\begin{proposition}
+Suppose $V^\phi$ is continuously differentiable along the relevant
+trajectories, both feasible policies have well-defined trajectories and
+integrable costs, and they share the initial distribution and terminal
+cost. Then
+\begin{align}
+ J(\pi)-J(\phi)&=\E\int_0^T
+ \mathcal A^\phi(t,x_t^\pi,\pi(t,x_t^\pi))\,dt,\\
+ \mathcal A^\phi(t,x,u)&=H(t,x,u,\nabla V^\phi)
+                  -H(t,x,\phi(t,x),\nabla V^\phi).
+\end{align}
+\end{proposition}
+\begin{proof}
+The chain rule and teacher evaluation equation give
+$\ell(t,x_t^\pi,\pi)+\frac{d}{dt}V^\phi(t,x_t^\pi)
+=\mathcal A^\phi(t,x_t^\pi,\pi)$. Integrate and use
+$V^\phi(T,\cdot)=g$.
+\end{proof}
+Nonpositive integrated advantage implies no greater student cost. The
+condition concerns student-visited states, which teacher samples alone
+need not cover.

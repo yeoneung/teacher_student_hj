@@ -1,0 +1,36 @@
+\subsection{Joint realizability}\label{sec:joint-sets}
+Define the set of students that satisfy every teaching set on a specified
+collection $Z$:
+\begin{equation}
+ \Pi_\alpha(Z)=\{\pi\in\Pi:\pi(z)\in C_\alpha(z)\text{ for every }z\in Z\}.
+\end{equation}
+\begin{proposition}\label{prop:joint-sets}
+For the exact model in Proposition~\ref{prop:label-loss}, with $\tau=10$ and
+the exact minimizer anchors, every $C_\alpha(i)$ is nonempty for
+$0<\alpha\leq1$, but no constant student satisfies all three sets.
+Nevertheless a constant student strictly improves expected teacher cost.
+At $\alpha=1/2$, even the global minimum of mean squared set distance has
+lower set loss and higher cost than the teacher.
+\end{proposition}
+\begin{proof}
+Here $\mathcal B_i(u)=Q_i(u)-Q_i(0)$ and the anchor gains are $(19,1,1)$.
+Solving their sublevel inequalities on $[-1,1]$ gives
+\begin{align}
+ C_\alpha(1)&=[10-\sqrt{100-19\alpha},\,1],\\
+ C_\alpha(2)=C_\alpha(3)&=[-1,\,-1+\sqrt{1-\alpha}].
+\end{align}
+The first lower endpoint is strictly positive and the other upper endpoint
+strictly negative for every $\alpha>0$. Their intersection is empty.
+The constant $c=1$ nevertheless has cost $89/3<34$: improvement in the
+first context compensates for worsening in the others.
+Write $l=10-\sqrt{90.5}$ and $h=-1+1/\sqrt2$ for the endpoints at
+$\alpha=1/2$. Between $h$ and $l$, the mean squared set distance is
+$[(c-l)^2+2(c-h)^2]/3$. Convexity gives the global minimizer
+$c=(l+2h)/3\approx-0.03297841$. Since $l+2h<0$, this constant is negative,
+so its cost difference $c^2-16c/3$ is strictly positive. Its set loss
+decreases by $c^2>0$. Numerically its set loss is 0.135111, below the teacher's
+0.136199, while its cost is 34.176972, above 34.
+\end{proof}
+
+Pointwise improvement can therefore impose jointly infeasible requirements
+even when average-cost improvement is attainable.
