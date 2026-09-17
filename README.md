@@ -26,6 +26,8 @@ The repository contains browsable numerical sources, protocols and aggregate rep
 
 Extract `research-artifacts-v1.zip` at the repository root. Keep both reference ZIPs there. Check hashes against `artifact-manifest.json` before extracting. Internal editorial/design notes and submission packaging helpers are excluded from the public research bundle; frozen numerical sources and outcomes are preserved.
 
+Alternatively, run `python download_artifacts.py` from a clone of this repository. This standard-library helper downloads all three public ZIPs, checks their pinned hashes, and extracts the research files without replacing differing existing files. It requires no GitHub token.
+
 ## Environment and verification
 
 Recorded environment: Python 3.10.18, PyTorch 2.7.1+cu118, NumPy 2.2.5, SciPy 1.15.3, Matplotlib 3.10.9, OSQP 1.0.4, PyMuPDF 1.28.0, Pillow 11.0.0 and an NVIDIA RTX 4080 SUPER. Full versions are in `research/environment_versions.json`.

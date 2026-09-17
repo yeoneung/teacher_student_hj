@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 .venv*/
 *.zip
+*.part
 research/reference_inputs/
 research/reproductions/
 *.pt
