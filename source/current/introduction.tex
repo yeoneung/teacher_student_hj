@@ -1,32 +1,48 @@
-A teacher can supply an improving action at every training state while
-a student fitted to those actions becomes worse. Input constraints can
-hide the cost of deviating from a target, and a shared policy must trade
-off deviations across states. We ask which teacher information must be
-retained for that tradeoff to preserve cost comparisons.
+Machine learning offers a way to represent feedback policies with shared
+parameters and fit them from sampled decisions. In sequential control,
+however, the quality of a decision depends on the future trajectory it
+induces. An action-regression loss measures how closely a policy matches
+its targets; the control objective measures accumulated cost. Connecting
+these two objectives requires knowing how fitting errors affect future
+cost, particularly when one neural policy must compromise across states.
 
-The setting is deterministic feedback control with known differentiable
-dynamics and a common cost. Hamilton--Jacobi (HJ) policy evaluation
-defines the teacher's future-cost sensitivity; Hamilton--Jacobi--Bellman
-(HJB) improvement uses it to compare actions. The teacher need not be
-optimal. Converting its improvement signal into supervision introduces
-two obstructions. Constrained targets can be identical despite opposite
+The Hamilton--Jacobi--Bellman (HJB) equation makes this dependence
+explicit. For smooth deterministic control, the value gradient enters
+the Hamiltonian and converts the effect of an action on the dynamics
+into a future-cost contribution. Minimizing the Hamiltonian compares
+actions using both immediate and future cost. A fixed, possibly
+suboptimal policy instead satisfies a Hamilton--Jacobi (HJ) evaluation
+equation without this minimization. Its value gradient supplies a
+policy-improvement signal without requiring the optimal value function.
+
+This evaluation--improvement construction gives a teacher--student
+interpretation of policy learning. The evaluated policy acts as a teacher:
+its future-cost sensitivity defines local action costs and feasible
+targets. A parameterized student fits the resulting supervision.
+The central question is what survives this conversion from cost
+information to training labels. Under input constraints, different cost
+sensitivities can produce the same target while assigning different
+penalties to student deviations. HJ evaluation identifies the information
+available before fitting; the student's representation determines which
+part must be retained.
+
+We study this question with known differentiable dynamics and a common
+cost. Exact examples show identical constrained targets with opposite
 cost effects of their best shared regression fit. Nonempty improvement
-sets can also be jointly unrealizable, even when the student class
-contains a policy that improves average cost. We give exact examples
-with complete coverage and globally solved fitting.
+sets can also be jointly unrealizable even when the student class
+contains an average-cost improvement. These failures occur with complete
+coverage and globally solved fitting.
 
 For a known isotropic quadratic teaching model, the missing information
-is a normal component at the constrained target. A student restricted
-to a fixed output space needs only the projection of that component
-into its own space. We prove that the minimum number of exact scalar
-value-difference queries is $\operatorname{rank}(P^\top\Gamma)$, where
-$P$ spans student outputs and $\Gamma$ spans normal ambiguity, and
-construct feasible queries attaining it. A gain scalar suffices on a
-ball but can fail on a box. Direct student-basis queries also recover
-exactly. A hybrid using the smaller of normal and student dimensions
-already attains the bound for generic relative position; strict savings
-require additional alignment. A spectral truncation bound describes
-the approximation error when that alignment is perturbed.
+is a normal component at the constrained target. Under a specified
+value-difference oracle, preserving all cost comparisons within a fixed
+student output space requires exactly
+$\operatorname{rank}(P^\top\Gamma)$ scalar queries, where $P$ spans
+student outputs and $\Gamma$ spans normal ambiguity. We construct
+feasible queries attaining this bound. A simple hybrid
+using the smaller of the normal and student dimensions is already
+optimal in generic relative position. Further savings require alignment;
+a spectral bound controls perturbation error.
 
 Cost-aware imitation, Hamiltonian fitting and improvement from imperfect
 oracles are established in AggreVaTeD, MPC-Net and MAMBA
@@ -41,7 +57,6 @@ the kernel criterion used here belongs to classical linear information
 recovery~\cite{pinkus1986recovery,foucart2021recovery}. Our contribution
 is the specific information requirement obtained by combining teacher
 constraint geometry with student representation.
-
 
 The evidence separates exact information recovery from policy improvement.
 A 480-fit grid and 120 direct-interface checks compare feasible queries
