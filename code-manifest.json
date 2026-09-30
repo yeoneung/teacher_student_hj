@@ -1,0 +1,325 @@
+{
+  "files": {
+    "download_artifacts.py": {
+      "sha256": "51996dd5bc13a975c7c6928aa4f9b84a1872b386e76d918bc3f052470628262d",
+      "role": "Repository verification and data staging"
+    },
+    "research/analyze_direct_queries.py": {
+      "sha256": "d1ffb531b4ae511d15a7b734c5d2014f34f833c9ec50dafcabe99c6e433e4200",
+      "release_sha256": "42d84347f50ec4677ec4c653f695538d2a78b9404c68b362f21e58ab167f9be9",
+      "frozen": false,
+      "change": "Numerical analysis without presentation exports"
+    },
+    "research/analyze_improving_sets.py": {
+      "sha256": "afb5fd32c26163f2e93d30aa3c747bb8e59531ecab27996fe17b9cd4b4ef42c3",
+      "release_sha256": "ee7e4ba06f611e247568087bec47b28f687cc06757130f04fe559934368cf62a",
+      "frozen": false,
+      "change": "Numerical analysis without presentation exports"
+    },
+    "research/analyze_minimal_teaching.py": {
+      "sha256": "f2a6f03edc56c3b8881eff20f0d2cb6316ef3b546def6d9747df599adbe7f015",
+      "release_sha256": "6e069dd8af1d2be17d13b0599cd36f351bcdc87497a5a6389b402eb29c9e6964",
+      "frozen": false,
+      "change": "Numerical analysis without presentation exports"
+    },
+    "research/analyze_neural_information.py": {
+      "sha256": "2569f85786584641920ac901916aae7cd7d22ebe402cab611654c6e629ce9c81",
+      "release_sha256": "752e14fbe5880eda3d7d9e5c910885d656a89a15936c74beccfe3862fed90e13",
+      "frozen": false,
+      "change": "Numerical analysis without presentation exports"
+    },
+    "research/current_method_analysis.py": {
+      "sha256": "c38343846806a17b49b24a42f282da6d89c3378a61d4697a56151ea019240ec9",
+      "release_sha256": "2e73fcb99b3ef622ce8b4cf5dc5682c817a0c28f739a84d697682db535040071",
+      "frozen": false,
+      "change": "Numerical analysis without presentation exports"
+    },
+    "research/direct_query_controls.py": {
+      "sha256": "abe00a99b567c7c1ed5eb79a062cf561d1968a8bdb8afd8bb57dd0b66c51351a",
+      "release_sha256": "abe00a99b567c7c1ed5eb79a062cf561d1968a8bdb8afd8bb57dd0b66c51351a",
+      "frozen": true
+    },
+    "research/direct_query_study.py": {
+      "sha256": "05bf7adc16765e43393ffa4ef521d61055d692e90debd9c239d66d59bb5bb9b5",
+      "release_sha256": "05bf7adc16765e43393ffa4ef521d61055d692e90debd9c239d66d59bb5bb9b5",
+      "frozen": true
+    },
+    "research/environment_versions.json": {
+      "sha256": "029dc82f02d07caa16a80426a5a980c3ead4fd5278a48654ac1890dc60ff9299",
+      "release_sha256": "029dc82f02d07caa16a80426a5a980c3ead4fd5278a48654ac1890dc60ff9299",
+      "frozen": true
+    },
+    "research/experiments/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "release_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "frozen": true
+    },
+    "research/experiments/hj_adaptive/__init__.py": {
+      "sha256": "2e10f350f21c2cab4c1fff651daa7996c1452166691e1334d9d843fe8f0a5bc8",
+      "release_sha256": "2e10f350f21c2cab4c1fff651daa7996c1452166691e1334d9d843fe8f0a5bc8",
+      "frozen": true
+    },
+    "research/experiments/hj_adaptive/full_batch.py": {
+      "sha256": "a525f9ef851a9d34f8f5fb97a1285e923279f128189c6e1baa2e4b98e10b473a",
+      "release_sha256": "a525f9ef851a9d34f8f5fb97a1285e923279f128189c6e1baa2e4b98e10b473a",
+      "frozen": true
+    },
+    "research/experiments/hj_adaptive/probe.py": {
+      "sha256": "d1304abfd96e29a6c01557f9e21f8c368d728dad4d24b60c42cf9ec9499a1d57",
+      "release_sha256": "d1304abfd96e29a6c01557f9e21f8c368d728dad4d24b60c42cf9ec9499a1d57",
+      "frozen": true
+    },
+    "research/experiments/hj_adaptive/study.py": {
+      "sha256": "8eafb16f976e16e6cc45e0bcaae2bbcbae435e0c53f86b364b74d9ca7e987a05",
+      "release_sha256": "8eafb16f976e16e6cc45e0bcaae2bbcbae435e0c53f86b364b74d9ca7e987a05",
+      "frozen": true
+    },
+    "research/experiments/hj_adaptive/trajectory.py": {
+      "sha256": "138e8c57488662bd4d2ce5dcb47eca1461af77e54e04d368e1a5dd9c9e30de72",
+      "release_sha256": "138e8c57488662bd4d2ce5dcb47eca1461af77e54e04d368e1a5dd9c9e30de72",
+      "frozen": true
+    },
+    "research/experiments/hj_adaptive/transport.py": {
+      "sha256": "17f39d48ec7b14628b9336cf0031a159650c05a31e7f7c7e3f230ee5144cec9f",
+      "release_sha256": "17f39d48ec7b14628b9336cf0031a159650c05a31e7f7c7e3f230ee5144cec9f",
+      "frozen": true
+    },
+    "research/experiments/hj_cotangent/__init__.py": {
+      "sha256": "19466364ab6de10256bb605607972023673582fe1339911e1d3a74f930124706",
+      "release_sha256": "19466364ab6de10256bb605607972023673582fe1339911e1d3a74f930124706",
+      "frozen": true
+    },
+    "research/experiments/hj_cotangent/building.py": {
+      "sha256": "3cd59df3ca04a02e792c04530aa7a38c80adedeca4ea7edd225a5c9854254f42",
+      "release_sha256": "3cd59df3ca04a02e792c04530aa7a38c80adedeca4ea7edd225a5c9854254f42",
+      "frozen": true
+    },
+    "research/experiments/hj_cotangent/building_audit.py": {
+      "sha256": "6dcb2c2cf154c050d797efc4361c176fcb38757c50b39293a8b2c38d4a689c98",
+      "release_sha256": "6dcb2c2cf154c050d797efc4361c176fcb38757c50b39293a8b2c38d4a689c98",
+      "frozen": true
+    },
+    "research/experiments/hj_cotangent/conditioning.py": {
+      "sha256": "12c5e1c36d777ca4cf5a151bf05fa3feda6c66e65c0e1fa6e7a8559eda551e6d",
+      "release_sha256": "12c5e1c36d777ca4cf5a151bf05fa3feda6c66e65c0e1fa6e7a8559eda551e6d",
+      "frozen": true
+    },
+    "research/experiments/hj_cotangent/core.py": {
+      "sha256": "be7302ac5bb48d576cfd0fa56cb70c5c9cbb9e9ff283d82b77f5cc04d8f4e772",
+      "release_sha256": "be7302ac5bb48d576cfd0fa56cb70c5c9cbb9e9ff283d82b77f5cc04d8f4e772",
+      "frozen": true
+    },
+    "research/experiments/hj_cotangent/evaluation.py": {
+      "sha256": "15da47ce465641f2a615f7bd43ac136e8e9f6f09d765ae90fd47670a9c3a297d",
+      "release_sha256": "15da47ce465641f2a615f7bd43ac136e8e9f6f09d765ae90fd47670a9c3a297d",
+      "frozen": true
+    },
+    "research/experiments/hj_cotangent/evaluation_preflight.py": {
+      "sha256": "05c00f55d58df2e8712e441cc05d8d2fecee1c097c9688aca8503ab4f51f1612",
+      "release_sha256": "05c00f55d58df2e8712e441cc05d8d2fecee1c097c9688aca8503ab4f51f1612",
+      "frozen": true
+    },
+    "research/experiments/hj_cotangent/study.py": {
+      "sha256": "1072a4c5fac75bc2e523dc87957c3ab3f0a9b8da0717f10cfba0f29be1b2ca55",
+      "release_sha256": "1072a4c5fac75bc2e523dc87957c3ab3f0a9b8da0717f10cfba0f29be1b2ca55",
+      "frozen": true
+    },
+    "research/experiments/hj_cotangent/systems.py": {
+      "sha256": "590d5a109d3c9ba9457f53a2f5cf065cf508bc0883471ab85b205f4326184bce",
+      "release_sha256": "590d5a109d3c9ba9457f53a2f5cf065cf508bc0883471ab85b205f4326184bce",
+      "frozen": true
+    },
+    "research/experiments/hj_gridfree/__init__.py": {
+      "sha256": "b87a1735e2bcf83177a179e28870224cc380502755ab2f1837dfafd5d487d0e6",
+      "release_sha256": "b87a1735e2bcf83177a179e28870224cc380502755ab2f1837dfafd5d487d0e6",
+      "frozen": true
+    },
+    "research/experiments/hj_gridfree/core.py": {
+      "sha256": "f3bf514cd409ef372a0e4971a89e07d63b176cd24648e4fd55267d7b0012aa5a",
+      "release_sha256": "f3bf514cd409ef372a0e4971a89e07d63b176cd24648e4fd55267d7b0012aa5a",
+      "frozen": true
+    },
+    "research/experiments/hj_gridfree/engine.py": {
+      "sha256": "2dae5002315abe379352344fae8a45c4ecf1ee2aa84cac8f56042c27898f7094",
+      "release_sha256": "2dae5002315abe379352344fae8a45c4ecf1ee2aa84cac8f56042c27898f7094",
+      "frozen": true
+    },
+    "research/experiments/hj_gridfree/evaluate.py": {
+      "sha256": "31e55d028cf228fe5daaaf1ad2c9419f6cf3943f383d159d12eae2bcf2dc9953",
+      "release_sha256": "31e55d028cf228fe5daaaf1ad2c9419f6cf3943f383d159d12eae2bcf2dc9953",
+      "frozen": true
+    },
+    "research/experiments/hj_gridfree/gate.py": {
+      "sha256": "de480dadc5a4b5615e0ef8611963dd959aa60a7afd73b29de62144835fdb6b6d",
+      "release_sha256": "de480dadc5a4b5615e0ef8611963dd959aa60a7afd73b29de62144835fdb6b6d",
+      "frozen": true
+    },
+    "research/experiments/hj_gridfree/planning_probe.py": {
+      "sha256": "6f782e08e4e84eb61740da95809730d0a35524812bf4fbc88f62bf6434b87fe9",
+      "release_sha256": "6f782e08e4e84eb61740da95809730d0a35524812bf4fbc88f62bf6434b87fe9",
+      "frozen": true
+    },
+    "research/experiments/hj_gridfree/train.py": {
+      "sha256": "248bf56b3a6a4f605412007aaf3b530c4d95e73934223aba404b35df3d5a7281",
+      "release_sha256": "248bf56b3a6a4f605412007aaf3b530c4d95e73934223aba404b35df3d5a7281",
+      "frozen": true
+    },
+    "research/experiments/hj_proximal/__init__.py": {
+      "sha256": "8c7ac508870eaa8f3d44ea4b935b920f7de765cabe15ead46739e8daacd90be4",
+      "release_sha256": "8c7ac508870eaa8f3d44ea4b935b920f7de765cabe15ead46739e8daacd90be4",
+      "frozen": true
+    },
+    "research/experiments/hj_proximal/study.py": {
+      "sha256": "e9cb1d3f5f99ac13dd620cc7a71409fd8d0fa58d751f1b100f191a3034197391",
+      "release_sha256": "e9cb1d3f5f99ac13dd620cc7a71409fd8d0fa58d751f1b100f191a3034197391",
+      "frozen": true
+    },
+    "research/experiments/hj_proximal/targets.py": {
+      "sha256": "44355dfa2fdb1bc0ff4b33a417dc1436b24adb3d65417654a4a9d9137f2cb7f0",
+      "release_sha256": "44355dfa2fdb1bc0ff4b33a417dc1436b24adb3d65417654a4a9d9137f2cb7f0",
+      "frozen": true
+    },
+    "research/experiments/hj_target_v9/__init__.py": {
+      "sha256": "3d4c42b48b565cfca7db6476d88a2f9180e1ebc606e58a313c8fd7f0fbe17b1b",
+      "release_sha256": "3d4c42b48b565cfca7db6476d88a2f9180e1ebc606e58a313c8fd7f0fbe17b1b",
+      "frozen": true
+    },
+    "research/experiments/hj_target_v9/control_training.py": {
+      "sha256": "96f440654f63ee4fdc79945806d10e38c1a518f260bfa173c8154cc625d9be7d",
+      "release_sha256": "96f440654f63ee4fdc79945806d10e38c1a518f260bfa173c8154cc625d9be7d",
+      "frozen": true
+    },
+    "research/experiments/hj_target_v9/controls.py": {
+      "sha256": "390f46775c100a1cdb4ad732b94050da7b06fa93b1678d941c81fc89925e49b8",
+      "release_sha256": "390f46775c100a1cdb4ad732b94050da7b06fa93b1678d941c81fc89925e49b8",
+      "frozen": true
+    },
+    "research/experiments/hj_target_v9/study.py": {
+      "sha256": "de708eb69baffa942244331e798d6f5c203a83a574e06294cd3e9e2237c9acaa",
+      "release_sha256": "de708eb69baffa942244331e798d6f5c203a83a574e06294cd3e9e2237c9acaa",
+      "frozen": true
+    },
+    "research/impact_audit.py": {
+      "sha256": "9d398f995d08c18f78a4f0b1a5abbd8a9637c1e53d5ebf7767339877e4ac30f8",
+      "release_sha256": "9d398f995d08c18f78a4f0b1a5abbd8a9637c1e53d5ebf7767339877e4ac30f8",
+      "frozen": true
+    },
+    "research/impact_core.py": {
+      "sha256": "73af53434141f1cb42a784ee4f96d1621b16fd2d94dccc58e3f09705fd136490",
+      "release_sha256": "73af53434141f1cb42a784ee4f96d1621b16fd2d94dccc58e3f09705fd136490",
+      "frozen": true
+    },
+    "research/impact_external_checks.py": {
+      "sha256": "7057f5d3d1b942d9ac6b972d9585b5b191ce923e90a9dc9de6ca4b805b8932f7",
+      "release_sha256": "7057f5d3d1b942d9ac6b972d9585b5b191ce923e90a9dc9de6ca4b805b8932f7",
+      "frozen": true
+    },
+    "research/impact_learning.py": {
+      "sha256": "fcfd2be3d261fdbec11235362d9655523c4236babf0127ac26477dcb97451505",
+      "release_sha256": "fcfd2be3d261fdbec11235362d9655523c4236babf0127ac26477dcb97451505",
+      "frozen": true
+    },
+    "research/impact_noise_validation.py": {
+      "sha256": "3bbedef20776e963937c36bdbbd914abe2f6fc2bcb4b2e3d4e4a37bd334224ae",
+      "release_sha256": "3bbedef20776e963937c36bdbbd914abe2f6fc2bcb4b2e3d4e4a37bd334224ae",
+      "frozen": true
+    },
+    "research/impact_refinement.py": {
+      "sha256": "779128e03e5af05cc9c616ccf3e580ab4b45e7846de591e0f556b6d394064e36",
+      "release_sha256": "779128e03e5af05cc9c616ccf3e580ab4b45e7846de591e0f556b6d394064e36",
+      "frozen": true
+    },
+    "research/impact_replication.py": {
+      "sha256": "7888fb695f0348f7df9eb525eacda9dfb3108f6c0f3c5c0fb1f2f17de87c6650",
+      "release_sha256": "7888fb695f0348f7df9eb525eacda9dfb3108f6c0f3c5c0fb1f2f17de87c6650",
+      "frozen": true
+    },
+    "research/impact_reporting.py": {
+      "sha256": "38591d07577348260ea4af6a9887703b1c823468b11876dda6151631b499e4ca",
+      "release_sha256": "744246b2a6b3ceaf4e0f2a6963f413becfaca8ad658378323bf9842743306224",
+      "frozen": false,
+      "change": "Numerical analysis without presentation exports"
+    },
+    "research/improving_sets.py": {
+      "sha256": "2397d697d276324e89c47110e07fd78422dc853ebf257178dc48e1db1e68620d",
+      "release_sha256": "2397d697d276324e89c47110e07fd78422dc853ebf257178dc48e1db1e68620d",
+      "frozen": true
+    },
+    "research/improving_sets_replication.py": {
+      "sha256": "6b4579ee9c68c8a244ab4b7647d3c5efd057b6140778bbeaed8dc115b7b221a4",
+      "release_sha256": "6b4579ee9c68c8a244ab4b7647d3c5efd057b6140778bbeaed8dc115b7b221a4",
+      "frozen": true
+    },
+    "research/improving_sets_study.py": {
+      "sha256": "db739246ddf0203b4bc29c5764a6f454b5f43b72bca9b1f22758bbbbd9f8665a",
+      "release_sha256": "db739246ddf0203b4bc29c5764a6f454b5f43b72bca9b1f22758bbbbd9f8665a",
+      "frozen": true
+    },
+    "research/improving_sets_warm.py": {
+      "sha256": "1de7a420a6ced2672dff79fcd2d00373038f1af475f07d443f09c235100d4424",
+      "release_sha256": "1de7a420a6ced2672dff79fcd2d00373038f1af475f07d443f09c235100d4424",
+      "frozen": true
+    },
+    "research/minimal_teaching.py": {
+      "sha256": "b021b70e164980bc0cdbf7976c92725f018752c027d68658df448692c8792ff7",
+      "release_sha256": "b021b70e164980bc0cdbf7976c92725f018752c027d68658df448692c8792ff7",
+      "frozen": true
+    },
+    "research/minimal_teaching_study.py": {
+      "sha256": "5b7cba1fb599d63f3c5a2b7dadcd28cfe7afb28e341d3fb9122df2bef57daab7",
+      "release_sha256": "5b7cba1fb599d63f3c5a2b7dadcd28cfe7afb28e341d3fb9122df2bef57daab7",
+      "frozen": true
+    },
+    "research/neural_information_confirmation.py": {
+      "sha256": "1a64d9b3f76d66b71725681f7520e4ab8bb402813a461a7036643c718a72560d",
+      "release_sha256": "1a64d9b3f76d66b71725681f7520e4ab8bb402813a461a7036643c718a72560d",
+      "frozen": true
+    },
+    "research/neural_information_transfer.py": {
+      "sha256": "8fffaaff7c5d19353a31615a3f202536560cce404eb1ef9651baf5aaa2161872",
+      "release_sha256": "8fffaaff7c5d19353a31615a3f202536560cce404eb1ef9651baf5aaa2161872",
+      "frozen": true
+    },
+    "research/reference_manifest_v10.json": {
+      "sha256": "d7f2a23966cd9d86975e0d44e8c647e6010375b484fa8ce1e49318d067b7695e",
+      "release_sha256": "d7f2a23966cd9d86975e0d44e8c647e6010375b484fa8ce1e49318d067b7695e",
+      "frozen": true
+    },
+    "research/teaching_information_loss.py": {
+      "sha256": "72c66ed742b88c166db7f1c6a253409a381a91ae45d52f26d8cfb8762845538b",
+      "release_sha256": "c168e240ecf4abe8499b8f97dd105891e47ddd642782ae9920ef9c9389ee0add",
+      "frozen": false,
+      "change": "Numerical analysis without presentation exports"
+    },
+    "research/vendor_provenance.json": {
+      "sha256": "79cd41a9886d9766c05832414155a49ddbd538fd9cda146e48cf50aebb1fe64c",
+      "release_sha256": "12c1c47a7f8f0a2d0baebfc92de7d1a304c64754cc724bc44ba2d58782b2372f",
+      "frozen": false,
+      "change": "Retained computational dependency records"
+    },
+    "research/verify_approximate_feedback.py": {
+      "sha256": "bd8320fba8096c00b6f725930df423e8a8ca9607d6ea9a99f17036821cad36f2",
+      "release_sha256": "bd8320fba8096c00b6f725930df423e8a8ca9607d6ea9a99f17036821cad36f2",
+      "frozen": true
+    },
+    "research/verify_evidence.py": {
+      "sha256": "60dfb1bc03abd291794307abfb0aa201ea44108074261b12b8fae69730be113a",
+      "release_sha256": "60dfb1bc03abd291794307abfb0aa201ea44108074261b12b8fae69730be113a",
+      "frozen": true
+    },
+    "research/verify_improving_sets.py": {
+      "sha256": "71ed717276b3caad33c435dbda7f0c9c99c3163102a8fe4db5de644eb7f499cc",
+      "release_sha256": "71ed717276b3caad33c435dbda7f0c9c99c3163102a8fe4db5de644eb7f499cc",
+      "frozen": true
+    },
+    "research/verify_minimal_information.py": {
+      "sha256": "7a7aba35f8827154900c58cae6a4f81847374bbc618240130c3386d936fb2108",
+      "release_sha256": "7a7aba35f8827154900c58cae6a4f81847374bbc618240130c3386d936fb2108",
+      "frozen": true
+    },
+    "verify_artifacts.py": {
+      "sha256": "90096eb973ad1bb4a26f96c2babed9eea85df5d5d8dcaeeb1bf5f9cc6e0ad20a",
+      "role": "Repository verification and data staging"
+    }
+  }
+}

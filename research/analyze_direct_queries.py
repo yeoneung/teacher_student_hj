@@ -3,22 +3,15 @@ import json,statistics
 from pathlib import Path
 import torch
 import numpy as np
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
 import minimal_teaching as mt
 import minimal_teaching_study as st
 import direct_query_controls as dc
 
-HERE=Path(__file__).resolve().parent;OUT=HERE/'results/direct_query_study';SOURCE=HERE.parent/'source'
+HERE=Path(__file__).resolve().parent;OUT=HERE/'results/direct_query_study'
 def read(p):return json.loads(Path(p).read_text())
-def savefig(fig,name):
-    fig.tight_layout()
-    for ext in ['pdf','png']:fig.savefig(SOURCE/f'figures/{name}.{ext}',dpi=190,bbox_inches='tight')
-    plt.close(fig)
 
 def main():
-    torch.set_num_threads(1);plt.rcParams.update({'font.size':10,'pdf.fonttype':42})
+    torch.set_num_threads(1)
     report=read(OUT/'report.json');lock=read(OUT/'protocol_lock.json')
     assert report['protocol_sha256']==mt.digest(OUT/'protocol_lock.json')
     assert lock['source_sha256']==mt.digest(HERE/'direct_query_study.py') and lock['controls_sha256']==mt.digest(dc.__file__)
@@ -79,53 +72,6 @@ def main():
         original_box_totals=totals,structured_totals=aligned,original_hybrid_rank_count_equal=True,timings=timings,groups=grouped,
         heterogeneity=heterogeneity,approximate_report_sha256=mt.digest(HERE/'results/approximate_feedback/report.json'))
     mt.write(HERE/'results/direct_query_analysis.json',result)
-    # Direct-query plot includes the strongest simple controls.
-    labels=['Relevant','Full face','Student basis','Orthogonal','Hybrid','Pruned hybrid']
-    fig,axes=plt.subplots(1,2,figsize=(8.2,3.3));colors=['#315f9b','#889299','#889299','#889299','#25876e','#25876e']
-    for ax,values,title in zip(axes,[totals,aligned],['Random embeddings: box caches','Shared actuation: constructed caches']):
-        divisor=491520 if values is totals else 61440
-        yy=np.array([values[m] for m in methods])/divisor
-        ax.bar(np.arange(6),yy,color=colors);ax.set_xticks(np.arange(6),labels,rotation=40,ha='right')
-        ax.set(ylabel='Queries per cached state',title=title)
-        for i,y in enumerate(yy):ax.text(i,y+.035,f'{y:.3f}' if values is totals else f'{y:g}',ha='center',fontsize=8)
-        ax.set_ylim(0,max(yy)*1.19);ax.spines[['top','right']].set_visible(False)
-    savefig(fig,'direct_query_controls')
-    fig,ax=plt.subplots(figsize=(7.4,2.5));ax.scatter(np.arange(1,11),differences,color='#315f9b',zorder=3)
-    ax.axhline(0,color='black',lw=.8);ax.axhline(differences.mean(),color='#ae5438',label=f'Mean {differences.mean():.3f}')
-    ax.axhline(np.median(differences),color='#25876e',ls='--',label=f'Median {np.median(differences):.3f}')
-    ax.set(xticks=np.arange(1,11),xlabel='Independent confirmation seed (fixed order)',ylabel='Restored minus point regret')
-    ax.legend(frameon=False,loc='lower left');ax.spines[['top','right']].set_visible(False);savefig(fig,'neural_paired_effects')
-    # Correct only the published figure; preserve original numerical source and hashes.
-    witness=read(HERE/'results/teaching_information_loss.json');half=next(r for r in witness['joint_sets'] if r['alpha']==.5)
-    fig,axes=plt.subplots(1,2,figsize=(8,3.1));tau=np.linspace(1,10,250)
-    axes[0].plot(tau,(2*tau-3)/9,color='#ae5438',lw=2);axes[0].axhline(0,color='black',lw=.7);axes[0].axvline(1.5,color='#8b9299',ls=':',lw=1)
-    axes[0].set(xlabel=r'First-context minimizer $\tau$',ylabel='Fitted cost minus teacher cost',title='Same targets; opposite cost effects')
-    axes[0].text(.06,.88,r'Targets $(1,-1,-1)$; fitted action $-1/3$',transform=axes[0].transAxes,fontsize=9)
-    axes[1].hlines(1,half['first_interval'][0],1,color='#315f9b',lw=7);axes[1].hlines(0,-1,half['other_intervals'][1],color='#25876e',lw=7)
-    axes[1].axvline(0,color='black',lw=.7);axes[1].axvline(half['best_constant'],color='#ae5438',ls='--',lw=1.5)
-    axes[1].set(xlim=(-1.12,1.12),ylim=(-.6,1.65),yticks=[0,1],yticklabels=['Contexts 2, 3','Context 1'],xlabel='Constant student action',title=r'No common feasible fit ($\alpha=1/2$)')
-    for ax in axes:ax.spines[['top','right']].set_visible(False)
-    savefig(fig,'teaching_information_loss_corrected')
-    fig,ax=plt.subplots(figsize=(6.8,2.7))
-    for noise in [0.,.001]:
-        rr=[r for r in approximate['rows'] if r['queries']==1 and r['noise']==noise and r['angle']>0]
-        ax.loglog([r['angle'] for r in rr],[max(r['maximum_coefficient_error'],1e-16) for r in rr],'o-',label=f'Observed, noise {noise:g}')
-        ax.loglog([r['angle'] for r in rr],[r['coefficient_bound'] for r in rr],'--',label=f'Bound, noise {noise:g}')
-    ax.set(xlabel=r'Alignment perturbation $\theta$ (radians)',ylabel='One-query coefficient error');ax.legend(frameon=False,fontsize=8,ncol=2)
-    ax.spines[['top','right']].set_visible(False);savefig(fig,'approximate_feedback')
-    # Compact complete follow-up means: paired differences retained in machine-readable report.
-    lines=[r'\begin{table}[htbp]\centering\small',r'\caption{Additional interface checks: means over five paired seeds. All exact-recovery interfaces agree to the reported precision; full-reference values are shown. These checks reuse four conditions and add a constructed shared-actuation condition.}\label{tab:direct-training}',r'\begin{tabular}{lrrrr}\toprule',r'Condition & Fits & Regret & Cost & Max. $|\Delta\mathcal R|$\\\midrule']
-    for d,m,shape,R in [[8,2,'box',.5],[32,2,'box',.5],[32,4,'box',2.],[32,4,'ball',.5],[8,4,'structured',.5]]:
-        flag=shape=='structured';actualshape='box' if flag else shape
-        subset=[r for r in report['rows'] if (r['structured'],r['dimension'],r['student_dimension'],r['shape'],r['radius'])==(flag,d,m,actualshape,R)]
-        refs=[r for r in subset if r['method']=='full'] if flag else [read(HERE/f'results/minimal_teaching_study/s{s}_d{d}_m{m}_{shape}_r{R:g}_full.json') for s in range(13101,13106)]
-        fs=[f for f in fidelity if any(r['key']==f['key'] for r in subset)]
-        delta=max(abs(f['regret_difference']) for f in fs)
-        label='Shared actuation' if flag else f'{shape}, $d={d},m={m},R={R:g}$'
-        scientific='0' if delta==0 else f'{delta:.2e}'.split('e')[0]+r'\times10^{'+str(int(f'{delta:.2e}'.split('e')[1]))+'}'
-        lines.append(f'{label} & {len(subset)} & {np.mean([r["metrics"]["normalized_regret"] for r in refs]):.6f} & {np.mean([r["metrics"]["test_cost"] for r in refs]):.6f} & ${scientific}$'+r'\\')
-    lines += [r'\bottomrule\end{tabular}',r'\end{table}']
-    (SOURCE/'current/direct_training_table.tex').write_text('\n'.join(lines)+'\n')
     print(json.dumps({k:result[k] for k in ['training_runs','fidelity_pairs','fidelity_pairs_within_tolerance','maximum_absolute_regret_difference','maximum_absolute_cost_difference','original_box_totals','structured_totals','timings','heterogeneity']},indent=2))
 
 if __name__=='__main__':main()

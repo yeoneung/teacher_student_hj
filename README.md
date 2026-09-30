@@ -1,60 +1,58 @@
 # Teacher-student learning through Hamilton-Jacobi information
 
-Research materials for **Information loss and minimal feedback in teacher-student policy learning: a Hamilton-Jacobi analysis**.
+Experimental code and data for *Information loss and minimal feedback in
+teacher-student policy learning: a Hamilton-Jacobi analysis*.
 
-The study asks which future-cost information a constrained teacher action can lose, and which part a fixed student output space needs. Under an explicit quadratic value-difference interface, the required exact scalar-query count is `rank(P.T @ Gamma)`. The rank proof uses classical linear recovery; the contribution is its teacher-constraint/student-representation interpretation and controlled evidence.
+Hamilton-Jacobi policy evaluation identifies cost information lost when a
+teacher action meets an input constraint. The experiments test which part of
+that information a shared student needs and when restoring it improves learning.
 
-[Read the manuscript](manuscript.pdf) or browse its [LaTeX source](source/manuscript.tex).
+## Experiments
 
-## Findings and limits
+| Paper component | Fitted policies | Experimental code | Numerical analysis |
+|---|---:|---|---|
+| Minimal-feedback grid | 480 | `research/minimal_teaching_study.py` | `analyze_minimal_teaching.py` |
+| Direct-query and shared-actuation comparisons | 120 | `research/direct_query_study.py` | `analyze_direct_queries.py` |
+| Neural information-restoration study | 240 initial + 360 confirmation | `research/neural_information_transfer.py`, `neural_information_confirmation.py` | `analyze_neural_information.py` |
+| Nonlinear continuation-audit study in the supplement | 50 | `research/impact_replication.py` | `current_method_analysis.py`, `impact_reporting.py` |
+| Improvement-set studies in the supplement | 24 + 12 exploratory, 20 independent | `research/improving_sets_study.py`, `improving_sets_warm.py`, `improving_sets_replication.py` | `analyze_improving_sets.py` |
 
-- Exact examples have identical improving targets but opposite cost effects after globally optimal shared-student fitting.
-- Direct student-basis queries and a simple hybrid also recover the cost model exactly. All random-embedding caches have `r = min(k,m)`, so relevant queries have **no count advantage over hybrid** there.
-- In a constructed shared-actuation geometry, `k=3, m=4, r=1`: relevant feedback needs one query, hybrid three, and the student basis four, with matching neural learning. This is a constructed case, not a naturally observed application benchmark.
-- The 68.03% box-query saving against full-normal reconstruction is also achieved by hybrid. The cheap analytic oracle gives no runtime advantage for rank construction.
-- A separate loss intervention confirms a conditional reduction in local Bellman regret despite higher action MSE. Effects are heterogeneous; adverse conditions and uncertain closed-loop mean effects are retained.
-- A spectral upper bound and 2,304 algebraic checks address perturbed alignment and response error. No noisy-network or general control-superiority claim is made.
+These are **1,306 fitted policies**, with separate samples and statistics.
+The release also preserves calibration, selection pilots, reference teachers,
+diagnostic arrays and protocol records required to interpret these studies.
+Exact constructions and algebraic checks are provided separately and are not
+counted as neural training replications. See [execution instructions](research/README.md).
 
-## Code and complete data
+## Obtain and verify the data
 
-The repository contains browsable numerical sources, protocols and aggregate reports. The complete checkpoints, cache arrays and per-run outcomes are in [Reproducibility materials v1.0.0](https://github.com/yeoneung/teacher_student_hj/releases/tag/v1.0.0):
+The [v1.0.0 release](https://github.com/yeoneung/teacher_student_hj/releases/tag/v1.0.0)
+contains the complete checkpoints, per-run evaluations, cached queries and
+numerical reports. The three ZIP files are pinned by SHA-256 in
+`artifact-manifest.json`.
 
-| Download | Contents |
-|---|---|
-| [research-artifacts-v1.zip](https://github.com/yeoneung/teacher_student_hj/releases/download/v1.0.0/research-artifacts-v1.zip) | Numerical code, simulation results, checkpoints and analysis reports under `research/` |
-| [07_supporting_evidence.zip](https://github.com/yeoneung/teacher_student_hj/releases/download/v1.0.0/07_supporting_evidence.zip) | Reference numerical evidence for the nonlinear audit |
-| [08_data_and_checkpoints.zip](https://github.com/yeoneung/teacher_student_hj/releases/download/v1.0.0/08_data_and_checkpoints.zip) | Reference policies and data required by the audit verification |
-| [artifact-manifest.json](https://github.com/yeoneung/teacher_student_hj/releases/download/v1.0.0/artifact-manifest.json) | SHA-256 checksums for assets and all research files |
-
-Extract `research-artifacts-v1.zip` at the repository root. Keep both reference ZIPs there. Check hashes against `artifact-manifest.json` before extracting. Internal editorial/design notes and submission packaging helpers are excluded from the public research bundle; frozen numerical sources and outcomes are preserved.
-
-Alternatively, run `python download_artifacts.py` from a clone of this repository. This standard-library helper downloads all three public ZIPs, checks their pinned hashes, and extracts the research files without replacing differing existing files. It requires no GitHub token.
-
-## Environment and verification
-
-Recorded environment: Python 3.10.18, PyTorch 2.7.1+cu118, NumPy 2.2.5, SciPy 1.15.3, Matplotlib 3.10.9, OSQP 1.0.4, PyMuPDF 1.28.0, Pillow 11.0.0 and an NVIDIA RTX 4080 SUPER. Full versions are in `research/environment_versions.json`.
-
-The CUDA analyses reevaluate stored policies without training. Run from `research/` after obtaining the complete artifacts:
-
-```text
-python analyze_direct_queries.py
-python analyze_minimal_teaching.py
-python analyze_neural_information.py
-python analyze_improving_sets.py
-python verify_evidence.py --stage-inputs
+```sh
+python download_artifacts.py
+python verify_artifacts.py
 ```
 
-These analysis scripts regenerate manuscript figures and tables under `source/`. Use a separate reproduction copy to retain the supplied artifacts unchanged. Fresh training must use empty result directories in that copy: the drivers enforce frozen protocol/source hashes and retain every final checkpoint. Some studies depend on preceding reports, particularly the independent confirmation and set replication. See `research/README.md` for the order.
+The downloader stages the numerical results under `research/results/` and
+preserves the current code. To check every archived file, including the frozen
+sources, run `python verify_artifacts.py --archive-dir .`.
+No GitHub token is needed to download public data.
 
-| Study | Fitted policies |
-|---|---:|
-| Nonlinear continuation audit | 50 |
-| Improvement-set comparison | 56 |
-| Neural loss intervention | 600 |
-| Minimal-query grid | 480 |
-| Direct-query controls and shared actuation | 120 |
-| Total, without pooling statistics | 1,306 |
+`verify_artifacts.py` checks the current code, all stored result files and the
+correspondence between each of the 1,306 reported policies and its checkpoint
+and evaluation bundle. It does not execute checkpoints or train policies.
+The study-specific analyses perform the numerical re-evaluations.
 
-## Status
+## Environment and code
 
-This repository provides research evidence and a manuscript under preparation. It does not assert journal acceptance. Authorship and submission declarations are maintained with the manuscript; public access does not itself certify those declarations.
+The recorded environment is Python 3.10.18, PyTorch 2.7.1+cu118, NumPy 2.2.5,
+SciPy 1.15.3 and an NVIDIA RTX 4080 SUPER. Supplementary checks also use OSQP
+and threadpoolctl. The full historical environment record is in
+`research/environment_versions.json`.
+
+Frozen training code and required computational modules retain their original
+bytes. Current analysis scripts produce numerical reports; `code-manifest.json`
+records their hashes and the corresponding source hashes in the release.
+The cited v1.0.0 release remains unchanged as the fixed record of the experiments.

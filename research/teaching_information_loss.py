@@ -8,9 +8,6 @@ import json,hashlib
 from pathlib import Path
 import numpy as np
 from scipy.optimize import minimize_scalar
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
 
 HERE=Path(__file__).resolve().parent
 
@@ -69,23 +66,6 @@ def main():
     report=dict(passed=True,point_family=records,joint_sets=joint,regularized_witnesses=regularized,scope='Exact constructed witnesses; no neural training and no attribution of nonlinear failure causes.',
         source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
     (HERE/'results/teaching_information_loss.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
-    plt.rcParams.update({'font.size':10,'pdf.fonttype':42})
-    fig,axes=plt.subplots(1,2,figsize=(8,3.1))
-    aa=np.linspace(1,10,250)
-    axes[0].plot(aa,(2*aa-3)/9,color='#ae5438',lw=2)
-    axes[0].axhline(0,color='black',lw=.7);axes[0].axvline(1.5,color='#8b9299',ls=':',lw=1)
-    axes[0].set(xlabel=r'Quadratic coefficient $a$',ylabel='Fitted cost minus teacher cost',title='Same action targets; opposite cost effects')
-    axes[0].text(.06,.88,r'Targets $(1,-1,-1)$; fitted action $-1/3$',transform=axes[0].transAxes,fontsize=9)
-    axes[1].hlines(1,half['first_interval'][0],1,color='#315f9b',lw=7)
-    axes[1].hlines(0,-1,half['other_intervals'][1],color='#25876e',lw=7)
-    axes[1].axvline(0,color='black',lw=.7)
-    axes[1].axvline(half['best_constant'],color='#ae5438',ls='--',lw=1.5)
-    axes[1].set(xlim=(-1.12,1.12),ylim=(-.6,1.65),yticks=[0,1],yticklabels=['Contexts 2, 3','Context 1'],xlabel='Constant student action',title=r'No shared action meets all sets ($\alpha=1/2$)')
-    axes[1].text(.04,.92,'Each set is nonempty; their intersection is empty',transform=axes[1].transAxes,fontsize=8,bbox={'facecolor':'white','edgecolor':'none','pad':1})
-    for ax in axes:ax.spines[['top','right']].set_visible(False)
-    fig.tight_layout()
-    for ext in ['pdf','png']:fig.savefig(HERE.parent/f'source/figures/teaching_information_loss.{ext}',dpi=190,bbox_inches='tight')
-    plt.close(fig)
     print(json.dumps(dict(a10=records[-1],alpha_half=half),indent=2))
 
 

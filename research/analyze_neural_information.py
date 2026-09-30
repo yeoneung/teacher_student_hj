@@ -8,9 +8,6 @@ from pathlib import Path
 import numpy as np
 from scipy.stats import t
 import torch
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
 import neural_information_transfer as base
 
 HERE=Path(__file__).resolve().parent;SUB=HERE.parent
@@ -87,36 +84,6 @@ def main():
             flat.append(dict(stage=result['stage'],seed=row['seed'],radius=row['radius'],width=row['width'],method=row['method'],**{m:value(row,m) for m in METRICS}))
     with (HERE/'results/neural_information_all_runs.csv').open('w',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=flat[0].keys());writer.writeheader();writer.writerows(flat)
-    plt.rcParams.update({'font.size':9,'pdf.fonttype':42})
-    fig,axes=plt.subplots(2,2,figsize=(10,7),layout='constrained')
-    for ax,result,title in zip(axes[0],results,['Initial study (5 seeds)','Independent confirmation (10 seeds)']):
-        radii=result['protocol']['control_radii']
-        for k,w in enumerate([2,4,16]):
-            cc=[next(c for c in result['cells'] if c['radius']==r and c['width']==w) for r in radii]
-            pp=[c['restored_minus']['point']['normalized_regret'] for c in cc];yy=np.array([p['mean'] for p in pp]);ee=np.array([(p['ci95'][1]-p['ci95'][0])/2 for p in pp])
-            ax.errorbar(np.arange(len(radii))+(k-1)*.13,yy,yerr=ee,marker='o',capsize=3,label=f'Width {w}')
-        ax.axhline(0,color='black',lw=.8);ax.set_xticks(range(len(radii)),[str(r) for r in radii]);ax.set_xlabel('Control radius (smaller = tighter)');ax.set_ylabel('Restored - point normalized regret');ax.set_title(title);ax.legend(fontsize=8)
-    cell=next(c for c in results[1]['cells'] if c['radius']==.5 and c['width']==2)
-    methods=base.METHODS;x=np.arange(4);means=cell['means'];ax=axes[1,0]
-    first=np.array([base.CURV*base.D*means[m]['target_mse'] for m in methods]);second=np.array([means[m]['normal_contribution'] for m in methods])
-    ax.bar(x,first,label='Quadratic target error');ax.bar(x,second,bottom=first,label='Normal contribution');ax.set_xticks(x,['Point','Restored','Weight','Shuffled']);ax.set_ylabel('Exact local Bellman regret');ax.set_title('Confirmation: radius 0.5, width 2');ax.legend(fontsize=8)
-    ax=axes[1,1]
-    for k,w in enumerate([2,4,16]):
-        cc=next(c for c in results[1]['cells'] if c['radius']==.5 and c['width']==w)
-        ax.bar(x+(k-1)*.24,[cc['means'][m]['normalized_regret'] for m in methods],width=.24,label=f'Width {w}')
-    ax.set_xticks(x,['Point','Restored','Weight','Shuffled']);ax.set_ylabel('Normalized local Bellman regret');ax.set_title('Capacity control at radius 0.5');ax.legend(fontsize=8)
-    for ext in ['pdf','png']:fig.savefig(SUB/f'source/figures/neural_information_transfer.{ext}',dpi=180)
-    plt.close(fig)
-    lines=[r'\begin{table}[htbp]',r'\centering\small\setlength{\tabcolsep}{4pt}',r'\caption{Controlled neural information transfer. Mean normalized local Bellman regret; lower is better. $\Delta$ is restored minus point with an unadjusted paired 95\% $t$ interval across seeds. The initial primary is $R=2$, width 2; the independent confirmation primary is $R=0.5$, width 2. All radii and widths are shown, including adverse comparisons.}',r'\label{tab:neural-information}',r'\begin{tabular}{rrrrrrl}',r'\toprule',r'$R$ & Width & Point & Restored & Weight & Shuffled & $\Delta$ [95\% CI]\\',r'\midrule']
-    for result in results:
-        label='Initial study: 5 seeds, 240 runs' if result['stage']==STAGES[0] else 'Independent confirmation: 10 seeds, 360 runs'
-        lines.append(r'\multicolumn{7}{l}{\textit{'+label+r'}}\\')
-        for c in result['cells']:
-            mm=c['means'];p=c['restored_minus']['point']['normalized_regret'];l,h=p['ci95']
-            lines.append(f"{c['radius']:g} & {c['width']} & "+' & '.join(f"{mm[m]['normalized_regret']:.4f}" for m in methods)+f" & {p['mean']:+.4f} [{l:+.4f}, {h:+.4f}]"+r'\\')
-        lines.append(r'\midrule')
-    lines[-1]=r'\bottomrule';lines.extend([r'\end{tabular}',r'\end{table}'])
-    (SUB/'source/current/neural_information_table.tex').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     print(json.dumps({r['stage']:dict(primary=r['primary'],supported=r['primary_benefit_supported'],audit=r['audit']) for r in results},indent=2))
 
 if __name__=='__main__':main()

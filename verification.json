@@ -1,0 +1,24 @@
+{
+  "studies": {
+    "minimal_teaching_study": 480,
+    "direct_query_study": 120,
+    "neural_information_transfer": 240,
+    "neural_information_confirmation": 360,
+    "replication_v3": 50,
+    "improving_sets_pilot": 24,
+    "improving_sets_warm": 12,
+    "improving_sets_replication": 20
+  },
+  "reported_fitted_policies": 1306,
+  "per_run_evaluations": 1306,
+  "protocols": 8,
+  "verified_archive_files": 4853,
+  "passed": true,
+  "code_files": 63,
+  "release_assets": {
+    "research-artifacts-v1.zip": "1d2d84c82ea4bb9fc74e890b436a138cf8d9f472ca77622cdd123bdbbde9f94e",
+    "07_supporting_evidence.zip": "74204480e658355a456a34feeb2de96d0836855dacb85ec629bfe99955dd538a",
+    "08_data_and_checkpoints.zip": "c1ee12f44bbacf13c33f6a1cb4e2d74f83255eb45a2162844c79cfa96bc80e27"
+  },
+  "scope": "Availability, byte integrity, protocols and policy/evaluation correspondence; no training or numerical re-evaluation."
+}
