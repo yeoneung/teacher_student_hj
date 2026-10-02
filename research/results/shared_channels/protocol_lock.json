@@ -1,0 +1,32 @@
+{
+  "config": {
+    "shape": "box",
+    "dimensions": [
+      16,
+      32
+    ],
+    "group_sizes": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "radii": [
+      0.5,
+      2.0
+    ],
+    "seeds": [
+      21101,
+      21102,
+      21103,
+      21104,
+      21105
+    ],
+    "initials": 512,
+    "rank_tolerance": 1e-10,
+    "note": "Geometry only. Targets, active faces and ranks come from minimal_teaching."
+  },
+  "source_sha256": "2fe2ecbe34ef5457d6fdde09ab43e779b468300442bad43ae1f94bfe4a27760b",
+  "interface_sha256": "b021b70e164980bc0cdbf7976c92725f018752c027d68658df448692c8792ff7",
+  "report_sha256": "ca3c94fda9f24fc8161f9eaf5fa3432372c83ac9a7588d9a519c4ae9c08b8bf1"
+}

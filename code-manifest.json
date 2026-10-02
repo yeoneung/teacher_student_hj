@@ -317,6 +317,11 @@
       "release_sha256": "7a7aba35f8827154900c58cae6a4f81847374bbc618240130c3386d936fb2108",
       "frozen": true
     },
+    "research/verify_shared_channels.py": {
+      "sha256": "2fe2ecbe34ef5457d6fdde09ab43e779b468300442bad43ae1f94bfe4a27760b",
+      "frozen": false,
+      "change": "Added after release v1.0.0: shared-channel query-count geometry check"
+    },
     "verify_artifacts.py": {
       "sha256": "90096eb973ad1bb4a26f96c2babed9eea85df5d5d8dcaeeb1bf5f9cc6e0ad20a",
       "role": "Repository verification and data staging"

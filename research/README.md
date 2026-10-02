@@ -39,6 +39,7 @@ process at a time. Configurations, seeds and update budgets are in the scripts.
 ```sh
 python verify_minimal_information.py
 python verify_approximate_feedback.py
+python verify_shared_channels.py
 python minimal_teaching_study.py
 python neural_information_transfer.py
 python neural_information_confirmation.py
@@ -89,9 +90,12 @@ their results must not be pooled or attributed to a different training rule.
 `teaching_information_loss.py` checks the exact information-loss and shared-fit
 constructions. `verify_minimal_information.py` checks 120 recovery and
 indistinguishability cases. `verify_approximate_feedback.py` checks 2,304
-alignment/noise cases. `verify_improving_sets.py` checks projection geometry,
-gradients and the exact quadratic policy bound. The last script uses CUDA for
-its quadratic-control check; the other three use the CPU.
+alignment/noise cases. `verify_shared_channels.py` computes the query counts
+for student output maps that tie several actuators to one channel, using the
+frozen `minimal_teaching.py` interface; it writes `results/shared_channels/`
+and trains or evaluates nothing. `verify_improving_sets.py` checks projection
+geometry, gradients and the exact quadratic policy bound. The last script uses
+CUDA for its quadratic-control check; the other four use the CPU.
 
 The original sources and all outcomes are retained in release v1.0.0.
 The current dependency record contains only computational modules retained here.
